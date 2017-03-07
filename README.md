@@ -11,7 +11,7 @@
 * This is a desktop Task Manager application. It has a GUI but most of the user interactions happen using a CLI (Command Line Interface).
 * It allows users to input and monitor upcoming tasks for the week and plan their day efficiently.
 * It is a Java application intended for users who prefers typing over use of mouse or key combinations.
-* It is **written in OOP fashion**. 
+* It is **written in OOP fashion**.
 
 
 #### Site Map
