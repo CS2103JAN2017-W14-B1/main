@@ -14,6 +14,8 @@ public class Comment {
     public static final String MESSAGE_COMMENT_CONSTRAINTS =
             "Person commentes can take any values, and it should not be blank";
     
+    public static final String DEFAULT_COMMENT = "";
+    
     /*
      * The first character of the comment must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
@@ -44,7 +46,7 @@ public class Comment {
     		}
     		this.value = commentString;
     	} else {
-    		this.value = "";
+    		this.value = DEFAULT_COMMENT;
     	}
     }
     
