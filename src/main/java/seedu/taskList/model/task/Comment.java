@@ -1,6 +1,8 @@
 package seedu.taskList.model.task;
 
 
+import java.util.Optional;
+
 import seedu.taskList.commons.exceptions.IllegalValueException;
 
 /**
@@ -11,6 +13,8 @@ public class Comment {
 
     public static final String MESSAGE_COMMENT_CONSTRAINTS =
             "Person commentes can take any values, and it should not be blank";
+
+    public static final String DEFAULT_COMMENT = "";
 
     /*
      * The first character of the comment must not be a whitespace,
@@ -31,6 +35,26 @@ public class Comment {
             throw new IllegalValueException(MESSAGE_COMMENT_CONSTRAINTS);
         }
         this.value = comment;
+    }
+
+    public Comment(Optional<String> comment) throws IllegalValueException {
+    	if (isCommentPresent(comment)) {
+    		String commentString = comment.get();
+    		assert comment != null;
+    		if (!isValidComment(commentString)) {
+    			throw new IllegalValueException(MESSAGE_COMMENT_CONSTRAINTS);
+    		}
+    		this.value = commentString;
+    	} else {
+    		this.value = DEFAULT_COMMENT;
+    	}
+    }
+
+    /**
+     * Returns true if a a comment is present
+     */
+    public static boolean isCommentPresent(Optional<String> comment) {
+    	return comment.isPresent();
     }
 
     /**
