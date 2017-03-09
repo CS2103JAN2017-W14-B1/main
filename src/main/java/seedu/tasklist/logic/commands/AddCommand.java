@@ -1,6 +1,7 @@
 package seedu.tasklist.logic.commands;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 import seedu.tasklist.commons.exceptions.IllegalValueException;
@@ -34,7 +35,7 @@ public class AddCommand extends Command {
      *
      * @throws IllegalValueException if any of the raw values are invalid
      */
-    public AddCommand(String name, String comment, Set<String> tags)
+    public AddCommand(String name, Optional<String> comment, Set<String> tags)
             throws IllegalValueException {
         final Set<Tag> tagSet = new HashSet<>();
         for (String tagName : tags) {
