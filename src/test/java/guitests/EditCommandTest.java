@@ -217,7 +217,6 @@ public class EditCommandTest extends TaskListGuiTest {
         assertResultMessage(EditCommand.MESSAGE_DUPLICATE_TASK);
     }
 
-    //@@author A0139747N
     @Test
     public void editFloatingTaskWithFlexibleCommandsAndPrefixes() throws IllegalValueException {
         commandBox.runCommand("modify 2 floating tAg/tag1 Comments/comments p/low");
@@ -227,7 +226,7 @@ public class EditCommandTest extends TaskListGuiTest {
 
         assertEditSuccessWithFlexibleCommand(taskListIndex, taskListIndex, editedTask);
     }
-    //@@author
+
     /**
      * Checks whether the edited task has the correct updated details.
      * Includes checking if the rest of the tasks are affected. They should not be changed.
@@ -252,7 +251,6 @@ public class EditCommandTest extends TaskListGuiTest {
         assertResultMessage(String.format(EditCommand.MESSAGE_EDIT_TASK_SUCCESS, editedTask));
     }
 
-    //@@author A0139747N
     /**
      * Checks whether the edited task has the correct updated details.
      * Very similar to the preceding method, exception without running the command.
