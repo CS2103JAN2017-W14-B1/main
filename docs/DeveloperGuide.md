@@ -93,7 +93,7 @@ Given below is a quick overview of the main components and their main responsibi
 #### 2.1. Main
 `Main` has only one class called [`MainApp`](../src/main/java/seedu/tasklist/MainApp.java). It is responsible for,
 
-* Initializing the components in the correct sequence, and connects them up with each other when FlexiTask launches 
+* Initializing the components in the correct sequence, and connects them up with each other when FlexiTask launches
 * Shutting down the components and invokes cleanup method where necessary, when FlexiTask shuts down.
 
 #### 2.2. Commons
@@ -238,15 +238,15 @@ and logging destinations.
 
 > The logging level can be controlled using the `logLevel` setting in the configuration file
   (See [Configuration](#32-configuration))<br>
-  
+
 > The `Logger` for a class can be obtained using `LogsCenter.getLogger(Class)` which will log messages according to
   the specified logging level<br>
-  
+
 > The log messages are currently output through: `Console` and to a `.log` file.
 
 ####3.1.1. **Logging Levels**
 
-Currently, FlexiTask has 4 logging levels: `SEVERE`, `WARNING`, `INFO` and `FINE`. They record information pertaining to: 
+Currently, FlexiTask has 4 logging levels: `SEVERE`, `WARNING`, `INFO` and `FINE`. They record information pertaining to:
 
 * `SEVERE` : Critical problem detected which may possibly cause the termination of the application
 * `WARNING` : Can continue, but with caution
@@ -289,7 +289,7 @@ We have two types of tests:
    3. Hybrids of unit and integration tests. These test are checking multiple code units as well as
       how the are connected together.<br>
       e.g. `seedu.tasklist.logic.LogicManagerTest`
-      
+
 3. **Headless GUI Testing** - These are test involving GUI.
   [TestFX](https://github.com/TestFX/TestFX) library allows GUI tests to be run in the _headless_ mode.
  In the headless mode, GUI tests do not show up on the screen.
