@@ -79,10 +79,14 @@ public interface Model {
      * @throws IOException
      * */
     void saveTaskList(String filePath) throws IOException;
-
+//@@author
     void updateFilteredTaskListStatus(Set<String> keywords);
 
     void updateTodaysTaskList();
 
     void updateTomorrowsTaskList();
+
+    UnmodifiableObservableList<ReadOnlyTask> getNextWeeksTaskList();
+
+    void updateNextWeeksTaskList();
 }

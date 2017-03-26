@@ -44,10 +44,10 @@ public class ModelManager extends ComponentManager implements Model {
     private final TaskList taskList;
     private final Storage storage;
 
-
     private final FilteredList<ReadOnlyTask> filteredTasks;
     private final FilteredList<ReadOnlyTask> todaysTasks;
     private final FilteredList<ReadOnlyTask> tomorrowsTasks;
+    private final FilteredList<ReadOnlyTask> nextWeeksTasks;
     private Stack<ReadOnlyTaskList> undoStack;
     private Stack<ReadOnlyTaskList> redoStack;
 //@@author A0141993X
@@ -68,6 +68,8 @@ public class ModelManager extends ComponentManager implements Model {
         updateTodaysTaskList();
         tomorrowsTasks = new FilteredList<>(this.taskList.getTaskList());
         updateTomorrowsTaskList();
+        nextWeeksTasks = new FilteredList<>(this.taskList.getTaskList());
+        updateNextWeeksTaskList();
 
         this.undoStack = new Stack<ReadOnlyTaskList>();
         this.redoStack = new Stack<ReadOnlyTaskList>();
@@ -184,7 +186,6 @@ public class ModelManager extends ComponentManager implements Model {
         return new UnmodifiableObservableList<>(todaysTasks);
     }
 
-    //@@author A0143355J
     @Override
     public UnmodifiableObservableList<ReadOnlyTask> getTomorrowTaskList() {
         return new UnmodifiableObservableList<>(tomorrowsTasks);
@@ -192,10 +193,16 @@ public class ModelManager extends ComponentManager implements Model {
 
     //@@author
     @Override
+    public UnmodifiableObservableList<ReadOnlyTask> getNextWeeksTaskList() {
+        return new UnmodifiableObservableList<>(nextWeeksTasks);
+    }
+
+    @Override
     public void updateFilteredListToShowAll() {
         filteredTasks.setPredicate(null);
         updateTodaysTaskList();
         updateTomorrowsTaskList();
+        updateNextWeeksTaskList();
     }
 
     @Override
@@ -240,12 +247,36 @@ public class ModelManager extends ComponentManager implements Model {
         c.add(Calendar.DATE, 1);
         Date tomorrow = c.getTime();
         return p -> (p.getType().equals(DeadlineTask.TYPE)
-                && DateUtils.isSameDay(((ReadOnlyDeadlineTask) p).getDeadline(), tomorrow))
-            || (p.getType().equals(EventTask.TYPE)
-                && DateUtils.isSameDay(((ReadOnlyEventTask) p).getStartDate(), tomorrow));
+                        && DateUtils.isSameDay(((ReadOnlyDeadlineTask) p).getDeadline(), tomorrow))
+                    || (p.getType().equals(EventTask.TYPE)
+                        && DateUtils.isSameDay(((ReadOnlyEventTask) p).getStartDate(), tomorrow));
     }
 
-//@@author A0141993X
+    @Override
+    public void updateNextWeeksTaskList() {
+        nextWeeksTasks.setPredicate(isNextWeekTask());
+    }
+
+    private static Predicate<ReadOnlyTask> isNextWeekTask() {
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+        while (c.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
+            c.add(Calendar.DATE, 1);
+        }
+        Date nextSun = c.getTime();
+        c.add(Calendar.DATE, 8);
+        Date followingMon = c.getTime();
+        return p -> (p.getType().equals(DeadlineTask.TYPE)
+                        && isWithinWeek(((ReadOnlyDeadlineTask) p).getDeadline(), nextSun, followingMon))
+                    || (p.getType().equals(EventTask.TYPE)
+                        && isWithinWeek(((ReadOnlyEventTask) p).getStartDate(), nextSun, followingMon));
+    }
+
+    private static boolean isWithinWeek(Date date, Date weekStart, Date weekEnd) {
+        return date.before(weekEnd) && date.after(weekStart);
+    }
+
+    //@@author A0141993X
     /**
      * Sort based on parameter specified
      * @param parameter
