@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Paths;
 
-import seedu.tasklist.commons.core.Config;
-import seedu.tasklist.commons.util.ConfigUtil;
-
 //@@author A0141993X
 /**
  * Save user data file for task list.
@@ -35,14 +32,15 @@ public class SaveCommand extends Command {
     public CommandResult execute() {
         assert filePath != null;
         assert model != null;
+        assert storage != null;
 
         if (!isValidPath(filePath)) {
             return new CommandResult(String.format(MESSAGE_INVALID_PATH, filePath));
         }
 
         try {
+            storage.setTaskListFilePath(filePath);
             model.saveTaskList(filePath);
-            updateFilePathOfConfigFile();
             return new CommandResult(String.format(MESSAGE_SUCCESS, filePath));
         } catch (IOException e) {
             return new CommandResult(String.format(MESSAGE_FAILURE, filePath));
@@ -67,19 +65,6 @@ public class SaveCommand extends Command {
      */
     private static boolean isXML(String path) {
         return path.endsWith(XML);
-    }
-
-    /**
-     * Updates the file path of config file with the new file path
-     * specified by user, which gets reflected in the UI.
-     *
-     * @throws IOException
-     */
-    private void updateFilePathOfConfigFile() throws IOException {
-        assert filePath != null;
-        Config config = new Config();
-        config.setTaskListFilePath(filePath);
-        ConfigUtil.saveConfig(config, Config.DEFAULT_CONFIG_FILE);
     }
 
 }
