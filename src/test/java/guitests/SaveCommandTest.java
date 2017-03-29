@@ -30,7 +30,7 @@ public class SaveCommandTest extends TaskListGuiTest {
         commandBox.runCommand(command);
         assertResultMessage(String.format(SaveCommand.MESSAGE_SUCCESS, "data/testTasklist.xml"));
     }
-    
+
     @Test
     public void save_validFilePathCreateDirectory_success() {
         String command = "save testSave/data/testTasklist.xml";
