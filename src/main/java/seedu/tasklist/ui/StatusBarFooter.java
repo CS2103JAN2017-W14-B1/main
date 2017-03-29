@@ -50,15 +50,15 @@ public class StatusBarFooter extends UiPart<Region> {
     }
 
     @Subscribe
-    public void handleTaskListChangedEvent(TaskListChangedEvent abce) {
+    public void handleTaskListChangedEvent(TaskListChangedEvent tlce) {
         String lastUpdated = (new Date()).toString();
-        logger.info(LogsCenter.getEventHandlingLogMessage(abce, "Setting last updated status to " + lastUpdated));
+        logger.info(LogsCenter.getEventHandlingLogMessage(tlce, "Setting last updated status to " + lastUpdated));
         setSyncStatus("Last Updated: " + lastUpdated);
     }
 
     //@@author A0141993X
     @Subscribe
-    public void handleTaskListFilePathChangedEvent(TaskListFilePathChangedEvent fp) {
-        setSaveLocation("File will be saved at: " + fp.filePath);
+    public void handleTaskListFilePathChangedEvent(TaskListFilePathChangedEvent tlce) {
+        setSaveLocation("File will be saved at: " + tlce.filePath);
     }
 }
