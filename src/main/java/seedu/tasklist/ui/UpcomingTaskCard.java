@@ -18,7 +18,7 @@ public class UpcomingTaskCard extends UiPart<Region> {
     private Label name;
 
     @FXML
-    private Label startDate;
+    private Label date;
     @FXML
     private Label endDate;
     @FXML
@@ -32,19 +32,24 @@ public class UpcomingTaskCard extends UiPart<Region> {
 
     private void setName(ReadOnlyTask task) {
         name.setText(task.getName().fullName);
+        name.setStyle("-fx-font-size: 120%");
+        name.setTranslateX(27);
     }
 
     private void setDate(ReadOnlyTask task) {
         String taskType = task.getType();
+        connector.setStyle("-fx-font-size: 120%");
+        date.setStyle("-fx-font-size: 120%");
+        endDate.setStyle("-fx-font-size: 120%");
         switch (taskType) {
         case DeadlineTask.TYPE:
-            startDate.setText("Deadline :");
+            date.setText("Deadline :");
             connector.setText("- ");
             connector.setStyle("-fx-text-fill: white");
             endDate.setText(((ReadOnlyDeadlineTask) task).getDeadlineStringForUpcomingTask() + " ");
             break;
         case EventTask.TYPE:
-            startDate.setText(((ReadOnlyEventTask) task).getStartDateStringForUpcomingTask() + " ");
+            date.setText(((ReadOnlyEventTask) task).getStartDateStringForUpcomingTask() + " ");
             connector.setText("- ");
             endDate.setText(((ReadOnlyEventTask) task).getEndDateStringForUpcomingTask() + " ");
             break;
