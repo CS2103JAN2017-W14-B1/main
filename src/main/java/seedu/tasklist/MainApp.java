@@ -80,10 +80,10 @@ public class MainApp extends Application {
             flexiTaskOptional = storage.readTaskList();
             if (!flexiTaskOptional.isPresent()) {
                 logger.info("Data file not found. Will be starting with a sample TaskList");
+                storage.setTaskListFilePath("data/tasklist.xml");
             }
             initialData = flexiTaskOptional.orElseGet(SampleDataUtil::getSampleTaskList);
             storage.saveTaskList(initialData);
-            storage.setTaskListFilePath("data/tasklist.xml");
         } catch (DataConversionException e) {
             logger.warning("Data file not in the correct format. Will be starting with an empty TaskList");
             initialData = new TaskList();
