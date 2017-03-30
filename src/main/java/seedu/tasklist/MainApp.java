@@ -80,7 +80,6 @@ public class MainApp extends Application {
             flexiTaskOptional = storage.readTaskList();
             if (!flexiTaskOptional.isPresent()) {
                 logger.info("Data file not found. Will be starting with a sample TaskList");
-                storage.setTaskListFilePath("data/tasklist.xml");
             }
             initialData = flexiTaskOptional.orElseGet(SampleDataUtil::getSampleTaskList);
             storage.saveTaskList(initialData);
@@ -95,7 +94,7 @@ public class MainApp extends Application {
 
         return new ModelManager(initialData, storage, userPrefs);
     }
-//@@author 
+//@@author
     private void initLogging(Config config) {
         LogsCenter.init(config);
     }
