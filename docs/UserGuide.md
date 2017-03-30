@@ -350,6 +350,7 @@ Example:
 <a name="save"></a>
 ### 3.12. Saving the program data to a specified path: save
 Save FlexiTask list to a file specified by user<br>
+Other FlexiTask list will be saved to the default location: data/tasklist.xml<br>
 
 Format: `save FILE_PATH/FILE_NAME.xml`
 
@@ -360,6 +361,7 @@ Format: `save FILE_PATH/FILE_NAME.xml`
 Example:
 
 * save data/mytasklist.xml
+* save C:/Desktop/mytasklist.xml
 
 
 <br>
