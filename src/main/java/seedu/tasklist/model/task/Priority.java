@@ -128,7 +128,7 @@ public class Priority {
         } else if (priority.toString().equals(PRIORITY_LOW)) {
             otherValue = 2;
         }  else if (priority.toString().equals(PRIORITY_NIL)) {
-           otherValue = 3;
+            otherValue = 3;
         }
 
         return thisValue.compareTo(otherValue);
