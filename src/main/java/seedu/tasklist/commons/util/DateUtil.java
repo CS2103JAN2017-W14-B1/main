@@ -17,7 +17,8 @@ public class DateUtil {
      * The check is inclusive for lowerbound, meaning if dateToTest falls on lowerbound or upperbound, it returns true.
      */
     public static boolean isBetween (Date dateToTest, Date lowerbound, Date upperbound) {
-        assert upperbound.after(lowerbound);
+        assert upperbound.after(lowerbound) || DateUtils.isSameDay(lowerbound, upperbound)
+               : "upperbound Date must be after lowerbound Date";
         return (DateUtils.isSameDay(lowerbound, dateToTest) || lowerbound.before(dateToTest))
                 && (DateUtils.isSameDay(upperbound, dateToTest) || upperbound.after(dateToTest));
     }
