@@ -219,13 +219,25 @@ public class EditCommandTest extends TaskListGuiTest {
 
     //@@author A0139747N
     @Test
-    public void editFloatingTaskWithFlexibleCommandsAndPrefixes() throws IllegalValueException {
+    public void edit_floating_task_with_flexible_commands_and_prefixes() throws IllegalValueException {
         commandBox.runCommand("modify 2 floating tAg/tag1 Comments/comments p/low");
         int taskListIndex = 2;
         TestTask editedTask = new FloatingTaskBuilder().withName("floating").withTags("tag1").withComment("comments")
                 .withPriority("low").withStatus(false).build();
 
-        assertEditSuccessWithFlexibleCommand(taskListIndex, taskListIndex, editedTask);
+        assertEditSuccessWithFlexibleCommand(taskListIndex, editedTask);
+    }
+
+    @Test
+    public void edit_deadline_task_with_flexible_commands_and_prefixes() throws IllegalValueException {
+        int taskListIndex = 5;
+        TestTask taskToEdit = expectedTasksList[taskListIndex - 1];
+        commandBox.runCommand("CHANGE 5 EMERGENCY Meeting! C/imperative!");
+
+        TestTask editedTask = new DeadlineTaskBuilder((TestDeadlineTask) taskToEdit).
+                withName("EMERGENCY Meeting!").withComment("imperative!").build();
+
+        assertEditSuccessWithFlexibleCommand(taskListIndex, editedTask);
     }
     //@@author
     /**
@@ -257,8 +269,7 @@ public class EditCommandTest extends TaskListGuiTest {
      * Checks whether the edited task has the correct updated details.
      * Very similar to the preceding method, exception without running the command.
      */
-    private void assertEditSuccessWithFlexibleCommand (int filteredTaskListIndex,
-            int taskListIndex, TestTask editedTask) {
+    private void assertEditSuccessWithFlexibleCommand (int taskListIndex, TestTask editedTask) {
 
         // confirm the new card contains the right data
         TaskCardHandle editedCard = taskListPanel.navigateToTask(editedTask.getName().fullName);

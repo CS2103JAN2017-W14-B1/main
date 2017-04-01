@@ -4,6 +4,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import seedu.tasklist.logic.commands.ClearCommand;
+
 public class ClearCommandTest extends TaskListGuiTest {
 
     @Test
@@ -26,14 +28,16 @@ public class ClearCommandTest extends TaskListGuiTest {
     //@@author A0139747N
     @Test
     public void clearWithFlexibleCommand() {
-        commandBox.runCommand("clean");
+        commandBox.runCommand("CLEan");
         assertListSize(0);
-        assertResultMessage("Task list has been cleared!");
+        assertResultMessage(ClearCommand.MESSAGE_SUCCESS);
+
     }
+
     //@@author
     private void assertClearCommandSuccess() {
         commandBox.runCommand("clear");
         assertListSize(0);
-        assertResultMessage("Task list has been cleared!");
+        assertResultMessage(ClearCommand.MESSAGE_SUCCESS);
     }
 }
