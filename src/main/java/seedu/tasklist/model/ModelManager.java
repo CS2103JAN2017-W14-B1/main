@@ -140,6 +140,11 @@ public class ModelManager extends ComponentManager implements Model {
     }
 
     @Override
+    public void clearRedoStack() {
+        redoStack.clear();
+    }
+
+    @Override
     public String setNextState() throws EmptyStackException {
         if (redoStack.empty()) {
             throw new EmptyStackException();
