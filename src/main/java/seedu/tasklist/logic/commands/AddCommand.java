@@ -138,6 +138,7 @@ public class AddCommand extends Command {
     public CommandResult execute() throws CommandException {
         assert model != null;
         try {
+            model.clearRedoStack();
             model.addTask(toAdd);
             return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));
         } catch (UniqueTaskList.DuplicateTaskException e) {

@@ -60,6 +60,9 @@ public interface Model {
     /** Get the previous state (undo) of the task list */
     public String setPreviousState() throws EmptyStackException;
 
+    /** Clear the redo stack (if the preceding command is not 'undo') */
+    public void clearRedoStack();
+
     /** Get the next state (redo) of the task list */
     public String setNextState() throws EmptyStackException;
 
