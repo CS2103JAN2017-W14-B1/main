@@ -109,6 +109,20 @@ public class UndoRedoCommandTest extends TaskListGuiTest {
 
         commandBox.runCommand("REDO");
         assertResultMessage(String.format(RedoCommand.MESSAGE_REDO_SUCCESS + taskToBeAdded.getAddCommand()));
+
+    /**
+     * A "illegal redo" is the redo command that is not preceded by an "undo" command.
+     */
+    @Test
+    public void assertIllegalRedoFail() {
+        TestTask taskToBeAdded = td.internship;
+        commandBox.runCommand(taskToBeAdded.getAddCommand());
+        commandBox.runCommand("undo");
+        TestTask anotherTaskToBeAdded = td.exam;
+        commandBox.runCommand(anotherTaskToBeAdded.getAddCommand());
+        commandBox.runCommand("redo");
+        assertResultMessage(RedoCommand.MESSAGE_REDO_FAILED);
+
     }
 }
 
