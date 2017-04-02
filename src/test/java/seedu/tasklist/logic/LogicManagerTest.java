@@ -22,7 +22,6 @@ import com.google.common.eventbus.Subscribe;
 
 import seedu.tasklist.commons.core.EventsCenter;
 import seedu.tasklist.commons.events.model.TaskListChangedEvent;
-import seedu.tasklist.commons.events.ui.JumpToListRequestEvent;
 import seedu.tasklist.commons.events.ui.ShowHelpRequestEvent;
 import seedu.tasklist.logic.commands.AddCommand;
 import seedu.tasklist.logic.commands.ClearCommand;
@@ -78,11 +77,6 @@ public class LogicManagerTest {
     @Subscribe
     private void handleShowHelpRequestEvent(ShowHelpRequestEvent she) {
         helpShown = true;
-    }
-
-    @Subscribe
-    private void handleJumpToListRequestEvent(JumpToListRequestEvent je) {
-        targetedJumpIndex = je.targetIndex;
     }
 
     @Before
