@@ -24,6 +24,7 @@ import seedu.tasklist.commons.exceptions.DataConversionException;
 import seedu.tasklist.commons.util.CollectionUtil;
 import seedu.tasklist.commons.util.StringUtil;
 import seedu.tasklist.model.tag.Tag;
+import seedu.tasklist.model.tag.UniqueTagList;
 import seedu.tasklist.model.task.DeadlineTask;
 import seedu.tasklist.model.task.EventTask;
 import seedu.tasklist.model.task.ReadOnlyDeadlineTask;
@@ -31,6 +32,7 @@ import seedu.tasklist.model.task.ReadOnlyEventTask;
 import seedu.tasklist.model.task.ReadOnlyTask;
 import seedu.tasklist.model.task.Task;
 import seedu.tasklist.model.task.UniqueTaskList;
+import seedu.tasklist.model.task.UniqueTaskList.DuplicateTaskException;
 import seedu.tasklist.model.task.UniqueTaskList.TaskNotFoundException;
 import seedu.tasklist.storage.Storage;
 
@@ -171,6 +173,36 @@ public class ModelManager extends ComponentManager implements Model {
     public void enableUndoForClear() {
         Pair current = new Pair(new TaskList(taskList), userInput);
         undoStack.push(current);
+    }
+
+    @Override
+    public void removeTasksForClearByTag (String keyword) {
+        TaskList toRemove = new TaskList();
+        boolean flag = false;
+        for (ReadOnlyTask task : taskList.getTaskList()) {
+            UniqueTagList tagList = task.getTags();
+            for (Tag tag : tagList) {
+                if (tag.tagName.equals(keyword)) {
+                    flag = true;
+                }
+            }
+            if (flag == true) {
+                try {
+                    toRemove.addTask((Task) task);
+                } catch (DuplicateTaskException e) {
+                    e.printStackTrace();
+                }
+                flag = false;
+
+            }
+        }
+        taskList.removeAll(toRemove);
+
+    }
+
+    @Override
+    public void removeTasksForClearByStatus(String keyword) {
+
     }
 
 //@@author A0141993X

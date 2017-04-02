@@ -69,6 +69,10 @@ public interface Model {
     /** Enables undo to work after a clear command, by pushing the existing state into UndoStack. */
     public void enableUndoForClear();
 
+    /** Removes tasks that contains the parameter/keywords input from clear command. */
+    public void removeTasksForClearByTag(String keyword);
+
+    public void removeTasksForClearByStatus(String keyword);
 //@@author A0141993X
     /**Sort tasks according to parameter specified by user */
     public void sortTaskList(String parameter);

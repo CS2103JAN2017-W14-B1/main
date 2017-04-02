@@ -49,7 +49,14 @@ public class ClearCommand extends Command {
         model.enableUndoForClear();
 
 
-        model.resetData(new TaskList());
+        if (isByTags) {
+            model.removeTasksForClearByTag(content);
+        } else if (isByStatus) {
+            model.removeTasksForClearByStatus(content);
+        } else {
+            model.resetData(new TaskList());
+        }
+
         return new CommandResult(MESSAGE_SUCCESS);
     }
 }
