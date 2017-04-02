@@ -21,7 +21,6 @@ import seedu.tasklist.logic.commands.ListCommand;
 import seedu.tasklist.logic.commands.LoadCommand;
 import seedu.tasklist.logic.commands.RedoCommand;
 import seedu.tasklist.logic.commands.SaveCommand;
-import seedu.tasklist.logic.commands.SelectCommand;
 import seedu.tasklist.logic.commands.SortCommand;
 import seedu.tasklist.logic.commands.UndoCommand;
 import seedu.tasklist.logic.commands.UndoneCommand;
@@ -72,9 +71,6 @@ public class Parser {
 
         case EditCommand.COMMAND_WORD:
             return new EditCommandParser().parse(arguments);
-
-        case SelectCommand.COMMAND_WORD:
-            return new SelectCommandParser().parse(arguments);
 
         case DeleteCommand.COMMAND_WORD:
             return new DeleteCommandParser().parse(arguments);

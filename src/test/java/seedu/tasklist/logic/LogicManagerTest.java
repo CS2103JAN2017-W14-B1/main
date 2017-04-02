@@ -35,7 +35,6 @@ import seedu.tasklist.logic.commands.HelpCommand;
 import seedu.tasklist.logic.commands.ListCommand;
 import seedu.tasklist.logic.commands.LoadCommand;
 import seedu.tasklist.logic.commands.SaveCommand;
-import seedu.tasklist.logic.commands.SelectCommand;
 import seedu.tasklist.logic.commands.SortCommand;
 import seedu.tasklist.logic.commands.exceptions.CommandException;
 import seedu.tasklist.model.Model;
@@ -68,6 +67,7 @@ public class LogicManagerTest {
     //These are for checking the correctness of the events raised
     private ReadOnlyTaskList latestSavedTaskList;
     private boolean helpShown;
+    @SuppressWarnings("unused")
     private int targetedJumpIndex;
 
     @Subscribe
@@ -319,34 +319,6 @@ public class LogicManagerTest {
 
         assertCommandFailure(commandWord + " 3", expectedMessage);
     }
-
-    @Test
-    public void execute_selectInvalidArgsFormat_errorMessageShown() throws Exception {
-        String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, SelectCommand.MESSAGE_USAGE);
-        assertIncorrectIndexFormatBehaviorForCommand("select", expectedMessage);
-    }
-
-    @Test
-    public void execute_selectIndexNotFound_errorMessageShown() throws Exception {
-        assertIndexNotFoundBehaviorForCommand("select");
-    }
-
-    @Test
-    public void execute_select_jumpsToCorrectTask() throws Exception {
-        TestDataHelper helper = new TestDataHelper();
-        List<Task> threeTasks = helper.generateTaskList(3);
-
-        TaskList expectedAB = helper.generateTaskManager(threeTasks);
-        helper.addToModel(model, threeTasks);
-
-        assertCommandSuccess("select 2",
-                String.format(SelectCommand.MESSAGE_SELECT_TASK_SUCCESS, 2),
-                expectedAB,
-                expectedAB.getTaskList());
-        assertEquals(1, targetedJumpIndex);
-        assertEquals(model.getFilteredTaskList().get(1), threeTasks.get(1));
-    }
-
 
     @Test
     public void execute_deleteInvalidArgsFormat_errorMessageShown() throws Exception {
