@@ -18,9 +18,9 @@ public class UpcomingTaskCard extends UiPart<Region> {
     private Label name;
 
     @FXML
-    private Label date;
+    private Label firstDate;
     @FXML
-    private Label endDate;
+    private Label secondDate;
     @FXML
     private Label connector;
 
@@ -39,19 +39,19 @@ public class UpcomingTaskCard extends UiPart<Region> {
     private void setDate(ReadOnlyTask task) {
         String taskType = task.getType();
         connector.setStyle("-fx-font-size: 120%");
-        date.setStyle("-fx-font-size: 120%");
-        endDate.setStyle("-fx-font-size: 120%");
+        firstDate.setStyle("-fx-font-size: 120%");
+        secondDate.setStyle("-fx-font-size: 120%");
         switch (taskType) {
         case DeadlineTask.TYPE:
-            date.setText("Deadline :");
+            firstDate.setText("Deadline :");
             connector.setText("- ");
             connector.setStyle("-fx-text-fill: white");
-            endDate.setText(((ReadOnlyDeadlineTask) task).getDeadlineStringForUpcomingTask() + " ");
+            secondDate.setText(((ReadOnlyDeadlineTask) task).getDeadlineStringForUpcomingTask() + " ");
             break;
         case EventTask.TYPE:
-            date.setText(((ReadOnlyEventTask) task).getStartDateStringForUpcomingTask() + " ");
+            firstDate.setText(((ReadOnlyEventTask) task).getStartDateStringForUpcomingTask() + " ");
             connector.setText("- ");
-            endDate.setText(((ReadOnlyEventTask) task).getEndDateStringForUpcomingTask() + " ");
+            secondDate.setText(((ReadOnlyEventTask) task).getEndDateStringForUpcomingTask() + " ");
             break;
         default:
             assert false;
