@@ -1,6 +1,6 @@
-package guitests;
+package guitests.guihandles;
 
-import guitests.guihandles.GuiHandle;
+import guitests.GuiRobot;
 import javafx.scene.Node;
 import javafx.stage.Stage;
 import seedu.tasklist.model.task.DeadlineTask;
