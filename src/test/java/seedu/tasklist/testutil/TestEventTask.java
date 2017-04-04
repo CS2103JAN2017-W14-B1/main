@@ -261,7 +261,7 @@ public class TestEventTask extends TestTask implements ReadOnlyEventTask {
      */
     @Override
     public String getStartDateString() {
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         return dateFormat.format(this.startDate);
     }
 
@@ -270,7 +270,7 @@ public class TestEventTask extends TestTask implements ReadOnlyEventTask {
      */
     @Override
     public String getEndDateString() {
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         return dateFormat.format(this.endDate);
     }
 

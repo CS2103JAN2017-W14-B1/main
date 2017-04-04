@@ -56,7 +56,7 @@ public class DeadlineTask extends Task implements ReadOnlyDeadlineTask {
 
     @Override
     public String getDeadlineString() {
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         return dateFormat.format(deadline);
     }
 

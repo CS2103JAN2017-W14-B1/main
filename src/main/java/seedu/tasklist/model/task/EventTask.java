@@ -104,7 +104,7 @@ public class EventTask extends Task implements ReadOnlyEventTask {
 
     @Override
     public String getStartDateString() {
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         return dateFormat.format(startDate);
     }
 
@@ -115,7 +115,7 @@ public class EventTask extends Task implements ReadOnlyEventTask {
 
     @Override
     public String getEndDateString() {
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         return dateFormat.format(endDate);
     }
 
