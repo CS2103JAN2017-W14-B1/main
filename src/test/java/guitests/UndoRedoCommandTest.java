@@ -100,6 +100,18 @@ public class UndoRedoCommandTest extends TaskListGuiTest {
         assertTrue(taskListPanel.isListMatching());
     }
 
+    @Test
+    public void undoRedoWithFlexibleCommands() {
+        TestTask taskToBeAdded = td.internship;
+        commandBox.runCommand(taskToBeAdded.getAddCommand());
+        commandBox.runCommand("UNDO");
+        assertResultMessage(UndoCommand.MESSAGE_UNDO_SUCCESS + taskToBeAdded.getAddCommand());
+
+        commandBox.runCommand("REDO");
+        assertResultMessage(String.format(RedoCommand.MESSAGE_REDO_SUCCESS + taskToBeAdded.getAddCommand()));
+
+    }
+
     /**
      * A "illegal redo" is the redo command that is not preceded by an "undo" command.
      */
@@ -112,6 +124,7 @@ public class UndoRedoCommandTest extends TaskListGuiTest {
         commandBox.runCommand(anotherTaskToBeAdded.getAddCommand());
         commandBox.runCommand("redo");
         assertResultMessage(RedoCommand.MESSAGE_REDO_FAILED);
+
     }
 }
 

@@ -40,7 +40,7 @@ public class DeleteCommandTest extends TaskListGuiTest {
         //execute command with acceptable alternative "remove"
         TestTask[] currentList = td.getTypicalTasks();
         int targetIndex = 1;
-        commandBox.runCommand("remove 1");
+        commandBox.runCommand("REmove 1");
         TestTask[] expectedList = TestUtil.removeTaskFromList(currentList, targetIndex);
         assertTrue(taskListPanel.isListMatching(expectedList));
 

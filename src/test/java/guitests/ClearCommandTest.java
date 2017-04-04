@@ -6,9 +6,11 @@ import static seedu.tasklist.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMA
 import org.junit.Test;
 
 import seedu.tasklist.logic.commands.ClearCommand;
+
 import seedu.tasklist.model.task.Status;
 import seedu.tasklist.testutil.TestTask;
 import seedu.tasklist.testutil.TestUtil;
+
 
 public class ClearCommandTest extends TaskListGuiTest {
 
@@ -31,6 +33,14 @@ public class ClearCommandTest extends TaskListGuiTest {
 
     //@@author A0139747N
     @Test
+    public void clearWithFlexibleCommand() {
+        commandBox.runCommand("CLEan");
+        assertListSize(0);
+        assertResultMessage(ClearCommand.MESSAGE_SUCCESS);
+
+    }
+
+
     public void clear_with_flexible_command() {
         commandBox.runCommand("clean");
         assertListSize(0);
@@ -94,6 +104,6 @@ public class ClearCommandTest extends TaskListGuiTest {
     private void assertClearCommandSuccess() {
         commandBox.runCommand("clear");
         assertListSize(0);
-        assertResultMessage("Task list has been cleared!");
+        assertResultMessage(ClearCommand.MESSAGE_SUCCESS);
     }
 }
