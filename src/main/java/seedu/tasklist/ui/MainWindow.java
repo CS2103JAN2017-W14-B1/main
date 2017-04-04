@@ -34,10 +34,13 @@ public class MainWindow extends UiPart<Region> {
     // Independent Ui parts residing in this Ui container
     private TaskListPanel taskListPanel;
     private Config config;
-    private UpcomingTaskPanel upcomingTaskPanel;
+    private TodayTaskPanel todayTaskPanel;
+    private TomorrowTaskPanel tomorrowTaskPanel;
 
     @FXML
-    private AnchorPane upcomingTaskPlaceholder;
+    private AnchorPane todayTaskPlaceholder;
+    @FXML
+    private AnchorPane tomorrowTaskPlaceholder;
 
     @FXML
     private AnchorPane commandBoxPlaceholder;
@@ -113,8 +116,8 @@ public class MainWindow extends UiPart<Region> {
 
     //@@author A0143355J
     void fillInnerParts() {
-        upcomingTaskPanel = new UpcomingTaskPanel(getUpcomingTaskListPlaceholder(), logic.getTodayTaskList(),
-                logic.getTomorrowTaskList());
+        todayTaskPanel = new TodayTaskPanel(getTodayTaskListPlaceholder(), logic.getTodayTaskList());
+        tomorrowTaskPanel = new TomorrowTaskPanel(getTomorrowTaskListPlaceholder(), logic.getTomorrowTaskList());
         taskListPanel = new TaskListPanel(getTaskListPlaceholder(), logic.getFilteredTaskList());
         new ResultDisplay(getResultDisplayPlaceholder());
         new StatusBarFooter(getStatusbarPlaceholder(), config.getTaskListFilePath());
@@ -140,8 +143,13 @@ public class MainWindow extends UiPart<Region> {
     }
 
     //@@author A0143355J
-    private AnchorPane getUpcomingTaskListPlaceholder() {
-        return upcomingTaskPlaceholder;
+    private AnchorPane getTodayTaskListPlaceholder() {
+        return todayTaskPlaceholder;
+    }
+
+    //@@author A0143355J
+    private AnchorPane getTomorrowTaskListPlaceholder() {
+        return tomorrowTaskPlaceholder;
     }
 
     //@@author
@@ -209,8 +217,12 @@ public class MainWindow extends UiPart<Region> {
     }
 
     //@@author A0143355J
-    public UpcomingTaskPanel getUpcomingTaskPanel() {
-        return this.upcomingTaskPanel;
+    public TodayTaskPanel getTodayTaskPanel() {
+        return this.todayTaskPanel;
+    }
+
+    public TomorrowTaskPanel getTomorrowTaskPanel() {
+        return this.tomorrowTaskPanel;
     }
 
 }

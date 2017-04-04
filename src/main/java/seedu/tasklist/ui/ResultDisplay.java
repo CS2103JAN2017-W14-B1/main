@@ -33,6 +33,7 @@ public class ResultDisplay extends UiPart<Region> {
     public ResultDisplay(AnchorPane placeHolder) {
         super(FXML);
         resultDisplay.textProperty().bind(displayed);
+        resultDisplay.setStyle("-fx-font-size: 130%");
         FxViewUtil.applyAnchorBoundaryParameters(resultDisplay, 0.0, 0.0, 0.0, 0.0);
         FxViewUtil.applyAnchorBoundaryParameters(mainPane, 0.0, 0.0, 0.0, 0.0);
         placeHolder.getChildren().add(mainPane);

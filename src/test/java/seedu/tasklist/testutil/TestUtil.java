@@ -21,6 +21,7 @@ import org.testfx.api.FxToolkit;
 import com.google.common.io.Files;
 
 import guitests.guihandles.TaskCardHandle;
+import guitests.guihandles.UpcomingTaskCardHandle;
 import javafx.geometry.Bounds;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
@@ -352,6 +353,14 @@ public class TestUtil {
     }
 
     public static boolean compareCardAndTask(TaskCardHandle card, ReadOnlyTask task) {
+        return card.isSameTask(task);
+    }
+
+    //@@author A0143355J
+    /*
+     * Returns true if card and task are the same
+     */
+    public static boolean compareUpcomingCardAndTask(UpcomingTaskCardHandle card, ReadOnlyTask task) {
         return card.isSameTask(task);
     }
 

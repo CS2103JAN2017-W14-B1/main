@@ -4,8 +4,11 @@ package seedu.tasklist.testutil;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 import seedu.tasklist.commons.exceptions.IllegalValueException;
+import seedu.tasklist.logic.parser.DateParser;
 import seedu.tasklist.model.tag.Tag;
 import seedu.tasklist.model.tag.UniqueTagList;
 import seedu.tasklist.model.task.Comment;
@@ -88,6 +91,16 @@ public class DeadlineTaskBuilder extends TaskBuilder {
     public DeadlineTaskBuilder withDeadline(String date) throws IllegalValueException, ParseException {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         this.task.setDeadline(dateFormat.parse(date));
+        return this;
+    }
+
+    //@@author A0143355J
+    /**
+     * Sets the deadline of the deadline task with natural language as dates
+     */
+    public DeadlineTaskBuilder withNaturalDeadline(String date) throws IllegalValueException {
+        List<Date> dates = DateParser.parse(date);
+        this.task.setDeadline(dates.get(0));
         return this;
     }
 }
