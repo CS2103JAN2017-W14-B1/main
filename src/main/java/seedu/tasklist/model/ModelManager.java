@@ -16,12 +16,14 @@ import org.ocpsoft.prettytime.shade.org.apache.commons.lang.time.DateUtils;
 
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import seedu.tasklist.commons.core.ComponentManager;
 import seedu.tasklist.commons.core.LogsCenter;
 import seedu.tasklist.commons.core.UnmodifiableObservableList;
 import seedu.tasklist.commons.events.model.TaskListChangedEvent;
 import seedu.tasklist.commons.exceptions.DataConversionException;
 import seedu.tasklist.commons.util.CollectionUtil;
+import seedu.tasklist.commons.util.DateUtil;
 import seedu.tasklist.commons.util.StringUtil;
 import seedu.tasklist.model.tag.Tag;
 import seedu.tasklist.model.tag.UniqueTagList;
@@ -47,8 +49,10 @@ public class ModelManager extends ComponentManager implements Model {
     private final Storage storage;
 
     private final FilteredList<ReadOnlyTask> filteredTasks;
-    private final FilteredList<ReadOnlyTask> todaysTasks;
-    private final FilteredList<ReadOnlyTask> tomorrowsTasks;
+    private final FilteredList<ReadOnlyTask> filteredTodaysTasks;
+    private final FilteredList<ReadOnlyTask> filteredTomorrowTasks;
+    private final SortedList<ReadOnlyTask> sortedTodaysTasks;
+    private final SortedList<ReadOnlyTask> sortedTomorrowsTasks;
     private Stack<Pair> undoStack;
     private Stack<Pair> redoStack;
     public String userInput;
@@ -66,9 +70,11 @@ public class ModelManager extends ComponentManager implements Model {
         this.taskList = new TaskList(taskList);
         this.storage = storage;
         filteredTasks = new FilteredList<>(this.taskList.getTaskList());
-        todaysTasks = new FilteredList<>(this.taskList.getTaskList());
+        filteredTodaysTasks = new FilteredList<>(this.taskList.getTaskList());
+        sortedTodaysTasks = new SortedList<>(filteredTodaysTasks, TaskList.dateComparator());
         updateTodaysTaskList();
-        tomorrowsTasks = new FilteredList<>(this.taskList.getTaskList());
+        filteredTomorrowTasks = new FilteredList<>(this.taskList.getTaskList());
+        sortedTomorrowsTasks = new SortedList<>(filteredTomorrowTasks, TaskList.dateComparator());
         updateTomorrowsTaskList();
 
         this.undoStack = new Stack<Pair>();
@@ -274,13 +280,13 @@ public class ModelManager extends ComponentManager implements Model {
     //@@author A0143355J
     @Override
     public UnmodifiableObservableList<ReadOnlyTask> getTodayTaskList() {
-        return new UnmodifiableObservableList<>(todaysTasks);
+        return new UnmodifiableObservableList<>(sortedTodaysTasks);
     }
 
     //@@author A0143355J
     @Override
     public UnmodifiableObservableList<ReadOnlyTask> getTomorrowTaskList() {
-        return new UnmodifiableObservableList<>(tomorrowsTasks);
+        return new UnmodifiableObservableList<>(sortedTomorrowsTasks);
     }
 
     //@@author A0139221N
@@ -312,19 +318,22 @@ public class ModelManager extends ComponentManager implements Model {
 
     @Override
     public void updateTodaysTaskList() {
-        todaysTasks.setPredicate(isTodayTask());
+        filteredTodaysTasks.setPredicate(isTodayTask());
     }
 
     private static Predicate<ReadOnlyTask> isTodayTask() {
         return p -> (p.getType().equals(DeadlineTask.TYPE)
                         && DateUtils.isSameDay(((ReadOnlyDeadlineTask) p).getDeadline(), new Date()))
                     || (p.getType().equals(EventTask.TYPE)
-                        && DateUtils.isSameDay(((ReadOnlyEventTask) p).getStartDate(), new Date()));
+                        && (DateUtil.isBetween(new Date(),
+                                ((ReadOnlyEventTask) p).getStartDate(),
+                                ((ReadOnlyEventTask) p).getEndDate())))
+                    && !p.getStatus().value;
     }
 
     @Override
     public void updateTomorrowsTaskList() {
-        tomorrowsTasks.setPredicate(isTomorrowTask());
+        filteredTomorrowTasks.setPredicate(isTomorrowTask());
     }
 
     private static Predicate<ReadOnlyTask> isTomorrowTask() {
@@ -333,9 +342,12 @@ public class ModelManager extends ComponentManager implements Model {
         c.add(Calendar.DATE, 1);
         Date tomorrow = c.getTime();
         return p -> (p.getType().equals(DeadlineTask.TYPE)
-                && DateUtils.isSameDay(((ReadOnlyDeadlineTask) p).getDeadline(), tomorrow))
-            || (p.getType().equals(EventTask.TYPE)
-                && DateUtils.isSameDay(((ReadOnlyEventTask) p).getStartDate(), tomorrow));
+                        && DateUtils.isSameDay(((ReadOnlyDeadlineTask) p).getDeadline(), tomorrow))
+                    || (p.getType().equals(EventTask.TYPE)
+                        && (DateUtil.isBetween(tomorrow,
+                                               ((ReadOnlyEventTask) p).getStartDate(),
+                                               ((ReadOnlyEventTask) p).getEndDate())))
+                    && !p.getStatus().value;
     }
 
 //@@author A0141993X

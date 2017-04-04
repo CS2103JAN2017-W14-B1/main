@@ -29,10 +29,16 @@ public class MainGuiHandle extends GuiHandle {
         return new MainMenuHandle(guiRobot, primaryStage);
     }
 
-    public BrowserPanelHandle getBrowserPanel() {
-        return new BrowserPanelHandle(guiRobot, primaryStage);
+    //@@author A0143355J
+    public TodayListPanelHandle getTodayListPanel() {
+        return new TodayListPanelHandle(guiRobot, primaryStage);
     }
 
+    public TomorrowListPanelHandle getTomorrowListPanel() {
+        return new TomorrowListPanelHandle(guiRobot, primaryStage);
+    }
+
+    //@@author
     public AlertDialogHandle getAlertDialog(String title) {
         guiRobot.sleep(1000);
         return new AlertDialogHandle(guiRobot, primaryStage, title);

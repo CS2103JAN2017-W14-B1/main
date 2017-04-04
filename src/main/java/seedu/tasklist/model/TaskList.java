@@ -225,24 +225,32 @@ public class TaskList implements ReadOnlyTaskList {
      * Tasks are sorted according to Name in ascending order
      */
     public void sortByName() {
-        this.tasks.getInternalList().sort(new Comparator<Task>() {
+        this.tasks.getInternalList().sort(nameComparator());
+    }
+
+    public static Comparator<ReadOnlyTask> nameComparator() {
+        return new Comparator<ReadOnlyTask>() {
             @Override
-            public int compare(Task t1, Task t2) {
+            public int compare(ReadOnlyTask t1, ReadOnlyTask t2) {
                 return t1.getName().compareTo(t2.getName());
             }
-        });
+        };
     }
 
     /**
      * Tasks are sorted according to Priority in descending order
      */
     public void sortByPriority() {
-        this.tasks.getInternalList().sort(new Comparator<Task>() {
+        this.tasks.getInternalList().sort(priorityComparator());
+    }
+
+    public static Comparator<ReadOnlyTask> priorityComparator() {
+        return new Comparator<ReadOnlyTask>() {
             @Override
-            public int compare(Task t1, Task t2) {
+            public int compare(ReadOnlyTask t1, ReadOnlyTask t2) {
                 return t1.getPriority().compareTo(t2.getPriority());
             }
-        });
+        };
     }
 
     /**
@@ -250,10 +258,13 @@ public class TaskList implements ReadOnlyTaskList {
      * and floating task listed in no particular order
      */
     public void sortByDate() {
+        this.tasks.getInternalList().sort(dateComparator());
+    }
 
-        this.tasks.getInternalList().sort(new Comparator<Task>() {
+    public static Comparator<ReadOnlyTask> dateComparator() {
+        return new Comparator<ReadOnlyTask>() {
             @Override
-            public int compare(Task t1, Task t2) {
+            public int compare(ReadOnlyTask t1, ReadOnlyTask t2) {
                 Date t1Date = new Date(Long.MAX_VALUE);
                 Date t2Date = new Date(Long.MAX_VALUE);
 
@@ -262,10 +273,10 @@ public class TaskList implements ReadOnlyTaskList {
                         t1Date = new Date(Long.MAX_VALUE);
                         break;
                     case DeadlineTask.TYPE:
-                        t1Date = ((DeadlineTask) t1).getDeadline();
+                        t1Date = ((ReadOnlyDeadlineTask) t1).getDeadline();
                         break;
                     case EventTask.TYPE:
-                        t1Date = ((EventTask) t1).getStartDate();
+                        t1Date = ((ReadOnlyEventTask) t1).getStartDate();
                         break;
                     default:
                         break;
@@ -276,16 +287,16 @@ public class TaskList implements ReadOnlyTaskList {
                         t2Date = new Date(Long.MAX_VALUE);
                         break;
                     case DeadlineTask.TYPE:
-                        t2Date = ((DeadlineTask) t2).getDeadline();
+                        t2Date = ((ReadOnlyDeadlineTask) t2).getDeadline();
                         break;
                     case EventTask.TYPE:
-                        t2Date =  ((EventTask) t2).getStartDate();
+                        t2Date =  ((ReadOnlyEventTask) t2).getStartDate();
                         break;
                     default:
                         break;
                     }
                     return t1Date.compareTo(t2Date);
             }
-        });
+        };
     }
 }
