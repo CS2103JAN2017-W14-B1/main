@@ -52,8 +52,8 @@ public abstract class TaskListGuiTest {
     protected MainGuiHandle mainGui;
     protected MainMenuHandle mainMenu;
     protected TaskListPanelHandle taskListPanel;
-    protected TodayListPanelHandle todayListPanelHandle;
-    protected TomorrowListPanelHandle tomorrowListPanelHandle;
+    protected TodayListPanelHandle todayListPanel;
+    protected TomorrowListPanelHandle tomorrowListPanel;
     protected ResultDisplayHandle resultDisplay;
     protected CommandBoxHandle commandBox;
     private Stage stage;
@@ -74,8 +74,8 @@ public abstract class TaskListGuiTest {
             mainGui = new MainGuiHandle(new GuiRobot(), stage);
             mainMenu = mainGui.getMainMenu();
             taskListPanel = mainGui.getTaskListPanel();
-            todayListPanelHandle = mainGui.getTodayListPanel();
-            tomorrowListPanelHandle = mainGui.getTomorrowListPanel();
+            todayListPanel = mainGui.getTodayListPanel();
+            tomorrowListPanel = mainGui.getTomorrowListPanel();
             resultDisplay = mainGui.getResultDisplay();
             commandBox = mainGui.getCommandBox();
             this.stage = stage;
