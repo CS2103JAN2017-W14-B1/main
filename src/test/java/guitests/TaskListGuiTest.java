@@ -21,6 +21,7 @@ import guitests.guihandles.TaskCardHandle;
 import guitests.guihandles.TaskListPanelHandle;
 import guitests.guihandles.TodayListPanelHandle;
 import guitests.guihandles.TomorrowListPanelHandle;
+import guitests.guihandles.UpcomingTaskCardHandle;
 import javafx.application.Platform;
 import javafx.stage.Stage;
 import seedu.tasklist.TestApp;
@@ -141,5 +142,9 @@ public abstract class TaskListGuiTest {
     public void raise(BaseEvent e) {
         //JUnit doesn't run its test cases on the UI thread. Platform.runLater is used to post event on the UI thread.
         Platform.runLater(() -> EventsCenter.getInstance().post(e));
+    }
+
+    public void assertUpcomingTaskMatching(ReadOnlyTask task, UpcomingTaskCardHandle card) {
+        assertTrue(TestUtil.compareUpcomingCardAndTask(card, task));
     }
 }
