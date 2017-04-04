@@ -9,7 +9,7 @@ public class ClearCommand extends Command {
     //boolean to know if the find command is for tags.
     private boolean isByTags = false;
     private boolean isByStatus = false;
-    private String content;
+    private String keyword;
 
     public static final String COMMAND_WORD = "clear";
     public static final String MESSAGE_SUCCESS = "Task list has been cleared!";
@@ -38,8 +38,8 @@ public class ClearCommand extends Command {
         isByTags = true;
         return this;
     }
-    public ClearCommand(String content) {
-        this.content = content;
+    public ClearCommand(String keyword) {
+        this.keyword = keyword;
     }
 
     @Override
@@ -50,9 +50,9 @@ public class ClearCommand extends Command {
 
 
         if (isByTags) {
-            model.removeTasksForClearByTag(content);
+            model.removeTasksForClearByTag(keyword);
         } else if (isByStatus) {
-            model.removeTasksForClearByStatus(content);
+            model.removeTasksForClearByStatus(keyword);
         } else {
             model.resetData(new TaskList());
         }

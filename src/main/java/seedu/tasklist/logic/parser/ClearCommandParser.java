@@ -10,9 +10,9 @@ import java.util.regex.Matcher;
 
 import seedu.tasklist.logic.commands.ClearCommand;
 import seedu.tasklist.logic.commands.Command;
-import seedu.tasklist.logic.commands.FindCommand;
 import seedu.tasklist.logic.commands.IncorrectCommand;
 
+//@@author A0139747N
 /**
  * Parses input arguments and creates ClearCommand object.
  *
@@ -55,8 +55,8 @@ public class ClearCommandParser {
         if (isByTags) {
             return new ClearCommand(keyword.get()).isByTags();
         } else if (isByStatus) {
-            if (!keyword.get().equals("completed") || !keyword.get().equals("uncompleted")) {
-                return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindCommand.MESSAGE_USAGE));
+            if (!keyword.get().equals("completed") && !keyword.get().equals("uncompleted")) {
+                return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ClearCommand.MESSAGE_USAGE));
             } else {
                 return new ClearCommand(keyword.get()).isByStatus();
             }
