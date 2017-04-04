@@ -14,9 +14,7 @@ import seedu.tasklist.commons.core.ComponentManager;
 import seedu.tasklist.commons.core.Config;
 import seedu.tasklist.commons.core.LogsCenter;
 import seedu.tasklist.commons.events.storage.DataSavingExceptionEvent;
-import seedu.tasklist.commons.events.ui.JumpToListRequestEvent;
 import seedu.tasklist.commons.events.ui.ShowHelpRequestEvent;
-import seedu.tasklist.commons.events.ui.TaskPanelSelectionChangedEvent;
 import seedu.tasklist.commons.util.StringUtil;
 import seedu.tasklist.logic.Logic;
 import seedu.tasklist.model.UserPrefs;
@@ -26,7 +24,7 @@ import seedu.tasklist.model.UserPrefs;
  */
 public class UiManager extends ComponentManager implements Ui {
     private static final Logger logger = LogsCenter.getLogger(UiManager.class);
-    private static final String ICON_APPLICATION = "/images/address_book_32.png";
+    private static final String ICON_APPLICATION = "/images/flexiTaskAppIcon.png";
     public static final String ALERT_DIALOG_PANE_FIELD_ID = "alertDialogPane";
 
     private Logic logic;
@@ -111,16 +109,4 @@ public class UiManager extends ComponentManager implements Ui {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         mainWindow.handleHelp();
     }
-
-    @Subscribe
-    private void handleJumpToListRequestEvent(JumpToListRequestEvent event) {
-        logger.info(LogsCenter.getEventHandlingLogMessage(event));
-        mainWindow.getTaskListPanel().scrollTo(event.targetIndex);
-    }
-
-    @Subscribe
-    private void handleTaskPanelSelectionChangedEvent(TaskPanelSelectionChangedEvent event) {
-        logger.info(LogsCenter.getEventHandlingLogMessage(event));
-    }
-
 }

@@ -22,7 +22,6 @@ import com.google.common.eventbus.Subscribe;
 
 import seedu.tasklist.commons.core.EventsCenter;
 import seedu.tasklist.commons.events.model.TaskListChangedEvent;
-import seedu.tasklist.commons.events.ui.JumpToListRequestEvent;
 import seedu.tasklist.commons.events.ui.ShowHelpRequestEvent;
 import seedu.tasklist.logic.commands.AddCommand;
 import seedu.tasklist.logic.commands.ClearCommand;
@@ -35,7 +34,6 @@ import seedu.tasklist.logic.commands.HelpCommand;
 import seedu.tasklist.logic.commands.ListCommand;
 import seedu.tasklist.logic.commands.LoadCommand;
 import seedu.tasklist.logic.commands.SaveCommand;
-import seedu.tasklist.logic.commands.SelectCommand;
 import seedu.tasklist.logic.commands.SortCommand;
 import seedu.tasklist.logic.commands.exceptions.CommandException;
 import seedu.tasklist.model.Model;
@@ -68,6 +66,7 @@ public class LogicManagerTest {
     //These are for checking the correctness of the events raised
     private ReadOnlyTaskList latestSavedTaskList;
     private boolean helpShown;
+    @SuppressWarnings("unused")
     private int targetedJumpIndex;
 
     @Subscribe
@@ -78,11 +77,6 @@ public class LogicManagerTest {
     @Subscribe
     private void handleShowHelpRequestEvent(ShowHelpRequestEvent she) {
         helpShown = true;
-    }
-
-    @Subscribe
-    private void handleJumpToListRequestEvent(JumpToListRequestEvent je) {
-        targetedJumpIndex = je.targetIndex;
     }
 
     @Before
@@ -321,34 +315,6 @@ public class LogicManagerTest {
     }
 
     @Test
-    public void execute_selectInvalidArgsFormat_errorMessageShown() throws Exception {
-        String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, SelectCommand.MESSAGE_USAGE);
-        assertIncorrectIndexFormatBehaviorForCommand("select", expectedMessage);
-    }
-
-    @Test
-    public void execute_selectIndexNotFound_errorMessageShown() throws Exception {
-        assertIndexNotFoundBehaviorForCommand("select");
-    }
-
-    @Test
-    public void execute_select_jumpsToCorrectTask() throws Exception {
-        TestDataHelper helper = new TestDataHelper();
-        List<Task> threeTasks = helper.generateTaskList(3);
-
-        TaskList expectedAB = helper.generateTaskManager(threeTasks);
-        helper.addToModel(model, threeTasks);
-
-        assertCommandSuccess("select 2",
-                String.format(SelectCommand.MESSAGE_SELECT_TASK_SUCCESS, 2),
-                expectedAB,
-                expectedAB.getTaskList());
-        assertEquals(1, targetedJumpIndex);
-        assertEquals(model.getFilteredTaskList().get(1), threeTasks.get(1));
-    }
-
-
-    @Test
     public void execute_deleteInvalidArgsFormat_errorMessageShown() throws Exception {
         String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE);
         assertIncorrectIndexFormatBehaviorForCommand("delete", expectedMessage);
@@ -557,7 +523,6 @@ public class LogicManagerTest {
             );
         }
 
-        //@@author A0139747N
         /** Generates the correct add command based on the task given */
         String generateAddCommand(Task p) {
             StringBuffer cmd = new StringBuffer();
@@ -575,7 +540,6 @@ public class LogicManagerTest {
 
             return cmd.toString();
         }
-        //@@author
 
         /**
          * Generates an TaskList with auto-generated tasks.

@@ -24,6 +24,7 @@ import seedu.tasklist.model.task.ReadOnlyTask;
 import seedu.tasklist.model.task.Task;
 import seedu.tasklist.model.task.UniqueTaskList;
 import seedu.tasklist.model.task.UniqueTaskList.DuplicateTaskException;
+import seedu.tasklist.model.task.UniqueTaskList.TaskNotFoundException;
 
 /**
  * Wraps all data at the address-book level
@@ -81,6 +82,21 @@ public class TaskList implements ReadOnlyTaskList {
         }
         syncMasterTagListWith(tasks);
     }
+
+    //@@author A0139747N
+    /**
+     * Removes the list of tasks toRemove from the original task list.
+     */
+    public void removeAll(TaskList toRemove) {
+        for (ReadOnlyTask task : toRemove.getTaskList()) {
+            try {
+                removeTask(task);
+            } catch (TaskNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    //@@author
 
 //// task-level operations
 

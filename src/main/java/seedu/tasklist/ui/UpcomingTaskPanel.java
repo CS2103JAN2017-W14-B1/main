@@ -11,7 +11,6 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
 import seedu.tasklist.commons.core.LogsCenter;
-import seedu.tasklist.commons.events.ui.TaskPanelSelectionChangedEvent;
 import seedu.tasklist.commons.util.FxViewUtil;
 import seedu.tasklist.model.task.ReadOnlyTask;
 
@@ -30,7 +29,6 @@ public class UpcomingTaskPanel extends UiPart<Region> {
         super(FXML);
         setTodayListView(todayTask);
         setTomorrowListView(tomorrowTask);
-        setEventHandlerForSelectionChangeEvent();
         addToPlaceholder(upcomingTaskPlaceholder);
     }
 
@@ -44,31 +42,6 @@ public class UpcomingTaskPanel extends UiPart<Region> {
         tomorrowTaskListView.setCellFactory(listView -> new UpcomingTaskViewCell());
     }
 
-    private void setEventHandlerForSelectionChangeEvent() {
-        setEventHandlerForTodaySelectionChangeEvent();
-        setEventHandlerForTomorrowSelectionChangeEvent();
-    }
-
-    private void setEventHandlerForTodaySelectionChangeEvent() {
-        todayTaskListView.getSelectionModel().selectedItemProperty()
-                .addListener((observable, oldValue, newValue) -> {
-                    if (newValue != null) {
-                        logger.fine("Selection in today list panel changed to : '" + newValue + "'");
-                        raise(new TaskPanelSelectionChangedEvent(newValue));
-                    }
-                });
-    }
-
-    private void setEventHandlerForTomorrowSelectionChangeEvent() {
-        tomorrowTaskListView.getSelectionModel().selectedItemProperty()
-                .addListener((observable, oldValue, newValue) -> {
-                    if (newValue != null) {
-                        logger.fine("Selection in tomorrow list panel changed to : '" + newValue + "'");
-                        raise(new TaskPanelSelectionChangedEvent(newValue));
-                    }
-                });
-    }
-
     private void addToPlaceholder(AnchorPane placeHolderPane) {
         SplitPane.setResizableWithParent(placeHolderPane, false);
         FxViewUtil.applyAnchorBoundaryParameters(getRoot(), 0.0, 0.0, 0.0, 0.0);
@@ -78,14 +51,12 @@ public class UpcomingTaskPanel extends UiPart<Region> {
     public void todayScrollTo(int index) {
         Platform.runLater(() -> {
             todayTaskListView.scrollTo(index);
-            todayTaskListView.getSelectionModel().clearAndSelect(index);
         });
     }
 
     public void tomorrowScrollTo(int index) {
         Platform.runLater(() -> {
             tomorrowTaskListView.scrollTo(index);
-            tomorrowTaskListView.getSelectionModel().clearAndSelect(index);
         });
     }
 

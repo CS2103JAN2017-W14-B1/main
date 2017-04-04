@@ -12,7 +12,7 @@ import seedu.tasklist.ui.CommandBox;
 
 public class CommandBoxTest extends TaskListGuiTest {
 
-    private static final String COMMAND_THAT_SUCCEEDS = "select 3";
+    private static final String COMMAND_THAT_SUCCEEDS = "delete 3";
     private static final String COMMAND_THAT_FAILS = "invalid command";
 
     private ArrayList<String> defaultStyleOfCommandBox;

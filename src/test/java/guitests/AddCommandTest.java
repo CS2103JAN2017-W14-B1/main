@@ -51,7 +51,7 @@ public class AddCommandTest extends TaskListGuiTest {
 
     //@@author A0139747N
     @Test
-    public void addWithFlexibleCommands() {
+    public void add_with_flexible_commands() {
         try {
             //add one task with flexible command, with capital letters
             TestTask[] currentList = td.getTypicalTasks();
@@ -68,7 +68,7 @@ public class AddCommandTest extends TaskListGuiTest {
     }
 
     @Test
-    public void addWithFlexiblePrefixes() {
+    public void add_with_flexible_prefixes() {
         try {
             //add one task with flexible command, with capital letters
             TestTask[] currentList = td.getTypicalTasks();
