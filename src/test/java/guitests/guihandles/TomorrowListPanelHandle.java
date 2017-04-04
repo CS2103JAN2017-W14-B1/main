@@ -21,7 +21,7 @@ import seedu.tasklist.testutil.TestUtil;
 public class TomorrowListPanelHandle extends GuiHandle {
 
     public static final int NOT_FOUND = -1;
-    public static final String CARD_PANE_ID = "#cardPane";
+    public static final String CARD_PANE_ID = "#upcomingCardPane";
 
     private static final String TOMORROW_LIST_VIEW_ID = "#tomorrowTaskListView";
 

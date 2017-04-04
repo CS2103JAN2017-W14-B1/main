@@ -2,6 +2,7 @@ package seedu.tasklist.ui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.tasklist.model.task.DeadlineTask;
 import seedu.tasklist.model.task.EventTask;
@@ -14,6 +15,8 @@ public class UpcomingTaskCard extends UiPart<Region> {
 
     private static final String FXML = "UpcomingTaskListCard.fxml";
 
+    @FXML
+    private HBox upcomingCardPane;
     @FXML
     private Label name;
 
@@ -46,12 +49,12 @@ public class UpcomingTaskCard extends UiPart<Region> {
             firstDate.setText("Deadline :");
             connector.setText("- ");
             connector.setStyle("-fx-text-fill: white");
-            secondDate.setText(((ReadOnlyDeadlineTask) task).getDeadlineStringForUpcomingTask() + " ");
+            secondDate.setText(((ReadOnlyDeadlineTask) task).getDeadlineStringForUpcomingTask());
             break;
         case EventTask.TYPE:
-            firstDate.setText(((ReadOnlyEventTask) task).getStartDateStringForUpcomingTask() + " ");
+            firstDate.setText(((ReadOnlyEventTask) task).getStartDateStringForUpcomingTask());
             connector.setText("- ");
-            secondDate.setText(((ReadOnlyEventTask) task).getEndDateStringForUpcomingTask() + " ");
+            secondDate.setText(((ReadOnlyEventTask) task).getEndDateStringForUpcomingTask());
             break;
         default:
             assert false;

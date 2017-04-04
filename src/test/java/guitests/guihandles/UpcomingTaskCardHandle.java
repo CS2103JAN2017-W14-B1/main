@@ -67,6 +67,7 @@ public class UpcomingTaskCardHandle extends GuiHandle {
         case FloatingTask.TYPE:
             return isSameName(task);
         case DeadlineTask.TYPE:
+            System.out.println(isSameDeadline(task));
             return isSameName(task) && isSameDeadline(task);
         case EventTask.TYPE:
             return isSameName(task) && isSameStartDate(task) && isSameEndDate(task);
@@ -86,6 +87,8 @@ public class UpcomingTaskCardHandle extends GuiHandle {
      * Returns true if task has the same deadline as task inside UpcomingTaskCard
      */
     private boolean isSameDeadline(ReadOnlyTask task) {
+        System.out.println(getDeadline());
+        System.out.println(((ReadOnlyDeadlineTask) task).getDeadlineStringForUpcomingTask());
         return getDeadline().equals(((ReadOnlyDeadlineTask) task).getDeadlineStringForUpcomingTask());
     }
 
