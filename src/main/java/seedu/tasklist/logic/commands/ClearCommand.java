@@ -2,6 +2,7 @@ package seedu.tasklist.logic.commands;
 
 import seedu.tasklist.model.TaskList;
 
+//@@author A0139747N
 /**
  * Clears the address book.
  */
@@ -29,6 +30,7 @@ public class ClearCommand extends Command {
         isByTags = false;
         isByStatus = false;
     }
+
     public ClearCommand isByStatus() {
         isByStatus = true;
         return this;
@@ -38,6 +40,7 @@ public class ClearCommand extends Command {
         isByTags = true;
         return this;
     }
+
     public ClearCommand(String keyword) {
         this.keyword = keyword;
     }
