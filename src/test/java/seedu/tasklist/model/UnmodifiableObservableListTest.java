@@ -99,13 +99,13 @@ public class UnmodifiableObservableListTest {
         assertTrue(expected.equals(tagTest.toString()));
 
         //test for tasks
-        expected = "CS2103T tutorial StartDate: 15/03/2017 15:00:10 EndDate: 15/03/2017 18:00:10 "
+        expected = "CS2103T tutorial StartDate: 15/03/2017 15:00 EndDate: 15/03/2017 18:00 "
                     + "Comment: prepare V0.2 presentation Priority: high Tags: [2103][class] "
                     + "CS3245 homework 3 Comment: discuss with classmates Priority: low Tags: [class] "
                     + "Buy groceries Comment: go NTUC Priority: low Tags:  "
                     + "Update Java for CS2103T Comment: Find out why jdk is not displaying the correct ver "
                     + "Priority: high Tags: [2103] "
-                    + "Implement undo for this Deadline: 15/03/2017 18:00:10 Comment: By today Priority: high Tags:  "
+                    + "Implement undo for this Deadline: 15/03/2017 18:00 Comment: By today Priority: high Tags:  "
                     + "Drink water Comment: To improve brain function Priority: high Tags:";
         UnmodifiableObservableList<ReadOnlyTask> taskTest = (UnmodifiableObservableList<ReadOnlyTask>)
                                                             new TypicalTestTasks().getTypicalTaskList().getTaskList();
