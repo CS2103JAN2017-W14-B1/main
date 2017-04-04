@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flexitask>
+    <tasks>
+        <name>CS2103T tutorial</name>
+        <comment>prepare V0.2 presentation</comment>
+        <type>event</type>
+        <priority>high</priority>
+        <status>false</status>
+        <startDate>2017-03-15T15:00:10+08:00</startDate>
+        <endDate>2017-03-15T18:00:10+08:00</endDate>
+        <tagged>2103</tagged>
+        <tagged>class</tagged>
+    </tasks>
+    <tasks>
+        <name>CS3245 homework 3</name>
+        <comment>discuss with classmates</comment>
+        <type>floating</type>
+        <priority>low</priority>
+        <status>false</status>
+        <tagged>class</tagged>
+    </tasks>
+    <tasks>
+        <name>Buy groceries</name>
+        <comment>go NTUC</comment>
+        <type>floating</type>
+        <priority>low</priority>
+        <status>false</status>
+    </tasks>
+    <tasks>
+        <name>Update Java for CS2103T</name>
+        <comment>Find out why jdk is not displaying the correct ver</comment>
+        <type>floating</type>
+        <priority>high</priority>
+        <status>false</status>
+        <tagged>2103</tagged>
+    </tasks>
+    <tasks>
+        <name>Implement undo for this</name>
+        <comment>By today</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-03-15T18:00:10+08:00</deadline>
+    </tasks>
+    <tasks>
+        <name>Drink water</name>
+        <comment>To improve brain function</comment>
+        <type>floating</type>
+        <priority>high</priority>
+        <status>false</status>
+    </tasks>
+    <tags>2103</tags>
+    <tags>class</tags>
+</flexitask>

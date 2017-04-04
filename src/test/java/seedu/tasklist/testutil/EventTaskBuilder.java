@@ -4,8 +4,11 @@ package seedu.tasklist.testutil;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 import seedu.tasklist.commons.exceptions.IllegalValueException;
+import seedu.tasklist.logic.parser.DateParser;
 import seedu.tasklist.model.tag.Tag;
 import seedu.tasklist.model.tag.UniqueTagList;
 import seedu.tasklist.model.task.Comment;
@@ -97,6 +100,25 @@ public class EventTaskBuilder extends TaskBuilder {
     public EventTaskBuilder withEndDate(String date) throws IllegalValueException, ParseException {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         this.task.setEndDate(dateFormat.parse(date));
+        return this;
+    }
+
+    //@@author A0143355J
+    /*
+     * Parses and sets the start date of the event task in format dd/MM/yyyy HH:mm:ss
+     */
+    public EventTaskBuilder withNaturalStartDate(String date) throws IllegalValueException {
+        List<Date> dates = DateParser.parse(date);
+        this.task.setStartDate(dates.get(0));
+        return this;
+    }
+
+    /*
+     * Parses and sets he end date of the event task in format dd/MM/yyyy HH:mm:ss
+     */
+    public EventTaskBuilder withNaturalEndDate(String date) throws IllegalValueException {
+        List<Date> dates = DateParser.parse(date);
+        this.task.setEndDate(dates.get(0));
         return this;
     }
 }

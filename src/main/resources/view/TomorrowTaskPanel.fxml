@@ -13,12 +13,7 @@
         <URL value="@Extensions.css" />
     </stylesheets>
     <children>
-        <Label text="Today" style="-fx-text-fill: #96beff; -fx-font-size: 30px"/>
-        <ListView fx:id="todayTaskListView" VBox.vgrow="ALWAYS" />
-    </children>
-    <children>
         <Label text="Tomorrow" style="-fx-text-fill: #96beff; -fx-font-size: 30px"/>
         <ListView fx:id="tomorrowTaskListView" VBox.vgrow="ALWAYS" />
     </children>
 </VBox>
-

@@ -13,13 +13,15 @@ import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.testfx.api.FxToolkit;
 
-import guitests.guihandles.BrowserPanelHandle;
 import guitests.guihandles.CommandBoxHandle;
 import guitests.guihandles.MainGuiHandle;
 import guitests.guihandles.MainMenuHandle;
 import guitests.guihandles.ResultDisplayHandle;
 import guitests.guihandles.TaskCardHandle;
 import guitests.guihandles.TaskListPanelHandle;
+import guitests.guihandles.TodayListPanelHandle;
+import guitests.guihandles.TomorrowListPanelHandle;
+import guitests.guihandles.UpcomingTaskCardHandle;
 import javafx.application.Platform;
 import javafx.stage.Stage;
 import seedu.tasklist.TestApp;
@@ -50,9 +52,10 @@ public abstract class TaskListGuiTest {
     protected MainGuiHandle mainGui;
     protected MainMenuHandle mainMenu;
     protected TaskListPanelHandle taskListPanel;
+    protected TodayListPanelHandle todayListPanel;
+    protected TomorrowListPanelHandle tomorrowListPanel;
     protected ResultDisplayHandle resultDisplay;
     protected CommandBoxHandle commandBox;
-    protected BrowserPanelHandle browserPanel;
     private Stage stage;
 
     @BeforeClass
@@ -71,9 +74,10 @@ public abstract class TaskListGuiTest {
             mainGui = new MainGuiHandle(new GuiRobot(), stage);
             mainMenu = mainGui.getMainMenu();
             taskListPanel = mainGui.getTaskListPanel();
+            todayListPanel = mainGui.getTodayListPanel();
+            tomorrowListPanel = mainGui.getTomorrowListPanel();
             resultDisplay = mainGui.getResultDisplay();
             commandBox = mainGui.getCommandBox();
-            browserPanel = mainGui.getBrowserPanel();
             this.stage = stage;
         });
         EventsCenter.clearSubscribers();
@@ -138,5 +142,9 @@ public abstract class TaskListGuiTest {
     public void raise(BaseEvent e) {
         //JUnit doesn't run its test cases on the UI thread. Platform.runLater is used to post event on the UI thread.
         Platform.runLater(() -> EventsCenter.getInstance().post(e));
+    }
+
+    public void assertUpcomingTaskMatching(ReadOnlyTask task, UpcomingTaskCardHandle card) {
+        assertTrue(TestUtil.compareUpcomingCardAndTask(card, task));
     }
 }
