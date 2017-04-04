@@ -75,6 +75,47 @@ public class TomorrowListPanelHandle extends GuiHandle {
         return true;
     }
 
+    public UpcomingTaskCardHandle navigateToTask(String name) {
+        guiRobot.sleep(500); //Allow a bit of time for the list to be updated
+        final Optional<ReadOnlyTask> task = getTomorrowListView().getItems().stream()
+                                                    .filter(p -> p.getName().fullName.equals(name))
+                                                    .findAny();
+        if (!task.isPresent()) {
+            throw new IllegalStateException("Name not found: " + name);
+        }
+
+        return navigateToTask(task.get());
+    }
+
+    /**
+     * Navigates the listview to display and select the task.
+     */
+    public UpcomingTaskCardHandle navigateToTask(ReadOnlyTask task) {
+        int index = getTaskIndex(task);
+
+        guiRobot.interact(() -> {
+            getTomorrowListView().scrollTo(index);
+            guiRobot.sleep(150);
+            getTomorrowListView().getSelectionModel().select(index);
+        });
+        guiRobot.sleep(100);
+
+        return getUpcomingTaskCardHandle(task);
+    }
+
+    /**
+     * Returns the position of the task given, {@code NOT_FOUND} if not found in the list.
+     */
+    public int getTaskIndex(ReadOnlyTask targetTask) {
+        List<ReadOnlyTask> tasksInList = getTomorrowListView().getItems();
+        for (int i = 0; i < tasksInList.size(); i++) {
+            if (tasksInList.get(i).getName().equals(targetTask.getName())) {
+                return i;
+            }
+        }
+        return NOT_FOUND;
+    }
+
     /**
      * Gets a task from the list by index
      */
