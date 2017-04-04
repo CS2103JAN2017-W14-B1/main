@@ -40,4 +40,11 @@ public interface Storage extends TaskListStorage, UserPrefsStorage {
      * Loads new XmlTaskListStorage from file path.
      */
     void loadTaskList(String filePath);
+
+    /**
+     * Sets new file path for task list to be stored
+     * @param filepath
+     * @throws IOException
+     */
+    void setTaskListFilePath(String filePath) throws IOException;
 }

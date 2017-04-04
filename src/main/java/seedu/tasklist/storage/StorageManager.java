@@ -7,10 +7,13 @@ import java.util.logging.Logger;
 import com.google.common.eventbus.Subscribe;
 
 import seedu.tasklist.commons.core.ComponentManager;
+import seedu.tasklist.commons.core.Config;
 import seedu.tasklist.commons.core.LogsCenter;
 import seedu.tasklist.commons.events.model.TaskListChangedEvent;
 import seedu.tasklist.commons.events.storage.DataSavingExceptionEvent;
+import seedu.tasklist.commons.events.storage.TaskListFilePathChangedEvent;
 import seedu.tasklist.commons.exceptions.DataConversionException;
+import seedu.tasklist.commons.util.ConfigUtil;
 import seedu.tasklist.model.ReadOnlyTaskList;
 import seedu.tasklist.model.UserPrefs;
 
@@ -94,4 +97,12 @@ public class StorageManager extends ComponentManager implements Storage {
         taskListStorage = new XmlTaskListStorage(filePath);
     }
 
+    @Override
+    public void setTaskListFilePath(String filePath) throws IOException {
+        assert filePath != null;
+        Config config = new Config();
+        config.setTaskListFilePath(filePath);
+        ConfigUtil.saveConfig(config, Config.DEFAULT_CONFIG_FILE);
+        raise(new TaskListFilePathChangedEvent(filePath));
+    }
 }

@@ -59,7 +59,7 @@ public class FindCommandParser {
             return new FindCommand(keywordSet).isByTags();
         } else if (isByStatus) {
             if ((keywordSet.size() > 2 || keywordSet.size() < 1)
-                && (!keywordSet.equals(completed) || !keywordSet.equals(notCompleted))) {
+                || (!keywordSet.equals(completed) && !keywordSet.equals(notCompleted))) {
                 return new IncorrectCommand(
                         String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindCommand.MESSAGE_USAGE));
             } else {
