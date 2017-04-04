@@ -36,7 +36,7 @@ public class DeleteCommandTest extends TaskListGuiTest {
 
     //@@author A0139747N
     @Test
-    public void deleteWithFlexibleCommand() {
+    public void delete_with_flexible_command() {
         //execute command with acceptable alternative "remove"
         TestTask[] currentList = td.getTypicalTasks();
         int targetIndex = 1;

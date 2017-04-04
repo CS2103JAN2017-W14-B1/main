@@ -62,13 +62,7 @@ public class ArgumentTokenizer {
         List<String> tags;
 
         if (!"".equals(tagStringToSplit)) {
-            ArrayList<String> processedTags = new ArrayList<String>();
-            for (int i = 0; i < splittedTags.length; i++) {
-                if (!splittedTags[i].equals("")) {
-                    processedTags.add(splittedTags[i]);
-                }
-            }
-            String[] newTags = processedTags.toArray(new String[processedTags.size()]);
+            String[] newTags = generateNewTagsArray(splittedTags);
             tags = new ArrayList<String>(Arrays.asList(newTags));
         } else {
             tags = new ArrayList<String>(Arrays.asList(splittedTags));
@@ -76,7 +70,19 @@ public class ArgumentTokenizer {
         return Optional.of(tags);
 
     }
-
+    /**
+     * Generates all the tags as a String array.
+     */
+    public String[] generateNewTagsArray(String[] splittedTags) {
+        ArrayList<String> processedTags = new ArrayList<String>();
+        for (int i = 0; i < splittedTags.length; i++) {
+            if (!splittedTags[i].equals("")) {
+                processedTags.add(splittedTags[i]);
+            }
+        }
+        String[] newTags = processedTags.toArray(new String[processedTags.size()]);
+        return newTags;
+    }
     //@@author
     /**
      * Returns all values of given prefix.

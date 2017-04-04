@@ -557,7 +557,6 @@ public class LogicManagerTest {
             );
         }
 
-        //@@author A0139747N
         /** Generates the correct add command based on the task given */
         String generateAddCommand(Task p) {
             StringBuffer cmd = new StringBuffer();
@@ -575,7 +574,6 @@ public class LogicManagerTest {
 
             return cmd.toString();
         }
-        //@@author
 
         /**
          * Generates an TaskList with auto-generated tasks.

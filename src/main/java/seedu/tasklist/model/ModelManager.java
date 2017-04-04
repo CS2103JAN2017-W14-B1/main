@@ -24,6 +24,7 @@ import seedu.tasklist.commons.exceptions.DataConversionException;
 import seedu.tasklist.commons.util.CollectionUtil;
 import seedu.tasklist.commons.util.StringUtil;
 import seedu.tasklist.model.tag.Tag;
+import seedu.tasklist.model.tag.UniqueTagList;
 import seedu.tasklist.model.task.DeadlineTask;
 import seedu.tasklist.model.task.EventTask;
 import seedu.tasklist.model.task.ReadOnlyDeadlineTask;
@@ -31,6 +32,7 @@ import seedu.tasklist.model.task.ReadOnlyEventTask;
 import seedu.tasklist.model.task.ReadOnlyTask;
 import seedu.tasklist.model.task.Task;
 import seedu.tasklist.model.task.UniqueTaskList;
+import seedu.tasklist.model.task.UniqueTaskList.DuplicateTaskException;
 import seedu.tasklist.model.task.UniqueTaskList.TaskNotFoundException;
 import seedu.tasklist.storage.Storage;
 
@@ -122,6 +124,10 @@ public class ModelManager extends ComponentManager implements Model {
     }
 
     //@@author A0139747N
+    /**
+     * Set the task list to be of the previous state, i.e. before a command that mutates the task list took place.
+     * The desired task list is popped from undoStack, and pushed into redoStack for redo command purposes.
+     */
     @Override
     public String setPreviousState() throws EmptyStackException {
         if (undoStack.empty()) {
@@ -144,6 +150,10 @@ public class ModelManager extends ComponentManager implements Model {
         redoStack.clear();
     }
 
+    /**
+     * Set the task list to be of the state before an undo command.
+     * The desired task list is popped from the redoStack, and pushd into undoStack.
+     */
     @Override
     public String setNextState() throws EmptyStackException {
         if (redoStack.empty()) {
@@ -164,13 +174,69 @@ public class ModelManager extends ComponentManager implements Model {
         userInput = input;
     }
 
-    @Override
+
     /**
      * Generates a Pair object with the task list, and a null task, since clear command does not involve a certain task.
      */
+    @Override
     public void enableUndoForClear() {
         Pair current = new Pair(new TaskList(taskList), userInput);
         undoStack.push(current);
+    }
+
+    /**
+     * Removes tasks from the list that contains the tag specified from user.
+     * Generates a TaskList, toRemove with all the tasks to be removed, and calls removeAll(toRemove).
+     */
+    @Override
+    public void removeTasksForClearByTag (String keyword) {
+        TaskList toRemove = new TaskList();
+        boolean flag = false;
+        for (ReadOnlyTask task : taskList.getTaskList()) {
+            UniqueTagList tagList = task.getTags();
+            for (Tag tag : tagList) {
+                if (tag.tagName.equals(keyword)) {
+                    flag = true;
+                }
+            }
+            if (flag == true) {
+                try {
+                    toRemove.addTask((Task) task);
+                } catch (DuplicateTaskException e) {
+                    e.printStackTrace();
+                }
+                flag = false;
+
+            }
+        }
+        taskList.removeAll(toRemove);
+
+    }
+
+    /**
+     * Removes tasks from the list that contains the status specified from user.
+     * Generates a TaskList, toRemove with all the tasks to be removed, and calls removeAll(toRemove).
+     */
+    @Override
+    public void removeTasksForClearByStatus(String keyword) {
+        TaskList toRemove = new TaskList();
+        boolean flag = false;
+        for (ReadOnlyTask task : taskList.getTaskList()) {
+            if (task.getStatus().toString().equals(keyword)) {
+                flag = true;
+            }
+            if (flag == true) {
+                try {
+                    toRemove.addTask((Task) task);
+                } catch (DuplicateTaskException e) {
+                    e.printStackTrace();
+                }
+                flag = false;
+
+            }
+        }
+        taskList.removeAll(toRemove);
+
     }
 
 //@@author A0141993X

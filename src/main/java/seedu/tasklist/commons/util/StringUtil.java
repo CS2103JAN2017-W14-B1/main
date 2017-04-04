@@ -76,4 +76,19 @@ public class StringUtil {
             return tag;
         }
     }
+//@@author A0139747N
+    /**
+     * Returns true is the keyword is a single word. Returns false if otherwise.
+     * For cases of punctuation, they are treated not as word separators. Therefore the whitespace character is the only
+     * determinant of separating two words.
+     * @param keyword should be trimmed.
+     */
+    public static boolean isSingleKeyword(String keyword) {
+        String[] keywordStringArray = keyword.split(" ");
+        if (keywordStringArray.length > 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }

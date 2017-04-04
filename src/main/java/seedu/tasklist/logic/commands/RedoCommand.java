@@ -3,6 +3,9 @@ package seedu.tasklist.logic.commands;
 import java.util.EmptyStackException;
 
 //@@author A0139747N
+/**
+ * Reverts the effect of a preceding undo command on the task list.
+ */
 public class RedoCommand extends Command {
     public static final String COMMAND_WORD = "redo";
 
