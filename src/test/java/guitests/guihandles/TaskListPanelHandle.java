@@ -35,11 +35,6 @@ public class TaskListPanelHandle extends GuiHandle {
         super(guiRobot, primaryStage, TestApp.APP_TITLE);
     }
 
-    public List<ReadOnlyTask> getSelectedTasks() {
-        ListView<ReadOnlyTask> taskList = getListView();
-        return taskList.getSelectionModel().getSelectedItems();
-    }
-
     public ListView<ReadOnlyTask> getListView() {
         return getNode(TASK_LIST_VIEW_ID);
     }
@@ -116,7 +111,7 @@ public class TaskListPanelHandle extends GuiHandle {
     }
 
     /**
-     * Navigates the listview to display and select the task.
+     * Navigates the listview to display the task.
      */
     public TaskCardHandle navigateToTask(ReadOnlyTask task) {
         int index = getTaskIndex(task);
@@ -124,7 +119,6 @@ public class TaskListPanelHandle extends GuiHandle {
         guiRobot.interact(() -> {
             getListView().scrollTo(index);
             guiRobot.sleep(150);
-            getListView().getSelectionModel().select(index);
         });
         guiRobot.sleep(100);
 

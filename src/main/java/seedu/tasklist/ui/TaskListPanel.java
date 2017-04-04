@@ -11,7 +11,6 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
 import seedu.tasklist.commons.core.LogsCenter;
-import seedu.tasklist.commons.events.ui.TaskPanelSelectionChangedEvent;
 import seedu.tasklist.commons.util.FxViewUtil;
 import seedu.tasklist.model.task.ReadOnlyTask;
 
@@ -34,7 +33,6 @@ public class TaskListPanel extends UiPart<Region> {
     private void setConnections(ObservableList<ReadOnlyTask> taskList) {
         taskListView.setItems(taskList);
         taskListView.setCellFactory(listView -> new TaskListViewCell());
-        setEventHandlerForSelectionChangeEvent();
     }
 
     private void addToPlaceholder(AnchorPane placeHolderPane) {
@@ -43,20 +41,9 @@ public class TaskListPanel extends UiPart<Region> {
         placeHolderPane.getChildren().add(getRoot());
     }
 
-    private void setEventHandlerForSelectionChangeEvent() {
-        taskListView.getSelectionModel().selectedItemProperty()
-                .addListener((observable, oldValue, newValue) -> {
-                    if (newValue != null) {
-                        logger.fine("Selection in task list panel changed to : '" + newValue + "'");
-                        raise(new TaskPanelSelectionChangedEvent(newValue));
-                    }
-                });
-    }
-
     public void scrollTo(int index) {
         Platform.runLater(() -> {
             taskListView.scrollTo(index);
-            taskListView.getSelectionModel().clearAndSelect(index);
         });
     }
 
