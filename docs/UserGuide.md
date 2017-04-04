@@ -335,14 +335,15 @@ Example:
 ### 3.11. Clearing entries: clear
 Clears all tasks or groups of task<br>
 
-Format: `clear [TAGS] [MORE_TAGS]`
+Format: `clear {t/TAG}{s/STATUS}`
 > Without parameters, clear will delete all tasks from the task manager<br>
-> With parameters, clear will only delete tasks containing all of the tags from the task manager
+> With parameters (tag or status), clear will only delete tasks containing the tag/having the corresponding status from the task manager<br>
+> Acceptable statuses: completed, uncompleted
 
 Example:
 
-* clear completed
-* clear completed 2103
+* clear s/completed
+* clear t/work
 
 
 <br>
