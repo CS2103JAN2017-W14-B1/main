@@ -13,10 +13,8 @@ import javafx.stage.Stage;
 import seedu.tasklist.TestApp;
 import seedu.tasklist.model.task.DeadlineTask;
 import seedu.tasklist.model.task.EventTask;
-import seedu.tasklist.model.task.FloatingTask;
 import seedu.tasklist.model.task.ReadOnlyDeadlineTask;
 import seedu.tasklist.model.task.ReadOnlyEventTask;
-import seedu.tasklist.model.task.ReadOnlyFloatingTask;
 import seedu.tasklist.model.task.ReadOnlyTask;
 import seedu.tasklist.testutil.TestUtil;
 
@@ -53,7 +51,7 @@ public class TodayListPanelHandle extends GuiHandle {
             final int scrollTo = i + startPosition;
             guiRobot.interact(() -> getTodayListView().scrollTo(scrollTo));
             guiRobot.sleep(200);
-            if (!TestUtil.compareCardAndTask(getUpcomingTaskCardHandle(startPosition + i), tasks[i])) {
+            if (!TestUtil.compareUpcomingCardAndTask(getUpcomingTaskCardHandle(startPosition + i), tasks[i])) {
                 return false;
             }
         }
