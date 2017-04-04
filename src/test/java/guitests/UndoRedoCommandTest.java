@@ -16,7 +16,7 @@ import seedu.tasklist.testutil.TestUtil;
 public class UndoRedoCommandTest extends TaskListGuiTest {
 
     @Test
-    public void assertUndoRedoAddSuccess() {
+    public void assert_undo_redo_add_success() {
         TestTask taskToBeAdded = td.internship;
         commandBox.runCommand(taskToBeAdded.getAddCommand());
         commandBox.runCommand("undo");
@@ -37,7 +37,7 @@ public class UndoRedoCommandTest extends TaskListGuiTest {
      */
 
     @Test
-    public void assertUndoRedoEditSuccess() throws IllegalValueException {
+    public void assert_undo_redo_edit_success() throws IllegalValueException {
         commandBox.runCommand("edit 1 Evalution Report");
         commandBox.runCommand("undo");
         TestTask[] expectedTaskList = td.getTypicalTasks();
@@ -52,7 +52,7 @@ public class UndoRedoCommandTest extends TaskListGuiTest {
     }
 
     @Test
-    public void assertUndoRedoDeleteSuccess() {
+    public void assert_undo_redo_delete_success() {
         TestTask[] currentList = TestUtil.removeTaskFromList(td.getTypicalTasks(), 6);
         commandBox.runCommand("delete 6");
         commandBox.runCommand("undo");
@@ -72,7 +72,7 @@ public class UndoRedoCommandTest extends TaskListGuiTest {
      * Test for events where multiple undo/redo commands are entered, and go over the stack limit.
      */
     @Test
-    public void assertUndoRedoFail() {
+    public void assert_undo_redo_fail() {
         TestTask taskToBeAdded = td.internship;
         commandBox.runCommand(taskToBeAdded.getAddCommand());
         commandBox.runCommand("undo");
@@ -88,7 +88,7 @@ public class UndoRedoCommandTest extends TaskListGuiTest {
     }
 
     @Test
-    public void assertUndoRedoClearSuccess() {
+    public void assert_undo_redo_clear_success() {
         commandBox.runCommand("clear");
         commandBox.runCommand("undo");
         assertResultMessage(UndoCommand.MESSAGE_UNDO_SUCCESS + "clear");
@@ -104,7 +104,7 @@ public class UndoRedoCommandTest extends TaskListGuiTest {
      * A "illegal redo" is the redo command that is not preceded by an "undo" command.
      */
     @Test
-    public void assertIllegalRedoFail() {
+    public void assert_illegal_redo_fail() {
         TestTask taskToBeAdded = td.internship;
         commandBox.runCommand(taskToBeAdded.getAddCommand());
         commandBox.runCommand("undo");

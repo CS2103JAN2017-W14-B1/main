@@ -219,7 +219,7 @@ public class EditCommandTest extends TaskListGuiTest {
 
     //@@author A0139747N
     @Test
-    public void editFloatingTaskWithFlexibleCommandsAndPrefixes() throws IllegalValueException {
+    public void edit_FloatingTask_with_flexible_commands_and_prefixes() throws IllegalValueException {
         commandBox.runCommand("modify 2 floating tAg/tag1 Comments/comments p/low");
         int taskListIndex = 2;
         TestTask editedTask = new FloatingTaskBuilder().withName("floating").withTags("tag1").withComment("comments")

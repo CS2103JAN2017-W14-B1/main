@@ -3,6 +3,9 @@ package seedu.tasklist.logic.commands;
 import java.util.EmptyStackException;
 
 //@@author A0139747N
+/**
+ * Reverts the task list to the previous state, before a command that mutates the task list data.
+ */
 public class UndoCommand extends Command {
     public static final String COMMAND_WORD = "undo";
 
