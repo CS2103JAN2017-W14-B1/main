@@ -65,66 +65,19 @@ public class SortCommandTest extends TaskListGuiTest {
             TestTask floatingTaskToAdd = new FloatingTaskBuilder().withName("Shop clothes")
                     .withTags("shopping").withComment("save money")
                     .withPriority("low").withStatus(false).build();
-            TestTask[] expectedListAddFloating = {td.tutorial, td.project, td.groceries,
-                                                  td.homework, td.drink, td.java, floatingTaskToAdd};
-            commandBox.runCommand("add Shop clothes t/shopping c/save money p/low");
+            TestTask[] expectedListAddFloating = {td.tutorial, td.project, td.drink,
+                                                  td.java, td.groceries, td.homework, floatingTaskToAdd};
+            commandBox.runCommand(floatingTaskToAdd.getAddCommand());
             commandBox.runCommand("sort d");
             assertResultMessage(SortCommand.MESSAGE_SUCCESS);
-            assertSortSuccessAdd(floatingTaskToAdd, expectedListAddFloating);
-
+            assertSortSuccess(expectedListAddFloating);
         } catch (IllegalValueException e) {
             e.printStackTrace();
-        }
-
-        //sort by date after adding deadline task
-        try {
-            TestTask deadlineTaskToAdd = new DeadlineTaskBuilder().withName("Project Report Submission")
-                    .withTags("work").withComment("discuss with teammates")
-                    .withDeadline("15 April 6pm").withPriority("high").withStatus(false).build();
-            TestTask[] expectedListAddDeadline = {td.tutorial, td.project, deadlineTaskToAdd, td.groceries,
-                                                  td.homework, td.drink, td.java};
-            commandBox.runCommand("add Project Report Submission d/15 April 6pm "
-                                   + "t/work c/discuss with teammates p/high");
-            commandBox.runCommand("sort d");
-            assertResultMessage(SortCommand.MESSAGE_SUCCESS);
-            assertSortSuccessAdd(deadlineTaskToAdd, expectedListAddDeadline);
-        } catch (IllegalValueException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        //sort by date after adding event task
-        try {
-            TestTask eventTaskToAdd = new EventTaskBuilder().withName("Project Meeting")
-                    .withTags("work").withComment("discuss with teammates")
-                    .withStartDate("12 April 4pm").withEndDate("12 April 6pm")
-                    .withPriority("high").withStatus(false).build();
-            TestTask[] expectedListAddEvent = {td.tutorial, td.project, eventTaskToAdd,
-                                               td.groceries, td.homework, td.drink, td.java};
-            commandBox.runCommand("add Project Meeting d/12 April 4pm to 6pm "
-                    + "t/work c/discuss with teammates p/high");
-            commandBox.runCommand("sort d");
-            assertResultMessage(SortCommand.MESSAGE_SUCCESS);
-            assertSortSuccessAdd(eventTaskToAdd, expectedListAddEvent);
-        } catch (IllegalValueException ive) {
-            ive.printStackTrace();
-        } catch (ParseException pe) {
-            pe.printStackTrace();
-        }
+        }        
     }
 
     private void assertSortSuccess(TestTask... expectedList) {
         //confirm list contains all tasks in the correct sorted order
         assertTrue(taskListPanel.isListMatching(expectedList));
     }
-
-    private void assertSortSuccessAdd(TestTask taskToAdd, TestTask... expectedList) {
-      //confirm the new card contains the right data
-        TaskCardHandle addedCard = taskListPanel.navigateToTask(taskToAdd.getName().fullName);
-        assertMatching(taskToAdd, addedCard);
-
-        assertTrue(taskListPanel.isListMatching(expectedList));
-    }
-
 }
