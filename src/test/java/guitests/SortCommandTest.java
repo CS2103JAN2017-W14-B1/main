@@ -2,16 +2,11 @@ package guitests;
 
 import static org.junit.Assert.assertTrue;
 
-import java.text.ParseException;
-
 import org.junit.Test;
 
-import guitests.guihandles.TaskCardHandle;
 import seedu.tasklist.commons.core.Messages;
 import seedu.tasklist.commons.exceptions.IllegalValueException;
 import seedu.tasklist.logic.commands.SortCommand;
-import seedu.tasklist.testutil.DeadlineTaskBuilder;
-import seedu.tasklist.testutil.EventTaskBuilder;
 import seedu.tasklist.testutil.FloatingTaskBuilder;
 import seedu.tasklist.testutil.TestTask;
 //@@author A0141993X
