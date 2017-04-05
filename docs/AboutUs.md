@@ -24,8 +24,8 @@ Code Written: <br>
 
 Other major contributions:<br>
 * [Did the inital refactoring from AddressBook to TaskList for storage and documents](https://github.com/CS2103JAN2017-W14-B1/main/pull/35)
-* Did AboutUs.md [#80](https://github.com/CS2103JAN2017-W14-B1/main/pull/97/)
-* Did Documentation of User and Developer guide
+* Did AboutUs.md [[#80](https://github.com/CS2103JAN2017-W14-B1/main/pull/97/)]
+* Did Documentation of User and Developer guide and ContactUs
 * Did minor UI enhancements
 * Create sample data  
 
@@ -46,7 +46,7 @@ Code Written: <br>
 
 Other major contributions:<br>
 * [Did the inital refactoring for test cases from AddressBook to TaskList](https://github.com/CS2103JAN2017-W14-B1/main/pull/43)
-* Set up Travis and Coveralls [#27](https://github.com/CS2103JAN2017-W14-B1/main/pull/37)
+* Set up Travis and Coveralls [[#27](https://github.com/CS2103JAN2017-W14-B1/main/pull/37)]
 * Formatting of User and Developer guide 
 
 
@@ -92,7 +92,7 @@ Code Written: <br>
 [[Functional Code](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/collated/main/A0139747N.md)] [[Testing Code](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/collated/test/A0139747N.md)]
 
 Other major contributions:<br>
-* Did the inital refactoring from AddressBook to TaskList [#1](https://github.com/CS2103JAN2017-W14-B1/main/pull/13)<br>
+* Did the inital refactoring from AddressBook to TaskList [[#1](https://github.com/CS2103JAN2017-W14-B1/main/pull/13)]<br>
 * Did Documentation of User and Developer guide
 * Did UI enhancements
 
