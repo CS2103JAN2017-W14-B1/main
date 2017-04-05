@@ -46,7 +46,7 @@ public class LoadCommand extends Command {
     }
 
     /**
-     * Returns true if the given path is a valid path
+     * Returns true if the given file path is a valid path
      */
     private boolean isValidPath(String path) {
         try {
@@ -58,12 +58,9 @@ public class LoadCommand extends Command {
     }
 
     /**
-     * Returns true if the given path ends with the .xml extension.
+     * Returns true if the given file path ends with the .xml extension.
      */
     private static boolean isXML(String path) {
         return path.endsWith(XML);
     }
-
-
-
 }
