@@ -48,7 +48,7 @@ public class LoadCommand extends Command {
     /**
      * Checks if the given file path is a valid path
      * Returns true if it is a valid path else false
-     * @param path 
+     * @param path
      */
     private boolean isValidPath(String path) {
         try {

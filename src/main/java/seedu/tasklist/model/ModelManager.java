@@ -59,7 +59,6 @@ public class ModelManager extends ComponentManager implements Model {
     private static final String NAME = "Name";
     private static final String DATE = "Date";
     private static final String PRIORITY = "Priority";
-    
 
 //@@author A0141993X
     /**

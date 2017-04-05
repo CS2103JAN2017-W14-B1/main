@@ -118,7 +118,7 @@ public class SortCommandTest extends TaskListGuiTest {
         //confirm list contains all tasks in the correct sorted order
         assertTrue(taskListPanel.isListMatching(expectedList));
     }
-    
+
     private void assertSortSuccessAdd(TestTask taskToAdd, TestTask... expectedList) {
       //confirm the new card contains the right data
         TaskCardHandle addedCard = taskListPanel.navigateToTask(taskToAdd.getName().fullName);

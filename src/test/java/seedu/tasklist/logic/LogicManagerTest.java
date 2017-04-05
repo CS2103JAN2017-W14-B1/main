@@ -136,7 +136,7 @@ public class LogicManagerTest {
     }
 
     /**
-     * Executes the command, confirms that the result message is correct 
+     * Executes the command, confirms that the result message is correct
      * and also confirms that the following three parts of the LogicManager object's state are as expected:<br>
      *      - the internal task list data are same as those in the {@code expectedTaskList} <br>
      *      - the backing list shown by UI matches the {@code shownList} <br>
