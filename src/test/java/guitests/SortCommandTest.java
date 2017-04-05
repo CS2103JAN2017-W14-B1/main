@@ -73,7 +73,7 @@ public class SortCommandTest extends TaskListGuiTest {
             assertSortSuccess(expectedListAddFloating);
         } catch (IllegalValueException e) {
             e.printStackTrace();
-        }        
+        }
     }
 
     private void assertSortSuccess(TestTask... expectedList) {
