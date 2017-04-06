@@ -23,27 +23,21 @@ public class ConfigTest {
 
         assertEquals(defaultConfigAsString, new Config().toString());
     }
-
+    //@@author A0141993X
     @Test
     public void equalsMethod() {
         Config defaultConfig = new Config();
         assertNotNull(defaultConfig);
         assertTrue(defaultConfig.equals(defaultConfig));
-        
+
         Config config = new Config();
-        assertFalse(config.equals("MyTaskList"));
+        assertFalse(config.equals(new Object()));
     }
-    
-    //@@author A0141993X
+
     @Test
     public void hashCodeMethod() {
         Config defaultConfig = new Config();
-        assertEquals(defaultConfig.hashCode(), defaultConfig.hashCode());
-
         Config config = new Config();
         assertEquals(config.hashCode(), defaultConfig.hashCode());
     }
-    
-
-
 }
