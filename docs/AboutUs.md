@@ -11,8 +11,6 @@ We are a team of computing students based in the [School of Computing, National 
 <img src="images/vesaliE.png" width="150" height="250"><br>
 Role: Developer <br>
 Responsibilities: Deliverables and deadlines, Documentation<br>
-Component in charge of: [Storage](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/docs/DeveloperGuide.md#25-storage-component)<br>
-
 
 Features implemented: <br>
 * [Sort Command](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/docs/UserGuide.md#310-sorting-tasks-sort) <br>
@@ -35,7 +33,6 @@ Other major contributions:<br>
 <img src="images/limjie.png" width="160" height="160"><br>
 Role: Developer <br>
 Responsibilities: Testing, Integration<br>
-Component in charge of: [Logic](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/docs/DeveloperGuide.md#23-logic-component)<br>
 
 Features implemented:<br>
 * [Edit Command](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/docs/UserGuide.md#37-modifies-a-current-task-edit)<br>
@@ -56,8 +53,6 @@ Other major contributions:<br>
 <img src="images/sherinatoh.png" width="150"><br>
 Role: Developer <br>
 Responsibilities: Scheduling and tracking <br>
-
-Component in charge of: [UI](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/docs/DeveloperGuide.md#22-ui-component)<br> 
 
 Features implemented: <br>
 * [Add Command](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/docs/UserGuide.md#32-adding-a-task-add) <br>
@@ -80,7 +75,6 @@ Other major contributions:<br>
 
  Role: Developer <br>
  Responsibilities: Integration, Documentation<br>
- Component in charge of: [Model](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/docs/DeveloperGuide.md#24-model-component)<br>
  
  Features implemented: <br>
  * [Undo Command](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/docs/UserGuide.md#38-undoing-changes-undo)<br>
