@@ -5,7 +5,7 @@
         <comment>inform boss</comment>
         <type>event</type>
         <priority>high</priority>
-        <status>true</status>
+        <status>false</status>
         <startDate>2017-05-05T00:00:00+08:00</startDate>
         <endDate>2017-05-08T00:00:00+08:00</endDate>
         <tagged>work</tagged>
@@ -15,10 +15,19 @@
         <comment>check documents required</comment>
         <type>deadline</type>
         <priority>medium</priority>
-        <status>false</status>
-        <deadline>2017-05-31T21:37:23.488+08:00</deadline>
-        <tagged>NOC</tagged>
+        <status>true</status>
+        <deadline>2017-04-10T23:59:00+08:00</deadline>
         <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Buy anniversary present</name>
+        <comment>parents' wedding aniversary</comment>
+        <type>deadline</type>
+        <priority>low</priority>
+        <status>true</status>
+        <deadline>2017-04-07T18:00:00+08:00</deadline>
+        <tagged>personal</tagged>
+        <tagged>family</tagged>
     </tasks>
     <tasks>
         <name>Buy groceries</name>
@@ -29,126 +38,13 @@
         <tagged>personal</tagged>
     </tasks>
     <tasks>
-        <name>CS2101 OP1 Presentation</name>
-        <comment>NIL</comment>
-        <type>deadline</type>
-        <priority>high</priority>
-        <status>true</status>
-        <deadline>2017-02-09T12:00:00+08:00</deadline>
-        <tagged>project</tagged>
-    </tasks>
-    <tasks>
-        <name>CS2101 OP2</name>
-        <comment>practise script</comment>
-        <type>deadline</type>
-        <priority>medium</priority>
-        <status>false</status>
-        <deadline>2017-04-03T12:00:00+08:00</deadline>
-        <tagged>project</tagged>
-    </tasks>
-    <tasks>
-        <name>CS2101 OP2 Dry Run</name>
-        <comment>discuss over weekend</comment>
-        <type>deadline</type>
-        <priority>high</priority>
-        <status>false</status>
-        <deadline>2017-03-27T12:00:00+08:00</deadline>
-        <tagged>work</tagged>
-        <tagged>project</tagged>
-    </tasks>
-    <tasks>
-        <name>CS2101 Reflections</name>
-        <comment>NIL</comment>
-        <type>deadline</type>
-        <priority>high</priority>
-        <status>true</status>
-        <deadline>2017-11-02T17:00:00+08:00</deadline>
-        <tagged>project</tagged>
-        <tagged>class</tagged>
-    </tasks>
-    <tasks>
-        <name>CS2103T Demo</name>
-        <comment>prepare V0.4 demo</comment>
-        <type>deadline</type>
-        <priority>high</priority>
-        <status>false</status>
-        <deadline>2017-03-28T23:00:00+08:00</deadline>
-        <tagged>project</tagged>
-    </tasks>
-    <tasks>
-        <name>CS2103T Exam</name>
-        <comment>finals</comment>
-        <type>deadline</type>
-        <priority>high</priority>
-        <status>false</status>
-        <deadline>2017-04-25T13:00:00+08:00</deadline>
-        <tagged>Exam</tagged>
-    </tasks>
-    <tasks>
-        <name>CS2103T tutorial</name>
-        <comment>prepare for demo</comment>
-        <type>deadline</type>
-        <priority>high</priority>
-        <status>false</status>
-        <deadline>2017-03-29T15:00:00+08:00</deadline>
-        <tagged>project</tagged>
-        <tagged>class</tagged>
-    </tasks>
-    <tasks>
-        <name>CS3230 Exam</name>
-        <comment>finals</comment>
+        <name>Change Starhub Plan</name>
+        <comment>cable tv plan</comment>
         <type>deadline</type>
         <priority>high</priority>
         <status>false</status>
         <deadline>2017-04-26T13:00:00+08:00</deadline>
-        <tagged>Exam</tagged>
-    </tasks>
-    <tasks>
-        <name>CS3230 Programming Assignment 1</name>
-        <comment>NIL</comment>
-        <type>deadline</type>
-        <priority>NIL</priority>
-        <status>true</status>
-        <deadline>2017-03-06T18:00:00+08:00</deadline>
-        <tagged>class</tagged>
-    </tasks>
-    <tasks>
-        <name>CS3243 Exam</name>
-        <comment>finals</comment>
-        <type>deadline</type>
-        <priority>high</priority>
-        <status>false</status>
-        <deadline>2017-05-02T17:00:00+08:00</deadline>
-        <tagged>Exam</tagged>
-    </tasks>
-    <tasks>
-        <name>CS3243 Lecture</name>
-        <comment>download files</comment>
-        <type>event</type>
-        <priority>medium</priority>
-        <status>false</status>
-        <startDate>2017-03-27T14:00:00+08:00</startDate>
-        <endDate>2017-03-27T16:00:00+08:00</endDate>
-        <tagged>class</tagged>
-    </tasks>
-    <tasks>
-        <name>CS3243 Midterms</name>
-        <comment>NIL</comment>
-        <type>event</type>
-        <priority>NIL</priority>
-        <status>true</status>
-        <startDate>2017-03-06T14:00:00+08:00</startDate>
-        <endDate>2017-03-06T16:00:00+08:00</endDate>
-        <tagged>Exam</tagged>
-    </tasks>
-    <tasks>
-        <name>CS3243 Project Report</name>
-        <comment>discuss with team members</comment>
-        <type>deadline</type>
-        <priority>high</priority>
-        <status>false</status>
-        <deadline>2017-04-13T17:00:00+08:00</deadline>
-        <tagged>work</tagged>
+        <tagged>personal</tagged>
     </tasks>
     <tasks>
         <name>Check Email</name>
@@ -159,12 +55,51 @@
         <tagged>work</tagged>
     </tasks>
     <tasks>
+        <name>Check Project Manuals</name>
+        <comment>discuss with manager</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>true</status>
+        <deadline>2017-04-01T11:00:00+08:00</deadline>
+        <tagged>work</tagged>
+        <tagged>project</tagged>
+    </tasks>
+    <tasks>
+        <name>Check Q2 Audit Report</name>
+        <comment>NIL</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-04-20T20:00:00+08:00</deadline>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
         <name>Clean House</name>
         <comment>change bed sheets</comment>
         <type>floating</type>
-        <priority>low</priority>
+        <priority>medium</priority>
         <status>false</status>
         <tagged>personal</tagged>
+    </tasks>
+    <tasks>
+        <name>Clean Office table</name>
+        <comment>very messy</comment>
+        <type>deadline</type>
+        <priority>medium</priority>
+        <status>false</status>
+        <deadline>2017-04-13T22:00:00+08:00</deadline>
+        <tagged>work</tagged>
+        <tagged>personal</tagged>
+    </tasks>
+    <tasks>
+        <name>Company Connection dinner</name>
+        <comment>prepare suit</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-04-20T18:20:00+08:00</deadline>
+        <tagged>work</tagged>
+        <tagged>networking</tagged>
     </tasks>
     <tasks>
         <name>Dad birthday</name>
@@ -177,11 +112,22 @@
         <tagged>family</tagged>
     </tasks>
     <tasks>
+        <name>Dad's doctor appointment</name>
+        <comment>accompany dad</comment>
+        <type>event</type>
+        <priority>NIL</priority>
+        <status>true</status>
+        <startDate>2017-03-25T14:00:00+08:00</startDate>
+        <endDate>2017-03-25T16:00:00+08:00</endDate>
+        <tagged>personal</tagged>
+        <tagged>family</tagged>
+    </tasks>
+    <tasks>
         <name>Dinner with Emily</name>
         <comment>At Jem</comment>
         <type>deadline</type>
         <priority>medium</priority>
-        <status>false</status>
+        <status>true</status>
         <deadline>2017-03-26T18:00:00+08:00</deadline>
         <tagged>friends</tagged>
     </tasks>
@@ -191,9 +137,18 @@
         <type>event</type>
         <priority>medium</priority>
         <status>false</status>
-        <startDate>2017-03-16T05:25:46.901+08:00</startDate>
-        <endDate>2017-03-16T05:25:46.901+08:00</endDate>
+        <startDate>2017-04-17T17:00:00+08:00</startDate>
+        <endDate>2017-04-17T22:00:00+08:00</endDate>
         <tagged>family</tagged>
+    </tasks>
+    <tasks>
+        <name>Do laundry</name>
+        <comment>house work</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-03-30T15:20:00+08:00</deadline>
+        <tagged>personal</tagged>
     </tasks>
     <tasks>
         <name>Drink water</name>
@@ -202,6 +157,15 @@
         <priority>high</priority>
         <status>false</status>
         <tagged>health</tagged>
+    </tasks>
+    <tasks>
+        <name>Email errors in report to Jane</name>
+        <comment>include attachments</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-04-19T21:00:00+08:00</deadline>
+        <tagged>project</tagged>
     </tasks>
     <tasks>
         <name>Email project manager</name>
@@ -243,7 +207,7 @@
         <type>deadline</type>
         <priority>NIL</priority>
         <status>false</status>
-        <deadline>1157-07-09T22:08:03.018+08:00</deadline>
+        <deadline>2017-04-14T23:00:00+08:00</deadline>
     </tasks>
     <tasks>
         <name>Health checkup</name>
@@ -255,22 +219,32 @@
         <tagged>health</tagged>
     </tasks>
     <tasks>
+        <name>Lunch with Jason</name>
+        <comment>NIL</comment>
+        <type>deadline</type>
+        <priority>NIL</priority>
+        <status>false</status>
+        <deadline>2017-04-13T12:00:00+08:00</deadline>
+        <tagged>work</tagged>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
         <name>Meeting</name>
         <comment>prepare notes</comment>
         <type>deadline</type>
         <priority>high</priority>
-        <status>true</status>
+        <status>false</status>
         <deadline>2017-05-01T00:00:00+08:00</deadline>
         <tagged>work</tagged>
     </tasks>
     <tasks>
-        <name>NOC Connection</name>
-        <comment>curriculum details</comment>
-        <type>deadline</type>
-        <priority>high</priority>
+        <name>Movie date with friends</name>
+        <comment>need to relax</comment>
+        <type>floating</type>
+        <priority>low</priority>
         <status>false</status>
-        <deadline>1243-06-27T21:16:39.425+08:00</deadline>
-        <tagged>NOC</tagged>
+        <tagged>family</tagged>
+        <tagged>friends</tagged>
     </tasks>
     <tasks>
         <name>Plan outing with family</name>
@@ -287,7 +261,6 @@
         <priority>high</priority>
         <status>false</status>
         <deadline>2017-07-21T21:26:38.813+08:00</deadline>
-        <tagged>NOC</tagged>
         <tagged>work</tagged>
     </tasks>
     <tasks>
@@ -297,15 +270,50 @@
         <priority>high</priority>
         <status>false</status>
         <deadline>2017-05-15T21:23:07.739+08:00</deadline>
-        <tagged>NOC</tagged>
         <tagged>work</tagged>
     </tasks>
     <tasks>
-        <name>Print Lecture notes</name>
-        <comment>at SOC</comment>
+        <name>Prepare for RoadShow</name>
+        <comment>For Project Delta</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-04-12T19:00:00+08:00</deadline>
+        <tagged>project</tagged>
+    </tasks>
+    <tasks>
+        <name>Print Notes for meeting</name>
+        <comment>help Jason, print 2 copies</comment>
         <type>floating</type>
         <priority>low</priority>
         <status>false</status>
+    </tasks>
+    <tasks>
+        <name>Project  Delta Presentation</name>
+        <comment>NIL</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>true</status>
+        <deadline>2017-03-25T12:00:00+08:00</deadline>
+        <tagged>project</tagged>
+    </tasks>
+    <tasks>
+        <name>Project Delta Meeting</name>
+        <comment>revise documents</comment>
+        <type>deadline</type>
+        <priority>medium</priority>
+        <status>false</status>
+        <deadline>2017-04-12T10:00:00+08:00</deadline>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Proposal to improve productivity</name>
+        <comment>discuss with team members</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-04-13T17:00:00+08:00</deadline>
+        <tagged>work</tagged>
     </tasks>
     <tasks>
         <name>Read Project Manual</name>
@@ -326,50 +334,40 @@
         <tagged>work</tagged>
     </tasks>
     <tasks>
-        <name>Repsond to CS2101 Reflections</name>
-        <comment>NIL</comment>
+        <name>Report Draft</name>
+        <comment>Project Bravo</comment>
+        <type>deadline</type>
+        <priority>medium</priority>
+        <status>false</status>
+        <deadline>2017-04-13T18:00:00+08:00</deadline>
+        <tagged>project</tagged>
+    </tasks>
+    <tasks>
+        <name>Request for more funding $$</name>
+        <comment>For Project Charizard</comment>
+        <type>deadline</type>
+        <priority>low</priority>
+        <status>false</status>
+        <deadline>2017-04-12T18:00:00+08:00</deadline>
+        <tagged>project</tagged>
+    </tasks>
+    <tasks>
+        <name>Respond to Boss emails</name>
+        <comment>work</comment>
         <type>deadline</type>
         <priority>high</priority>
         <status>true</status>
         <deadline>2017-03-24T15:00:00+08:00</deadline>
-        <tagged>assignment</tagged>
-        <tagged>class</tagged>
+        <tagged>work</tagged>
     </tasks>
     <tasks>
-        <name>ST2334 Exam</name>
-        <comment>final exam</comment>
+        <name>Server maintanance</name>
+        <comment>remember to back up</comment>
         <type>deadline</type>
         <priority>high</priority>
         <status>false</status>
-        <deadline>2017-04-28T09:00:00+08:00</deadline>
-        <tagged>Exam</tagged>
-    </tasks>
-    <tasks>
-        <name>ST2334 Lecture</name>
-        <comment>print ws</comment>
-        <type>deadline</type>
-        <priority>medium</priority>
-        <status>false</status>
-        <deadline>2017-03-30T10:00:00+08:00</deadline>
-        <tagged>lesson</tagged>
-    </tasks>
-    <tasks>
-        <name>ST2334 Tutorial 5</name>
-        <comment>download from IVLE</comment>
-        <type>deadline</type>
-        <priority>low</priority>
-        <status>false</status>
-        <deadline>2017-04-05T10:00:00+08:00</deadline>
-        <tagged>class</tagged>
-    </tasks>
-    <tasks>
-        <name>ST2334 midterm</name>
-        <comment>NIL</comment>
-        <type>deadline</type>
-        <priority>NIL</priority>
-        <status>true</status>
-        <deadline>1013-08-31T22:39:33.037+08:00</deadline>
-        <tagged>class</tagged>
+        <deadline>2017-04-30T12:00:00+08:00</deadline>
+        <tagged>work</tagged>
     </tasks>
     <tasks>
         <name>Shopping</name>
@@ -380,14 +378,32 @@
         <tagged>family</tagged>
     </tasks>
     <tasks>
-        <name>TR4049 Workshop</name>
-        <comment>compulsory</comment>
+        <name>Soft skills training workshop</name>
+        <comment>compulsory, report attendance of team to manager</comment>
         <type>event</type>
         <priority>high</priority>
         <status>false</status>
-        <startDate>2017-05-08T21:21:39.758+08:00</startDate>
-        <endDate>2017-05-12T21:21:39.758+08:00</endDate>
-        <tagged>NOC</tagged>
+        <startDate>2017-04-12T13:00:00+08:00</startDate>
+        <endDate>2017-04-12T16:00:00+08:00</endDate>
+        <tagged>workshop</tagged>
+    </tasks>
+    <tasks>
+        <name>Submit Project Delta Project Proposal</name>
+        <comment>NIL</comment>
+        <type>deadline</type>
+        <priority>medium</priority>
+        <status>true</status>
+        <deadline>2017-03-20T18:00:00+08:00</deadline>
+        <tagged>work</tagged>
+        <tagged>project</tagged>
+    </tasks>
+    <tasks>
+        <name>System Update</name>
+        <comment>finals</comment>
+        <type>deadline</type>
+        <priority>low</priority>
+        <status>false</status>
+        <deadline>2017-04-22T23:00:00+08:00</deadline>
         <tagged>work</tagged>
     </tasks>
     <tasks>
@@ -396,42 +412,25 @@
         <type>deadline</type>
         <priority>high</priority>
         <status>false</status>
-        <deadline>2017-03-28T18:00:00+08:00</deadline>
+        <deadline>2017-04-13T09:00:00+08:00</deadline>
         <tagged>family</tagged>
     </tasks>
     <tasks>
-        <name>TestList</name>
-        <comment>NIL</comment>
+        <name>Update Excel spreadsheet</name>
+        <comment>Project Delta finances</comment>
         <type>floating</type>
         <priority>NIL</priority>
         <status>false</status>
+        <tagged>work</tagged>
     </tasks>
     <tasks>
-        <name>Update FlexiTask Help page</name>
-        <comment>cs2103T</comment>
-        <type>floating</type>
-        <priority>NIL</priority>
-        <status>false</status>
-        <tagged>project</tagged>
-    </tasks>
-    <tasks>
-        <name>User Guide Draft 1</name>
-        <comment>cs2101</comment>
-        <type>deadline</type>
-        <priority>medium</priority>
-        <status>true</status>
-        <deadline>2017-03-16T17:00:00+08:00</deadline>
-        <tagged>project</tagged>
-    </tasks>
-    <tasks>
-        <name>V03 Demo</name>
-        <comment>CS2103T tutorial</comment>
+        <name>Update Microsoft</name>
+        <comment>ask technical services</comment>
         <type>deadline</type>
         <priority>high</priority>
         <status>true</status>
-        <deadline>2017-03-22T15:00:00+08:00</deadline>
-        <tagged>project</tagged>
-        <tagged>class</tagged>
+        <deadline>2017-04-01T21:00:00+08:00</deadline>
+        <tagged>work</tagged>
     </tasks>
     <tasks>
         <name>Wash car</name>
@@ -442,25 +441,17 @@
         <tagged>car</tagged>
     </tasks>
     <tasks>
-        <name>Watch CS3230 webcast</name>
-        <comment>NIL</comment>
-        <type>deadline</type>
-        <priority>low</priority>
-        <status>true</status>
-        <deadline>2017-03-25T21:00:00+08:00</deadline>
-        <tagged>class</tagged>
-    </tasks>
-    <tasks>
-        <name>Watch Movie</name>
-        <comment>need to relax</comment>
-        <type>floating</type>
-        <priority>low</priority>
+        <name>Watch Emily's Performance at SCO</name>
+        <comment>buy flowers</comment>
+        <type>event</type>
+        <priority>medium</priority>
         <status>false</status>
-        <tagged>family</tagged>
-        <tagged>friends</tagged>
+        <startDate>2017-03-27T14:00:00+08:00</startDate>
+        <endDate>2017-03-27T16:00:00+08:00</endDate>
+        <tagged>personal</tagged>
     </tasks>
     <tasks>
-        <name>Watch musical with parents</name>
+        <name>Watch musical with family</name>
         <comment>esplanade</comment>
         <type>floating</type>
         <priority>medium</priority>
@@ -479,4 +470,6 @@
     <tags>class</tags>
     <tags>Exam</tags>
     <tags>assignment</tags>
+    <tags>workshop</tags>
+    <tags>networking</tags>
 </flexitask>
