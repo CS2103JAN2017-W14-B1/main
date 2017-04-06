@@ -1,6 +1,7 @@
 package seedu.tasklist.commons.core;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -28,7 +29,21 @@ public class ConfigTest {
         Config defaultConfig = new Config();
         assertNotNull(defaultConfig);
         assertTrue(defaultConfig.equals(defaultConfig));
+        
+        Config config = new Config();
+        assertFalse(config.equals("MyTaskList"));
     }
+    
+    //@@author A0141993X
+    @Test
+    public void hashCodeMethod() {
+        Config defaultConfig = new Config();
+        assertEquals(defaultConfig.hashCode(), defaultConfig.hashCode());
+
+        Config config = new Config();
+        assertEquals(config.hashCode(), defaultConfig.hashCode());
+    }
+    
 
 
 }
