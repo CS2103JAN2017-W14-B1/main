@@ -21,11 +21,12 @@ Code Written: <br>
 [[Functional Code](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/collated/main/A0141993X.md)] [[Testing Code](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/collated/test/A0141993X.md)]
 
 Other major contributions:<br>
-* Did the inital refactoring from AddressBook to TaskList for storage and documents [[#35](https://github.com/CS2103JAN2017-W14-B1/main/pull/35)]
+* Did the inital refactoring from AddressBook to TaskList [[#31](https://github.com/CS2103JAN2017-W14-B1/main/pull/52)] [[#35](https://github.com/CS2103JAN2017-W14-B1/main/pull/35)] 
 * Did AboutUs.md and ContactUs.md [[#80](https://github.com/CS2103JAN2017-W14-B1/main/pull/97/)] [[#154](https://github.com/CS2103JAN2017-W14-B1/main/pull/159)]
-* Did Documentation of User and Developer guide [[#102](https://github.com/CS2103JAN2017-W14-B1/main/pull/75)]
+* Did Documentation of User and Developer guide [[#102](https://github.com/CS2103JAN2017-W14-B1/main/pull/75)] [[#162](https://github.com/CS2103JAN2017-W14-B1/main/pull/163)] 
 * Did minor UI enhancements
 * Create sample data for manual testing [[#147](https://github.com/CS2103JAN2017-W14-B1/main/pull/157)]
+* Did TestScript.md [[#148](https://github.com/CS2103JAN2017-W14-B1/main/pull/157)]
 
 -----
 
@@ -64,10 +65,11 @@ Code Written: <br>
 [[Functional Code](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/collated/main/A0143355J.md)] [[Testing Code](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/collated/test/A0143355J.md)]
 
 Other major contributions:<br>
-* Did refactoring for documents [[#53](https://github.com/CS2103JAN2017-W14-B1/main/pull/53)]
+* Did intial refactoring from AddressBook to TaskList  [[#25](https://github.com/CS2103JAN2017-W14-B1/main/pull/52)] [[#53](https://github.com/CS2103JAN2017-W14-B1/main/pull/53)]
 * Did README.md [[#16](https://github.com/CS2103JAN2017-W14-B1/main/pull/16)]
 * Did Documentation of User and Developer guide [[#102](https://github.com/CS2103JAN2017-W14-B1/main/pull/75)]
-* Did UI enhancements
+* Did UI enhancements [[#46](https://github.com/CS2103JAN2017-W14-B1/main/pull/52)]
+* Did TestScript.md [[#148](https://github.com/CS2103JAN2017-W14-B1/main/pull/157)]
 
 -----
 
@@ -87,9 +89,10 @@ Code Written: <br>
 [[Functional Code](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/collated/main/A0139747N.md)] [[Testing Code](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/collated/test/A0139747N.md)]
 
 Other major contributions:<br>
-* Did the inital refactoring from AddressBook to TaskList [[#1](https://github.com/CS2103JAN2017-W14-B1/main/pull/13)]<br>
+* Did the inital refactoring from AddressBook to TaskList [[#1](https://github.com/CS2103JAN2017-W14-B1/main/pull/13)] [[#32](https://github.com/CS2103JAN2017-W14-B1/main/pull/52)]
 * Did Documentation of User and Developer guide [[#85](https://github.com/CS2103JAN2017-W14-B1/main/pull/108)] [[#86](https://github.com/CS2103JAN2017-W14-B1/main/pull/108)]
 * Did minor UI enhancements
+* Did TestScript.md [[#148](https://github.com/CS2103JAN2017-W14-B1/main/pull/157)]
 
 
 
