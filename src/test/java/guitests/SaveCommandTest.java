@@ -39,7 +39,7 @@ public class SaveCommandTest extends TaskListGuiTest {
     }
 
     @Test
-    public void save_CorrectFilePath_success() {
+    public void save_validFilePath_success() {
         String command = "save " + newFilePath;
         commandBox.runCommand(command);
         assertResultMessage(String.format(SaveCommand.MESSAGE_SUCCESS, newFilePath));

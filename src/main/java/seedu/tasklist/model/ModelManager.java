@@ -56,6 +56,10 @@ public class ModelManager extends ComponentManager implements Model {
     private Stack<Pair> undoStack;
     private Stack<Pair> redoStack;
     public String userInput;
+    private static final String NAME = "Name";
+    private static final String DATE = "Date";
+    private static final String PRIORITY = "Priority";
+
 //@@author A0141993X
     /**
      * Initializes a ModelManager with the given taskList and userPrefs.
@@ -358,13 +362,13 @@ public class ModelManager extends ComponentManager implements Model {
     public void sortTaskList(String parameter) {
         assert parameter != null;
         switch (parameter) {
-        case "Name":
+        case NAME:
             taskList.sortByName();
             break;
-        case "Priority":
+        case PRIORITY:
             taskList.sortByPriority();
             break;
-        case "Date":
+        case DATE:
             taskList.sortByDate();
             break;
         default:

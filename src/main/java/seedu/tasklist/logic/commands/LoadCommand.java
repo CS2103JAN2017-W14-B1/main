@@ -13,13 +13,13 @@ public class LoadCommand extends Command {
 
     public static final String COMMAND_WORD = "load";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": loads data from specified location.\n"
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Loads data from specified location.\n"
             + "Parameters: FILE_PATH/FILE_NAME.xml\n"
             + "Example: " + COMMAND_WORD + " data/mytasklist.xml";
 
-    public static final String MESSAGE_SUCCESS = "Data successfully loaded from: %1$s";
+    public static final String MESSAGE_SUCCESS = "Data is successfully loaded from: %1$s";
     public static final String MESSAGE_INVALID_PATH = "The file path specified is invalid: %1$s";
-    public static final String MESSAGE_FAILURE = "The file cannot be loaded: %1$s";
+    public static final String MESSAGE_FAILURE = "The file cannot be loaded, check if file exists: %1$s";
 
     private String filePath;
     private static final String XML = ".xml";
@@ -46,24 +46,25 @@ public class LoadCommand extends Command {
     }
 
     /**
-     * Returns true if the given path is a valid path
+     * Checks if the given file path is a valid path
+     * Returns true if it is a valid path else false
+     * @param path
      */
     private boolean isValidPath(String path) {
         try {
             Paths.get(path);
-            return isXML(path);
+            return isXMLExtension(path);
         } catch (InvalidPathException e) {
             return false;
         }
     }
 
     /**
-     * Returns true if the given path ends with the .xml extension.
+     * Checks if the given file path ends with the .xml extension.
+     * Returns true if extension is .xml else false
+     * @param path
      */
-    private static boolean isXML(String path) {
+    private static boolean isXMLExtension(String path) {
         return path.endsWith(XML);
     }
-
-
-
 }

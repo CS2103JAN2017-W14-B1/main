@@ -125,9 +125,10 @@ public class LogicManagerTest {
         assertCommandBehavior(true, inputCommand, expectedMessage, expectedTaskList, expectedShownList);
     }
 
+//@@author A0141993X
     /**
      * Executes the command and confirms that the result message is correct.
-     * Both the 'task list' and the 'last shown list' are expected to be empty.
+     * Both the 'task list' and the 'last shown list' are empty.
      * @see #assertCommandBehavior(String, String, ReadOnlyTaskList, List)
      */
     private void assertCommandBehavior(String inputCommand, String expectedMessage) throws Exception {
@@ -135,8 +136,8 @@ public class LogicManagerTest {
     }
 
     /**
-     * Executes the command and confirms that the result message is correct and
-     * also confirms that the following three parts of the LogicManager object's state are as expected:<br>
+     * Executes the command, confirms that the result message is correct
+     * and also confirms that the following three parts of the LogicManager object's state are as expected:<br>
      *      - the internal task list data are same as those in the {@code expectedTaskList} <br>
      *      - the backing list shown by UI matches the {@code shownList} <br>
      *      - {@code expectedTaskList} was saved to the storage file. <br>
@@ -145,7 +146,6 @@ public class LogicManagerTest {
                                        ReadOnlyTaskList expectedTaskList,
                                        List<? extends ReadOnlyTask> expectedShownList) throws Exception {
 
-        //Execute the command
         CommandResult result = logic.execute(inputCommand);
 
         //Confirm the ui display elements should contain the right data
@@ -157,7 +157,7 @@ public class LogicManagerTest {
         assertEquals(expectedTaskList, latestSavedTaskList);
     }
 
-
+//@@author
     /**
      * Executes the command, confirms that the result message is correct
      * and that a CommandException is thrown if expected

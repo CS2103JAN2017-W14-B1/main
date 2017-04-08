@@ -5,7 +5,9 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import seedu.tasklist.commons.core.Messages;
+import seedu.tasklist.commons.exceptions.IllegalValueException;
 import seedu.tasklist.logic.commands.SortCommand;
+import seedu.tasklist.testutil.FloatingTaskBuilder;
 import seedu.tasklist.testutil.TestTask;
 //@@author A0141993X
 public class SortCommandTest extends TaskListGuiTest {
@@ -52,11 +54,25 @@ public class SortCommandTest extends TaskListGuiTest {
         commandBox.runCommand(commandPriority);
         assertResultMessage(SortCommand.MESSAGE_SUCCESS);
         assertSortSuccess(expectedListPriority);
+
+        //sort by date after adding floating task
+        try {
+            TestTask floatingTaskToAdd = new FloatingTaskBuilder().withName("Shop clothes")
+                    .withTags("shopping").withComment("save money")
+                    .withPriority("low").withStatus(false).build();
+            TestTask[] expectedListAddFloating = {td.tutorial, td.project, td.drink,
+                                                  td.java, td.groceries, td.homework, floatingTaskToAdd};
+            commandBox.runCommand(floatingTaskToAdd.getAddCommand());
+            commandBox.runCommand("sort d");
+            assertResultMessage(SortCommand.MESSAGE_SUCCESS);
+            assertSortSuccess(expectedListAddFloating);
+        } catch (IllegalValueException e) {
+            e.printStackTrace();
+        }
     }
 
     private void assertSortSuccess(TestTask... expectedList) {
         //confirm list contains all tasks in the correct sorted order
         assertTrue(taskListPanel.isListMatching(expectedList));
     }
-
 }

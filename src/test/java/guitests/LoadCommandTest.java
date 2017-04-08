@@ -26,7 +26,7 @@ public class LoadCommandTest extends TaskListGuiTest {
     }
 
     @Test
-    public void load_CorrectExtension_success() {
+    public void load_validExtension_success() {
         String command = "load " + newFilePath;
         commandBox.runCommand(command);
         assertResultMessage(String.format(LoadCommand.MESSAGE_SUCCESS, newFilePath));
