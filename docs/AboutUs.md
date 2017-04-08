@@ -22,8 +22,8 @@ Code Written: <br>
 
 Other major contributions:<br>
 * Did the inital refactoring from AddressBook to TaskList for storage and documents [[#35](https://github.com/CS2103JAN2017-W14-B1/main/pull/35)]
-* Did AboutUs.md [[#80](https://github.com/CS2103JAN2017-W14-B1/main/pull/97/)]
-* Did Documentation of User and Developer guide and ContactUs
+* Did AboutUs.md and ContactUs.md [[#80](https://github.com/CS2103JAN2017-W14-B1/main/pull/97/)] [[#154](https://github.com/CS2103JAN2017-W14-B1/main/pull/159)]
+* Did Documentation of User and Developer guide [[#102](https://github.com/CS2103JAN2017-W14-B1/main/pull/75)]
 * Did minor UI enhancements
 * Create sample data for manual testing [[#147](https://github.com/CS2103JAN2017-W14-B1/main/pull/157)]
 
@@ -44,7 +44,8 @@ Code Written: <br>
 Other major contributions:<br>
 * Did the inital refactoring for test cases from AddressBook to TaskList [[#43](https://github.com/CS2103JAN2017-W14-B1/main/pull/43)]
 * Set up Travis and Coveralls [[#27](https://github.com/CS2103JAN2017-W14-B1/main/pull/37)]
-* Formatting of User and Developer guide 
+* Formatting of User and Developer guide [[#102](https://github.com/CS2103JAN2017-W14-B1/main/pull/75)]
+* Did UI enhancements 
 
 
 -----
@@ -57,7 +58,7 @@ Responsibilities: Scheduling and tracking <br>
 Features implemented: <br>
 * [Add Command](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/docs/UserGuide.md#32-adding-a-task-add) <br>
 * [Done Command](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/docs/UserGuide.md#done)<br>
-* [Undone Command]()<br>
+* [Undone Command](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/docs/UserGuide.md#37-unmarking-a-task-undone)<br>
 
 Code Written: <br>
 [[Functional Code](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/collated/main/A0143355J.md)] [[Testing Code](https://github.com/CS2103JAN2017-W14-B1/main/blob/master/collated/test/A0143355J.md)]
@@ -65,7 +66,7 @@ Code Written: <br>
 Other major contributions:<br>
 * Did refactoring for documents [[#53](https://github.com/CS2103JAN2017-W14-B1/main/pull/53)]
 * Did README.md [[#16](https://github.com/CS2103JAN2017-W14-B1/main/pull/16)]
-* Did Documentation of User and Developer guide
+* Did Documentation of User and Developer guide [[#102](https://github.com/CS2103JAN2017-W14-B1/main/pull/75)]
 * Did UI enhancements
 
 -----
@@ -87,8 +88,8 @@ Code Written: <br>
 
 Other major contributions:<br>
 * Did the inital refactoring from AddressBook to TaskList [[#1](https://github.com/CS2103JAN2017-W14-B1/main/pull/13)]<br>
-* Did Documentation of User and Developer guide
-* Did UI enhancements
+* Did Documentation of User and Developer guide [[#85](https://github.com/CS2103JAN2017-W14-B1/main/pull/108)] [[#86](https://github.com/CS2103JAN2017-W14-B1/main/pull/108)]
+* Did minor UI enhancements
 
 
 
