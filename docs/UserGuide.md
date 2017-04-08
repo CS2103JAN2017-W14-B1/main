@@ -181,16 +181,18 @@ As shown in Figure 3, priority is displayed next to the task name and tags are d
 
 <a name="find"></a>
 ### 3.3. Finding a task: find
-Finds all tasks with the following keywords<br>
+Finds all tasks by name, substring, status and tag<br>
 
 > ***Flexible command:*** `locate`
 
-Format: `find KEYWORD...`
+Format: `find {TASK_DETAILS}{s/STATUS}{t/TAGS}`
 
 > Search is case insensitive <br>
-> Order of keywords does not matter <br>
-> Tasks containing all keywords will be returned
+> Only one of the parameters must be specified<br>
+> Tasks containing all the keywords specified by user will be returned
 
+#### 3.3.1 Finding a task by name 
+Finds all tasks with the following name<br>
 Example: <br>
 
 * find assignments
@@ -198,6 +200,41 @@ Example: <br>
 
 * find lecture tutorial
 > Returns all tasks with lecture and tutorial in their name or tasks with both lecture and tutorial as tags
+
+<br>
+
+#### 3.3.2 Finding a task by substring
+Finds all tasks containing any part of prefix or suffix specified<br>
+Example: <br>
+
+* find  eval
+> Returns all tasks that has the prefix eval in their name, for example a task with name evalutation report will be returned
+
+* find  ing
+> Returns all tasks with the suffix ing in their name, for example a task with name jogging will be returned
+
+#### 3.3.2 Finding a task by tags
+Finds all tasks with the tags specified <br>
+Multiple tags can be stated and only tasks with all specified tags will be returned
+
+Example: <br>
+
+* find t/work
+> Returns all tasks with the tag work 
+
+* find t/family friends
+> Returns all tasks with the tags both family and work
+
+#### 3.3.3 Finding a task by status 
+Finds all tasks that are marked as completed or uncompleted
+
+Example:<br>
+
+* find s/completed
+> Returns all tasks that are marked as completed 
+
+* find s/not completed 
+> Returns all tasks that are uncompleted
 
 <br>
 
