@@ -260,7 +260,7 @@ Example:
 <br>
 
 <a name="undone"></a>
-### 3.7 Unmarks a task: undone
+### 3.7 Unmarking a task: undone
 
 Marks a completed task as uncompleted<br>
 
@@ -276,7 +276,7 @@ Similar to `delete`, `undone` is also possible after a `find` command<br>
 <br>
 
 <a name="edit"></a>
-### 3.8. Modifies a current task: edit
+### 3.8. Modifying a current task: edit
 
 Edits a task with the specified index. All parameters in the task with the specified index can be edited<br>
 
