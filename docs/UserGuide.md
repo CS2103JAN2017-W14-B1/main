@@ -13,14 +13,15 @@ By : `Team W14-B1`  &nbsp;&nbsp;&nbsp;&nbsp; Since: `February 2017`  &nbsp;&nbsp
     3.4. [Listing all tasks: list](#list)<br>
     3.5. [Deleting a task: delete](#delete)<br>
     3.6. [Marking a task: done](#done)<br>
-    3.7. [Modifying a task: edit](#edit)<br>
-    3.8. [Undoing changes: undo](#undo)<br>
-    3.9. [Reverting undos: redo](#redo)<br>
-    3.10. [Sorting tasks: sort](#sort)<br>
-    3.11. [Clearing entries: clear](#clear)<br>
-    3.12. [Saving the program data to a specified path: save](#save)<br>
-    3.13. [Loading the program data from a specified path: load](#load)<br>
-    3.14. [Exiting the program: exit](#exit)<br>
+    3.7. [Unmarking a task: undone](#undone)<br>
+    3.8. [Modifying a task: edit](#edit)<br>
+    3.9. [Undoing changes: undo](#undo)<br>
+    3.10. [Reverting undos: redo](#redo)<br>
+    3.11. [Sorting tasks: sort](#sort)<br>
+    3.12. [Clearing entries: clear](#clear)<br>
+    3.13. [Saving the program data to a specified path: save](#save)<br>
+    3.14. [Loading the program data from a specified path: load](#load)<br>
+    3.15. [Exiting the program: exit](#exit)<br>
 4. [FAQ](#4-faq)
 5. [Command Summary](#5-command-summary)
 
@@ -258,8 +259,24 @@ Example:
 
 <br>
 
+<a name="undone"></a>
+### 3.7 Unmarks a task: undone
+
+Marks a completed task as uncompleted<br>
+
+Format:` undone INDEX`
+
+Example:
+* list<br>
+    done 5
+> Uncompletes 5th task from task manager
+
+Similar to `delete`, `undone` is also possible after a `find` command<br>
+
+<br>
+
 <a name="edit"></a>
-### 3.7. Modifies a current task: edit
+### 3.8. Modifies a current task: edit
 
 Edits a task with the specified index. All parameters in the task with the specified index can be edited<br>
 
@@ -274,7 +291,7 @@ Example:
 <br>
 
 <a name="undo"></a>
-### 3.8. Undoing changes: undo
+### 3.9. Undoing changes: undo
 
 Reverts the results of the previous action, in the event a mistake is made
 
@@ -298,7 +315,7 @@ Example:
 <br>
 
 <a name="redo"></a>
-### 3.9. Reverting undos: redo
+### 3.10. Reverting undos: redo
 
 Reverts previous undo command(s)
 
@@ -307,7 +324,7 @@ Format: `redo`
 <br>
 
 <a name="sort"></a>
-### 3.10. Sorting tasks: sort
+### 3.11. Sorting tasks: sort
 
 Sorts tasks based on task name, start date, end date or priority level<br>
 
@@ -332,7 +349,7 @@ Example:
 <br>
 
 <a name="clear"></a>
-### 3.11. Clearing entries: clear
+### 3.12. Clearing entries: clear
 Clears all tasks or groups of task<br>
 
 Format: `clear {t/TAG}{s/STATUS}`
@@ -349,7 +366,7 @@ Example:
 <br>
 
 <a name="save"></a>
-### 3.12. Saving the program data to a specified path: save
+### 3.13. Saving the program data to a specified path: save
 Save FlexiTask list to a file specified by user<br>
 Other FlexiTask list will be saved to the default location: data/tasklist.xml<br>
 
@@ -368,7 +385,7 @@ Example:
 <br>
 
 <a name="load"></a>
-### 3.13. Loading the program data from a specified path: load
+### 3.14. Loading the program data from a specified path: load
 
 
 Load FlexiTask list from file specified by user<br>
@@ -383,7 +400,7 @@ Example:
 * load users/user/Documents/mytasklist.xml
 
 <a name="exit"></a>
-### 3.14. Exiting the program: exit
+### 3.15. Exiting the program: exit
 Exits the program<br>
 
 Format: `exit`
