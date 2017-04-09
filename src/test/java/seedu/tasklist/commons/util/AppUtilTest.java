@@ -1,6 +1,7 @@
 package seedu.tasklist.commons.util;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -12,13 +13,19 @@ public class AppUtilTest {
     public ExpectedException thrown = ExpectedException.none();
 
 
-
+    //author A0141993X
     @Test
-    public void getImage_exitingImage() {
-        assertNotNull(AppUtil.getImage("/images/address_book_32.png"));
+    public void getImage_existingImage() {
+        assertNotNull(AppUtil.getImage("/images/flexiTaskAppIcon.png"));
+    }
+    
+    @Test
+    public void getImage_nonExistingImage() {
+        thrown.expect(NullPointerException.class);
+        AppUtil.getImage("/images/flexiTaskAppIcon2.png");
     }
 
-
+//@@author
     @Test
     public void getImage_nullGiven_assertionError() {
         thrown.expect(AssertionError.class);
