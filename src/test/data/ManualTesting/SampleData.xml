@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flexitask>
+    <tasks>
+        <name>AI Conference</name>
+        <comment>inform boss</comment>
+        <type>event</type>
+        <priority>high</priority>
+        <status>false</status>
+        <startDate>2017-05-05T00:00:00+08:00</startDate>
+        <endDate>2017-05-08T00:00:00+08:00</endDate>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Apply for residence permit</name>
+        <comment>check documents required</comment>
+        <type>deadline</type>
+        <priority>medium</priority>
+        <status>true</status>
+        <deadline>2017-04-10T23:59:00+08:00</deadline>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Buy anniversary present</name>
+        <comment>parents' wedding aniversary</comment>
+        <type>deadline</type>
+        <priority>low</priority>
+        <status>true</status>
+        <deadline>2017-04-07T18:00:00+08:00</deadline>
+        <tagged>personal</tagged>
+        <tagged>family</tagged>
+    </tasks>
+    <tasks>
+        <name>Buy groceries</name>
+        <comment>on the way home</comment>
+        <type>floating</type>
+        <priority>high</priority>
+        <status>false</status>
+        <tagged>personal</tagged>
+    </tasks>
+    <tasks>
+        <name>Change Starhub Plan</name>
+        <comment>cable tv plan</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-04-26T13:00:00+08:00</deadline>
+        <tagged>personal</tagged>
+    </tasks>
+    <tasks>
+        <name>Check Email</name>
+        <comment>check everyday</comment>
+        <type>floating</type>
+        <priority>high</priority>
+        <status>false</status>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Check Project Manuals</name>
+        <comment>discuss with manager</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>true</status>
+        <deadline>2017-04-01T11:00:00+08:00</deadline>
+        <tagged>work</tagged>
+        <tagged>project</tagged>
+    </tasks>
+    <tasks>
+        <name>Check Q2 Audit Report</name>
+        <comment>NIL</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-04-20T20:00:00+08:00</deadline>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Clean House</name>
+        <comment>change bed sheets</comment>
+        <type>floating</type>
+        <priority>medium</priority>
+        <status>false</status>
+        <tagged>personal</tagged>
+    </tasks>
+    <tasks>
+        <name>Clean Office table</name>
+        <comment>very messy</comment>
+        <type>deadline</type>
+        <priority>medium</priority>
+        <status>false</status>
+        <deadline>2017-04-13T22:00:00+08:00</deadline>
+        <tagged>work</tagged>
+        <tagged>personal</tagged>
+    </tasks>
+    <tasks>
+        <name>Company Connection dinner</name>
+        <comment>prepare suit</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-04-20T18:20:00+08:00</deadline>
+        <tagged>work</tagged>
+        <tagged>networking</tagged>
+    </tasks>
+    <tasks>
+        <name>Dad birthday</name>
+        <comment>get present</comment>
+        <type>event</type>
+        <priority>high</priority>
+        <status>false</status>
+        <startDate>2017-04-14T12:00:00+08:00</startDate>
+        <endDate>2017-04-14T19:00:00+08:00</endDate>
+        <tagged>family</tagged>
+    </tasks>
+    <tasks>
+        <name>Dad's doctor appointment</name>
+        <comment>accompany dad</comment>
+        <type>event</type>
+        <priority>NIL</priority>
+        <status>true</status>
+        <startDate>2017-03-25T14:00:00+08:00</startDate>
+        <endDate>2017-03-25T16:00:00+08:00</endDate>
+        <tagged>personal</tagged>
+        <tagged>family</tagged>
+    </tasks>
+    <tasks>
+        <name>Dinner with Emily</name>
+        <comment>At Jem</comment>
+        <type>deadline</type>
+        <priority>medium</priority>
+        <status>true</status>
+        <deadline>2017-03-26T18:00:00+08:00</deadline>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
+        <name>Dinner with wife</name>
+        <comment>At Orchard</comment>
+        <type>event</type>
+        <priority>medium</priority>
+        <status>false</status>
+        <startDate>2017-04-17T17:00:00+08:00</startDate>
+        <endDate>2017-04-17T22:00:00+08:00</endDate>
+        <tagged>family</tagged>
+    </tasks>
+    <tasks>
+        <name>Do laundry</name>
+        <comment>house work</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-03-30T15:20:00+08:00</deadline>
+        <tagged>personal</tagged>
+    </tasks>
+    <tasks>
+        <name>Drink water</name>
+        <comment>to improve brain function</comment>
+        <type>floating</type>
+        <priority>high</priority>
+        <status>false</status>
+        <tagged>health</tagged>
+    </tasks>
+    <tasks>
+        <name>Email errors in report to Jane</name>
+        <comment>include attachments</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-04-19T21:00:00+08:00</deadline>
+        <tagged>project</tagged>
+    </tasks>
+    <tasks>
+        <name>Email project manager</name>
+        <comment>cv</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>true</status>
+        <deadline>2017-03-21T17:00:00+08:00</deadline>
+        <tagged>NOC</tagged>
+    </tasks>
+    <tasks>
+        <name>Emily Birthday Party</name>
+        <comment>Seaview Resort</comment>
+        <type>event</type>
+        <priority>high</priority>
+        <status>false</status>
+        <startDate>2017-04-21T19:00:00+08:00</startDate>
+        <endDate>2017-04-21T23:00:00+08:00</endDate>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
+        <name>Get Haircut</name>
+        <comment>near CCK mrt</comment>
+        <type>floating</type>
+        <priority>low</priority>
+        <status>false</status>
+        <tagged>personal</tagged>
+    </tasks>
+    <tasks>
+        <name>Go Cold Storage</name>
+        <comment>buy fruits</comment>
+        <type>floating</type>
+        <priority>NIL</priority>
+        <status>false</status>
+    </tasks>
+    <tasks>
+        <name>Good Friday</name>
+        <comment>holiday</comment>
+        <type>deadline</type>
+        <priority>NIL</priority>
+        <status>false</status>
+        <deadline>2017-04-14T23:00:00+08:00</deadline>
+    </tasks>
+    <tasks>
+        <name>Health checkup</name>
+        <comment>bring appointment card</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-04-12T15:00:00+08:00</deadline>
+        <tagged>health</tagged>
+    </tasks>
+    <tasks>
+        <name>Lunch with Jason</name>
+        <comment>NIL</comment>
+        <type>deadline</type>
+        <priority>NIL</priority>
+        <status>false</status>
+        <deadline>2017-04-13T12:00:00+08:00</deadline>
+        <tagged>work</tagged>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
+        <name>Meeting</name>
+        <comment>prepare notes</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-05-01T00:00:00+08:00</deadline>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Movie date with friends</name>
+        <comment>need to relax</comment>
+        <type>floating</type>
+        <priority>low</priority>
+        <status>false</status>
+        <tagged>family</tagged>
+        <tagged>friends</tagged>
+    </tasks>
+    <tasks>
+        <name>Plan outing with family</name>
+        <comment>ask for location</comment>
+        <type>floating</type>
+        <priority>medium</priority>
+        <status>false</status>
+        <tagged>personal</tagged>
+    </tasks>
+    <tasks>
+        <name>Pre Departure Briefing 2</name>
+        <comment>complusory</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-07-21T21:26:38.813+08:00</deadline>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Pre Departure briefing</name>
+        <comment>complusory</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-05-15T21:23:07.739+08:00</deadline>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Prepare for RoadShow</name>
+        <comment>For Project Delta</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-04-12T19:00:00+08:00</deadline>
+        <tagged>project</tagged>
+    </tasks>
+    <tasks>
+        <name>Print Notes for meeting</name>
+        <comment>help Jason, print 2 copies</comment>
+        <type>floating</type>
+        <priority>low</priority>
+        <status>false</status>
+    </tasks>
+    <tasks>
+        <name>Project  Delta Presentation</name>
+        <comment>NIL</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>true</status>
+        <deadline>2017-03-25T12:00:00+08:00</deadline>
+        <tagged>project</tagged>
+    </tasks>
+    <tasks>
+        <name>Project Delta Meeting</name>
+        <comment>revise documents</comment>
+        <type>deadline</type>
+        <priority>medium</priority>
+        <status>false</status>
+        <deadline>2017-04-12T10:00:00+08:00</deadline>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Proposal to improve productivity</name>
+        <comment>discuss with team members</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-04-13T17:00:00+08:00</deadline>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Read Project Manual</name>
+        <comment>cs2103T</comment>
+        <type>floating</type>
+        <priority>high</priority>
+        <status>false</status>
+        <tagged>project</tagged>
+    </tasks>
+    <tasks>
+        <name>Renew season parking</name>
+        <comment>$35</comment>
+        <type>deadline</type>
+        <priority>medium</priority>
+        <status>false</status>
+        <deadline>2017-04-15T17:00:00+08:00</deadline>
+        <tagged>car</tagged>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Report Draft</name>
+        <comment>Project Bravo</comment>
+        <type>deadline</type>
+        <priority>medium</priority>
+        <status>false</status>
+        <deadline>2017-04-13T18:00:00+08:00</deadline>
+        <tagged>project</tagged>
+    </tasks>
+    <tasks>
+        <name>Request for more funding $$</name>
+        <comment>For Project Charizard</comment>
+        <type>deadline</type>
+        <priority>low</priority>
+        <status>false</status>
+        <deadline>2017-04-12T18:00:00+08:00</deadline>
+        <tagged>project</tagged>
+    </tasks>
+    <tasks>
+        <name>Respond to Boss emails</name>
+        <comment>work</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>true</status>
+        <deadline>2017-03-24T15:00:00+08:00</deadline>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Server maintanance</name>
+        <comment>remember to back up</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-04-30T12:00:00+08:00</deadline>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Shopping</name>
+        <comment>with mom</comment>
+        <type>floating</type>
+        <priority>medium</priority>
+        <status>false</status>
+        <tagged>family</tagged>
+    </tasks>
+    <tasks>
+        <name>Soft skills training workshop</name>
+        <comment>compulsory, report attendance of team to manager</comment>
+        <type>event</type>
+        <priority>high</priority>
+        <status>false</status>
+        <startDate>2017-04-12T13:00:00+08:00</startDate>
+        <endDate>2017-04-12T16:00:00+08:00</endDate>
+        <tagged>workshop</tagged>
+    </tasks>
+    <tasks>
+        <name>Submit Project Delta Project Proposal</name>
+        <comment>NIL</comment>
+        <type>deadline</type>
+        <priority>medium</priority>
+        <status>true</status>
+        <deadline>2017-03-20T18:00:00+08:00</deadline>
+        <tagged>work</tagged>
+        <tagged>project</tagged>
+    </tasks>
+    <tasks>
+        <name>System Update</name>
+        <comment>finals</comment>
+        <type>deadline</type>
+        <priority>low</priority>
+        <status>false</status>
+        <deadline>2017-04-22T23:00:00+08:00</deadline>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Temple visit</name>
+        <comment>bus 190</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>false</status>
+        <deadline>2017-04-13T09:00:00+08:00</deadline>
+        <tagged>family</tagged>
+    </tasks>
+    <tasks>
+        <name>Update Excel spreadsheet</name>
+        <comment>Project Delta finances</comment>
+        <type>floating</type>
+        <priority>NIL</priority>
+        <status>false</status>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Update Microsoft</name>
+        <comment>ask technical services</comment>
+        <type>deadline</type>
+        <priority>high</priority>
+        <status>true</status>
+        <deadline>2017-04-01T21:00:00+08:00</deadline>
+        <tagged>work</tagged>
+    </tasks>
+    <tasks>
+        <name>Wash car</name>
+        <comment>very dirty</comment>
+        <type>floating</type>
+        <priority>high</priority>
+        <status>false</status>
+        <tagged>car</tagged>
+    </tasks>
+    <tasks>
+        <name>Watch Emily's Performance at SCO</name>
+        <comment>buy flowers</comment>
+        <type>event</type>
+        <priority>medium</priority>
+        <status>false</status>
+        <startDate>2017-03-27T14:00:00+08:00</startDate>
+        <endDate>2017-03-27T16:00:00+08:00</endDate>
+        <tagged>personal</tagged>
+    </tasks>
+    <tasks>
+        <name>Watch musical with family</name>
+        <comment>esplanade</comment>
+        <type>floating</type>
+        <priority>medium</priority>
+        <status>false</status>
+        <tagged>family</tagged>
+    </tasks>
+    <tags>work</tags>
+    <tags>family</tags>
+    <tags>friends</tags>
+    <tags>car</tags>
+    <tags>health</tags>
+    <tags>NOC</tags>
+    <tags>project</tags>
+    <tags>lesson</tags>
+    <tags>personal</tags>
+    <tags>class</tags>
+    <tags>Exam</tags>
+    <tags>assignment</tags>
+    <tags>workshop</tags>
+    <tags>networking</tags>
+</flexitask>
