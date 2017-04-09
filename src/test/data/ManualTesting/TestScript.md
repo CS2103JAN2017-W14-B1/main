@@ -110,7 +110,7 @@ Please note that the actual date and time displayed by FlexiTask will depend on 
 
 
 
-<br>
+
 ## 3. Find Command
 ------
 ### 3.1 Find by task name
@@ -155,7 +155,8 @@ Please note that the actual date and time displayed by FlexiTask will depend on 
 `9 tasks listed!`
 - TaskList Panel lists all tasks which contains the tag `family` as one of its tags.
 
-<br>
+
+
 ## 4. List Command
 ------
 > **Command:** `list`<br>
@@ -165,6 +166,7 @@ Please note that the actual date and time displayed by FlexiTask will depend on 
 - TaskList panel lists all tasks on the left panel.
 
 <br>
+
 
 ## 5. Delete Command
 ------
@@ -213,6 +215,7 @@ Example: delete 1`
 
 <br>
 
+
 ## 6. Done Command
 ------
 ### 6.1 mark a task as done
@@ -247,6 +250,8 @@ Example: done 1`
 - The index specified must be valid (exists in the task list).
 
 <br>
+
+
 ## 7. Undone Command
 ------
 ### 7.1 mark a done task as undone
@@ -283,6 +288,7 @@ Example: undone 1`
 `The task index provided is invalid`
 - The index specified must be valid (exists in the task list).
 <br>
+
 
 ## 8. Edit Command
 ------
@@ -446,7 +452,7 @@ Example: undone 1`
 
 ## 12. Sort Command
 ------
-###12.1 Sort by name 
+### 12.1 Sort by name 
 > **Command:** `sort n` <br>
 > **Result:**<br>
 - Result display panel posts message:<br>
@@ -454,7 +460,7 @@ Example: undone 1`
 - TaskList panel displays task cards sorted by lexicographical order at the left task list panel.
 
 
-###12.2 Sort by date
+### 12.2 Sort by date
 > **Command:** `sort d` <br>
 > **Result:**<br>
 - Result display panel posts message:<br>
@@ -462,7 +468,7 @@ Example: undone 1`
 - TaskList panel displays task cards sorted by date starting from the earliest at the left task list panel.
 
 
-###12.3 Sort by priority 
+### 12.3 Sort by priority 
 > **Command:** `sort p` <br>
 > **Result:**<br>
 - Result display panel posts message:<br>
@@ -470,7 +476,7 @@ Example: undone 1`
 - TaskList panel displays task cards sorted by priority starting from tasks ranked with highest priority 
 followed by medium and then low at the left task list panel.
 
-###12.4 invalid commands: sort by invalid parameter 
+### 12.4 invalid commands: sort by invalid parameter 
 > **Command:** `sort q` <br>
 > **Result:**<br>
 - Result display panel posts message:<br>
@@ -482,19 +488,19 @@ Example: sort n`
 
 ## 13. Save Command
 ------
-###13.1 Save to existing folder 
+### 13.1 Save to existing folder 
 > **Command:** `save data/myTaskList.xml` <br>
 > **Result:**<br>
 - Result display panel posts message:<br>
 `File is successfully saved to: data/myTaskList.xml`<br>
 
-###13.2 Save to directory that doesn't exist 
+### 13.2 Save to directory that doesn't exist 
 > **Command:** `save data/Project/myTaskList.xml` <br>
 > **Result:**<br>
 - Result display panel posts message:<br>
 `File is successfully saved to: data/Project/myTaskList.xml`
 
-###13.3 Save to invalid path 
+### 13.3 Save to invalid path 
 > **Command:** `save data/myTaskList.png` <br>
 > **Result:**<br>
 - Result display panel posts message:<br>
@@ -503,13 +509,13 @@ Example: sort n`
 
 ## 14. Load Command
 ------
-###14.1 Load from original given tasklist 
+### 14.1 Load from original given tasklist 
 > **Command:** `load data/tasklist.xml` <br>
 > **Result:**<br>
 - Result display panel posts message:<br>
 `Data successfully loaded from: data/tasklist.xml`
 
-###14.2 Load from file that doesn't exits 
+### 14.2 Load from file that doesn't exits 
 > **Command:** `load data/file.xml` <br>
 > **Result:**<br>
 - Result display panel posts message:<br>
