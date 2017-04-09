@@ -67,8 +67,8 @@ Try FlexiTask now and benefit from its convenient features.
 > * Items with `...` after them can have multiple instances
 > * Parameters can be in any order
 > * Commands can be case-insensitive (Both "Add" and "add" are acceptable)
-> * <span style="color:red;">Contents entered can contain any character except slash '/'. Please use backslash '\' instead.</span>
-> * Commands support ***flexible commands:*** Common alternatives for the keywords will be accepted. These will be listed in the respective sections below.
+> * <span style="color:red;">Contents entered can contain any character except slash '/'. Please use backslash '\' instead</span>
+> * Commands support ***flexible commands:*** Common alternatives for the keywords will be accepted. These will be listed in the respective sections below
 
 `Entering in dates`: Flexitask supports flexible date formats that can be entered in the formats specified below:
 
@@ -130,7 +130,7 @@ Format: `add TASK_DETAILS [p/PRIORITY_LEVEL] [c/COMMENTS] [t/TAGS...] [d/DATES].
 > ***Flexible command:*** `tag/`, `tags/` <br>
 > Each tag is separated with spaces after the '/t' command<br>
 > Example: *t/project leisure* means 2 tags of "project" and "leisure" to be created
-* Use `DATES` to add a deadline or a timeframe to the task.<br>
+* Use `DATES` to add a deadline or a timeframe to the task<br>
 > ***Flexible command:*** `date/`, `dates/`<br>
 > Date and time can be written in any order, as it is processed by an inbuilt natural language processor
 
