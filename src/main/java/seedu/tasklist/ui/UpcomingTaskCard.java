@@ -24,8 +24,6 @@ public class UpcomingTaskCard extends UiPart<Region> {
     private Label firstDate;
     @FXML
     private Label secondDate;
-    @FXML
-    private Label connector;
 
     /**
      * Creates an {@code UpcomingTaskCard} Object and sets the values of the Labels
@@ -53,19 +51,15 @@ public class UpcomingTaskCard extends UiPart<Region> {
      */
     private void setDate(ReadOnlyTask task) {
         String taskType = task.getType();
-        connector.setStyle("-fx-font-size: 120%");
         firstDate.setStyle("-fx-font-size: 120%");
         secondDate.setStyle("-fx-font-size: 120%");
         switch (taskType) {
         case DeadlineTask.TYPE:
             firstDate.setText("Deadline :");
-            connector.setText("- ");
-            connector.setStyle("-fx-text-fill: white");
             secondDate.setText(((ReadOnlyDeadlineTask) task).getDeadlineStringForUpcomingTask());
             break;
         case EventTask.TYPE:
             firstDate.setText(((ReadOnlyEventTask) task).getStartDateStringForUpcomingTask());
-            connector.setText("- ");
             secondDate.setText(((ReadOnlyEventTask) task).getEndDateStringForUpcomingTask());
             break;
         default:
