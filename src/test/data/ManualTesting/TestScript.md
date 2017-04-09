@@ -71,7 +71,28 @@ Please note that the actual date and time displayed by FlexiTask will depend on 
 - TaskList panel displays newly added task card at the bottom of the left task list panel<br>
 - The upcoming task panel displays newly added task card in "Tomorrow" sorted by time.
 
-### 2.3.1 Add an event with Natural Language
+### 2.3.1 invalid command: wrong priority value
+> **Command:** `add fetch son from school p/important`<br>
+> **Result:**<br>
+- Result display panel posts message:<br>
+`Task priorities should only contain 'high', 'medium', or 'low', and it should not be blank`<br>
+- Priorities can only contain 'high', 'medium' or 'low' if it is inputted
+
+### 2.3.2 invalid command: more than two dates
+> **Command:** `add fetch son from school d/today to tomorrow to day after tomorrow`<br>
+> **Result:**<br>
+- Result display panel posts message:<br>
+`Please enter only one date for Deadlines and two dates for Events.`<br>
+- Tasks can only have one date for Deadlines or two dates for Events.
+
+### 2.3.3 invalid command: task already inside
+> **Command:** `create Submit presentation slides d/today c/discuss with Bob p/high`<br>
+> **Result:**<br>
+- Result display panel posts message:<br>
+`This task already exists in the task list`<br>
+- Tasks that already exists cannot be added in again
+
+### 2.4.1 Add an event with Natural Language
 > **Command:** `add meeting with boss d/tomorrow at 4pm to tomorrow at 6pm c/take minutes p/medium`<br>
 > **Result:**<br>
 - Result display panel posts message:<br>
@@ -79,7 +100,7 @@ Please note that the actual date and time displayed by FlexiTask will depend on 
 - TaskList panel displays newly added task card at the bottom of the left task list panel.<br>
 - The upcoming task panel displays newly added task card in "Tomorrow" sorted by time.
 
-### 2.3.2 Add an event with flexible command and prefix
+### 2.4.2 Add an event with flexible command and prefix
 > **Command:** `create Tom's birthday cruise d/tomorrow 9pm to day after tomorrow 11pm c/bring present`<br>
 > **Result:**<br>
 - Result display panel posts message:<br>
@@ -87,26 +108,7 @@ Please note that the actual date and time displayed by FlexiTask will depend on 
 - TaskList panel displays newly added task at the bottom of the left task list panel.<br>
 - The upcoming task panel displays newly added task card in "Tomorrow" sorted by time.
 
-### 2.4.1 invalid command: wrong priority value
-> **Command:** `add fetch son from school p/important`<br>
-> **Result:**<br>
-- Result display panel posts message:<br>
-`Task priorities should only contain 'high', 'medium', or 'low', and it should not be blank`<br>
-- Priorities can only contain 'high', 'medium' or 'low' if it is inputted
 
-### 2.4.2 invalid command: more than two dates
-> **Command:** `add fetch son from school d/today to tomorrow to day after tomorrow`<br>
-> **Result:**<br>
-- Result display panel posts message:<br>
-`Please enter only one date for Deadlines and two dates for Events.`<br>
-- Tasks can only have one date for Deadlines or two dates for Events.
-
-### 2.4.3 invalid command: task already inside
-> **Command:** `create Tom's birthday cruise d/tomorrow 9pm to day after tomorrow 11pm c/bring present`<br>
-> **Result:**<br>
-- Result display panel posts message:<br>
-`This task already exists in the task list`<br>
-- Tasks that already exists cannot be added in again
 
 <br>
 ## 3. Find Command
@@ -170,14 +172,14 @@ Please note that the actual date and time displayed by FlexiTask will depend on 
 > **Command:** `delete 1`<br>
 > **Result:**<br>
 - Result display panel posts message:<br>
-`Deleted Task: AI Conference StartDate: 05/05/2017 00:00 EndDate: 08/05/2017 00:00 Comment: inform boss Priority: high Tags: [work]`
+`Deleted Task: Buy anniversary present Deadline: 07/04/2017 18:00 Comment: parents' wedding aniversary Priority: low Tags: [personal][family]`
 - The deleted task will disappear from the TaskList panel.
 
 ### 5.2 Delete a task using flexible commands
 > **Command:** `remove 3`<br>
 > **Result:**<br>
 - Result display panel posts message:<br>
-`Deleted Task: Buy groceries Comment: on the way home Priority: high Tags: [personal]`
+`Deleted Task: Dinner with wife StartDate: 17/04/2017 17:00 EndDate: 17/04/2017 22:00 Comment: At Orchard Priority: medium Tags: [family]`
 - The deleted task will disappear from the TaskList panel.
 
 ### 5.3 Delete a task after find command
@@ -186,10 +188,11 @@ Please note that the actual date and time displayed by FlexiTask will depend on 
 - Result display panel posts message:<br>
 `2 tasks listed!`
 <br>
+
 > **Command:** `delete 1`<br>
 > **Result:**<br>
 - Result display panel posts message:<br>
-`Deleted Task: Respond to Boss emails Deadline: 24/03/2017 15:00 Comment: work Priority: high Tags: [work]!`
+`Deleted Task: Respond to Boss emails Deadline: 24/03/2017 15:00 Comment: work Priority: high Tags: [work]`
 
 ### 5.4.1 invalid commands: invalid task index
 > **Command:** `delete 0`<br>
@@ -217,7 +220,7 @@ Example: delete 1`
 > **Command:** `done 3`<br>
 > **Result:**<br>
 - Result display panel posts message:<br>
-`Done Task: Change Starhub Plan Deadline: 26/04/2017 13:00 Comment: cable tv plan Priority: high Tags: [personal]`
+`Done Task: Buy groceries Comment: on the way home Priority: high Tags: [personal]`
 - The task will be marked done, indicated by the green tick appearing on the right of its task card.
 
 ### 6.2.1 invalid commands: mark a task that is already done
@@ -248,20 +251,21 @@ Example: done 1`
 ------
 ### 7.1 mark a done task as undone
 > **Command:** `list`<br>
-> **Command:** `done 1`<br>
+> **Command:** `undone 2`<br>
 > **Result:**<br>
 - Result display panel posts message:<br>
 `Undone Task: Apply for residence permit Deadline: 10/04/2017 23:59 Comment: check documents required Priority: medium Tags: [work]`
 - The task will be marked undone, indicated by the green tick disappearing on the right of its task card.
 
 ### 7.2.1 invalid commands: mark a task that is already undone
- > **Command:** `list`<br>
+> **Command:** `list`<br>
 > **Command:** `undone 4`<br>
 > **Result:**<br>
 - Result display panel posts message:<br>
 `Task has not been completed!` 
 
 ### 7.2.2 invalid commands: invalid task index
+> **Command:** `list`<br>
 > **Command:** `undone 0`<br>
 > **Result:**<br>
 - Result display panel posts message:<br>
@@ -272,6 +276,7 @@ Example: undone 1`
 - The index specified must be valid (positive integer).
 
 ### 7.2.3 invalid commands: invalid task index
+> **Command:** `list`<br>
 > **Command:** `undone 111`<br>
 > **Result:**<br>
 - Result display panel posts message:<br>
@@ -362,6 +367,7 @@ Example: undone 1`
 ## 9. Clear Command
 ------
 ### 9.1 Clear tasks according to tag
+> **Command:** `list`<br>
 > **Command:** `clear t/work`<br>
 > **Result:**<br>
 - Result display panel posts message:<br>
@@ -390,10 +396,12 @@ Example: undone 1`
 > **Result:**<br>
 - Result display panel posts message:<br>
 `Task list has been cleared!`<br>
+
 > **Command:** `undo`<br>
 > **Result:**<br>
 - Result display panel posts message:<br>
-`Reverted the most recent action: clear s/completed`
+`Reverted the most recent action: clear s/completed`<br>
+
 > **Command:** `undo`<br>
 > **Result:**<br>
 - Result display panel posts message:<br>
