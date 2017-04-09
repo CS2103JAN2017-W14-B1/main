@@ -20,7 +20,7 @@ import seedu.tasklist.testutil.TestTask;
 public class DoneCommandTest extends TaskListGuiTest {
 
     @Test
-    public void doneFloatingTaskSuccess() throws Exception {
+    public void done_FloatingTask_success() throws Exception {
         int doneTaskIndex = 3;
 
         TestTask doneTask = new FloatingTaskBuilder().
@@ -33,7 +33,7 @@ public class DoneCommandTest extends TaskListGuiTest {
     }
 
     @Test
-    public void doneDeadlineTaskSuccess() throws Exception {
+    public void done_DeadlineTask_success() throws Exception {
         int doneTaskIndex = 5;
 
         TestTask doneTask = new DeadlineTaskBuilder().
@@ -47,7 +47,7 @@ public class DoneCommandTest extends TaskListGuiTest {
     }
 
     @Test
-    public void doneEventTaskSuccess() throws Exception {
+    public void done_EventTask_success() throws Exception {
         int doneTaskIndex = 1;
 
         TestTask doneTask = new EventTaskBuilder().
@@ -63,7 +63,7 @@ public class DoneCommandTest extends TaskListGuiTest {
     }
 
     @Test
-    public void doneFindThenDoneSuccess() throws Exception {
+    public void done_findThenDone_success() throws Exception {
         commandBox.runCommand("find CS3245");
         int filteredTaskListIndex = 1;
         int doneTaskIndex = 2;
@@ -79,19 +79,19 @@ public class DoneCommandTest extends TaskListGuiTest {
     }
 
     @Test
-    public void doneMissingIndexFailure() throws Exception {
+    public void done_MissingIndex_failure() throws Exception {
         commandBox.runCommand("done");
         assertResultMessage(String.format(MESSAGE_INVALID_COMMAND_FORMAT, DoneCommand.MESSAGE_USAGE));
     }
 
     @Test
-    public void doneInvalidIndexFailure() throws Exception {
+    public void done_InvalidIndex_failure() throws Exception {
         commandBox.runCommand("done 100");
         assertResultMessage(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
     }
 
     @Test
-    public void doneAlreadyCompletedFailure() throws Exception {
+    public void done_AlreadyCompleted_failure() throws Exception {
         commandBox.runCommand("done 4");
         commandBox.runCommand("done 4");
         assertResultMessage(DoneCommand.MESSAGE_DONE_ERROR);

@@ -40,16 +40,12 @@ public class DoneCommand extends Command {
 
     @Override
     public CommandResult execute() throws CommandException {
-        List<ReadOnlyTask> lastShownList = model.getFilteredTaskList();
-
-        if (lastShownList.size() < targetIndex) {
-            throw new CommandException(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
-        }
+        checkValidIndex();
 
         //Index adjusted to 0 based
         int adjustedIndex = targetIndex - 1;
 
-        ReadOnlyTask taskToDone = lastShownList.get(adjustedIndex);
+        ReadOnlyTask taskToDone = model.getFilteredTaskList().get(adjustedIndex);
 
         Task doneTask;
 
@@ -70,17 +66,26 @@ public class DoneCommand extends Command {
     }
 
     /**
+     * Checks if the Index is valid task
+     * @throws CommandException if index is invalid
+     */
+    private void checkValidIndex() throws CommandException {
+        List<ReadOnlyTask> lastShownList = model.getFilteredTaskList();
+
+        if (lastShownList.size() < targetIndex) {
+            throw new CommandException(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
+        }
+    }
+
+    /**
      * Creates and returns a {@code Task} with the details of {@code taskToDone}
      * edited with status as COMPLETED.
-     * @throws IllegalValueException
+     * @throws IllegalValueException if task is already completed.
      */
     private Task createDoneTask(ReadOnlyTask taskToDone) throws IllegalValueException {
         assert taskToDone != null;
 
-        Status status = taskToDone.getStatus();
-        if (status.value == Status.COMPLETED) {
-            throw new IllegalValueException(MESSAGE_DONE_ERROR);
-        }
+        checkStatusCompleted(taskToDone);
 
         String type = taskToDone.getType();
         switch (type) {
@@ -100,6 +105,18 @@ public class DoneCommand extends Command {
 
         default:
             return null;
+        }
+    }
+
+    /**
+     * Checks if task is already completed.
+     * @param taskToDone task to be completed
+     * @throws IllegalValueException if it is already completed.
+     */
+    private void checkStatusCompleted(ReadOnlyTask taskToDone) throws IllegalValueException {
+        Status status = taskToDone.getStatus();
+        if (status.value == Status.COMPLETED) {
+            throw new IllegalValueException(MESSAGE_DONE_ERROR);
         }
     }
 

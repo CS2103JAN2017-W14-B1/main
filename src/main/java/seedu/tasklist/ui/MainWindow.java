@@ -115,6 +115,9 @@ public class MainWindow extends UiPart<Region> {
     }
 
     //@@author A0143355J
+    /**
+     * Fills each section of FlexiTask with its appropriate AnchorPane and Placeholder
+     */
     void fillInnerParts() {
         todayTaskPanel = new TodayTaskPanel(getTodayTaskListPlaceholder(), logic.getTodayTaskList());
         tomorrowTaskPanel = new TomorrowTaskPanel(getTomorrowTaskListPlaceholder(), logic.getTomorrowTaskList());
@@ -138,16 +141,28 @@ public class MainWindow extends UiPart<Region> {
     }
 
     //@@author A0143355J
+    /**
+     * Returns the AnchorPane of the Left Task Panel
+     * @return {@code AnchorPane} of Left Task Panel
+     */
     private AnchorPane getTaskListPlaceholder() {
         return taskListPanelPlaceholder;
     }
 
     //@@author A0143355J
+    /**
+     * Returns the AnchorPane of the Today Task Panel
+     * @return {@code AnchorPane} of Today Task Panel
+     */
     private AnchorPane getTodayTaskListPlaceholder() {
         return todayTaskPlaceholder;
     }
 
     //@@author A0143355J
+    /**
+     * Returns the AnchorPane of Tomorrow Task Panel
+     * @return {@code AnchorPane} of Tomorrow Task Panel
+     */
     private AnchorPane getTomorrowTaskListPlaceholder() {
         return tomorrowTaskPlaceholder;
     }
