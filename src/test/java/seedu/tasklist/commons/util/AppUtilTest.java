@@ -1,7 +1,6 @@
 package seedu.tasklist.commons.util;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -18,7 +17,7 @@ public class AppUtilTest {
     public void getImage_existingImage() {
         assertNotNull(AppUtil.getImage("/images/flexiTaskAppIcon.png"));
     }
-    
+
     @Test
     public void getImage_nonExistingImage() {
         thrown.expect(NullPointerException.class);
