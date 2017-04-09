@@ -77,7 +77,7 @@ public class DoneCommand extends Command {
             throw new CommandException(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
         }
     }
-    
+
     /**
      * Creates and returns a {@code Task} with the details of {@code taskToDone}
      * edited with status as COMPLETED.

@@ -40,16 +40,12 @@ public class UndoneCommand extends Command {
 
     @Override
     public CommandResult execute() throws CommandException {
-        List<ReadOnlyTask> lastShownList = model.getFilteredTaskList();
-
-        if (lastShownList.size() < targetIndex) {
-            throw new CommandException(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
-        }
+        checkValidIndex(targetIndex);
 
         //Index adjusted to 0 based
         int adjustedIndex = targetIndex - 1;
 
-        ReadOnlyTask taskToUndone = lastShownList.get(adjustedIndex);
+        ReadOnlyTask taskToUndone = model.getFilteredTaskList().get(adjustedIndex);
 
         Task undoneTask;
 
@@ -70,17 +66,27 @@ public class UndoneCommand extends Command {
     }
 
     /**
-     * Creates and returns a {@code Task} with the details of {@code taskToDone}
-     * edited with status as COMPLETED.
+     * Checks if the Index is valid task
+     * @param index the index of a task
+     * @throws CommandException if index is invalid
+     */
+    private void checkValidIndex(int index) throws CommandException {
+        List<ReadOnlyTask> lastShownList = model.getFilteredTaskList();
+
+        if (lastShownList.size() < targetIndex) {
+            throw new CommandException(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
+        }
+    }
+
+    /**
+     * Creates and returns a {@code Task} with the details of {@code taskToUndone}
+     * edited with status as UNCOMPLETED.
      * @throws IllegalValueException
      */
     private Task createUndoneTask(ReadOnlyTask taskToUndone) throws IllegalValueException {
         assert taskToUndone != null;
 
-        Status status = taskToUndone.getStatus();
-        if (status.value == Status.UNCOMPLETED) {
-            throw new IllegalValueException(MESSAGE_UNDONE_ERROR);
-        }
+        checkStatusUncompleted(taskToUndone);
 
         String type = taskToUndone.getType();
         switch (type) {
@@ -100,6 +106,18 @@ public class UndoneCommand extends Command {
 
         default:
             return null;
+        }
+    }
+
+    /**
+     * Checks if task is already completed.
+     * @param taskToDone task to be completed
+     * @throws IllegalValueException if it is already completed.
+     */
+    private void checkStatusUncompleted(ReadOnlyTask taskToDone) throws IllegalValueException {
+        Status status = taskToDone.getStatus();
+        if (status.value == Status.UNCOMPLETED) {
+            throw new IllegalValueException(MESSAGE_UNDONE_ERROR);
         }
     }
 
