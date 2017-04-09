@@ -43,7 +43,6 @@ public class AddCommand extends Command {
 
     /**
      * Creates an AddCommand using raw values.
-     *
      * @throws IllegalValueException if any of the raw values are invalid
      */
     public AddCommand(String name, Optional<List<Date>> dates, Optional<String> comment,
@@ -64,6 +63,8 @@ public class AddCommand extends Command {
             );
         } else {
             List<Date> dateList = dates.get();
+
+            //Check if it is a DeadlineTask
             if (isDeadline(dateList)) {
                 this.toAdd = new DeadlineTask(
                         new Name(name),
@@ -73,6 +74,8 @@ public class AddCommand extends Command {
                         getDeadline(dateList),
                         new UniqueTagList(tagSet)
                         );
+
+            //Check if it is an Event Task
             } else if (isEvent(dateList)) {
                 this.toAdd = new EventTask(
                         new Name(name),
@@ -91,7 +94,8 @@ public class AddCommand extends Command {
     }
 
     /**
-     * Returns true if dates are present. Used to check for FloatingTask
+     * Check if Dates are present Used to check for FloatingTask
+     * @param dates Optional dates from the parser
      */
     public boolean isDatePresent(Optional<List<Date>> dates) {
         return dates.isPresent();

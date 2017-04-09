@@ -36,6 +36,11 @@ public class Comment {
     }
 
     //@@author A0143355J
+    /**
+     * Creates a comment object depending on whether a comment is present
+     * @param comment is an {@code Optional<String>} Object containing comments from the parser
+     * @throws IllegalValueException if it is not a valid comment
+     */
     public Comment(Optional<String> comment) throws IllegalValueException {
         if (isCommentPresent(comment)) {
             String commentString = comment.get();
@@ -50,10 +55,16 @@ public class Comment {
     }
 
     //@@author A0143355J
+    /**
+     * Checks if a comment present
+     * @param comment is an {@code Optional<String>} Object obtained from the parser
+     * @return {@code true} if a comment is present and {@code false} otherwise
+     */
     public boolean isCommentPresent(Optional<String> comment) {
         return comment.isPresent();
     }
 
+//@@author A0139747N
     /**
      * Returns true if a given string is a valid Task email.
      */

@@ -35,6 +35,11 @@ public class Priority {
     }
 
     //@@author A0143355J
+    /**
+     * Creates a Priority object with the appropriate {@code value}
+     * @param priority is an Optional<String> Object containing priority from the parser
+     * @throws IllegalValueException if invalid priority is entered
+     */
     public Priority(Optional<String> priority) throws IllegalValueException {
         if (priority.isPresent()) {
             String priorityString = priority.get();

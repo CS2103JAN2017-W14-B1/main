@@ -48,6 +48,11 @@ public class TaskCard extends UiPart<Region> {
     private FlowPane tags;
 
     //@@author A0143355J
+    /**
+     * Creates a {@code TaskCard} object and sets the Labels with the given values
+     * @param task is the task to be displayed on the TaskCard
+     * @param displayedIndex is the Index to be displayed on the TaskCard
+     */
     public TaskCard(ReadOnlyTask task, int displayedIndex) {
         super(FXML);
         setCompleted(task);
@@ -60,8 +65,9 @@ public class TaskCard extends UiPart<Region> {
 
     }
 
-    /*
-     * Set image for completed tasks
+    /**
+     * Set image for the TaskCard if the task is completed
+     * @param is the task to be displayed on this task card
      */
     private void setCompleted(ReadOnlyTask task) {
         Image tickImage = AppUtil.getImage(tickSource);
@@ -74,22 +80,25 @@ public class TaskCard extends UiPart<Region> {
         }
     }
 
-    /*
-     * Set name for tasks
+    /**
+     * Set Task name for the {@code TaskCard}
+     * @param is the task to be displayed on this task card
      */
     private void setName(ReadOnlyTask task) {
         name.setText(task.getName().fullName);
     }
 
-    /*
-     * Set ID for tasks
+    /**
+     * Set ID for the {@code TaskCard}
+     * @param is the task to be displayed on this task card
      */
     private void setId(int displayedIndex) {
         id.setText(displayedIndex + ". ");
     }
 
-    /*
-     * Set comment for tasks
+    /**
+     * Set comment for the {@code TaskCard}
+     * @param is the task to be displayed on this task card
      */
     private void setComment(ReadOnlyTask task) {
         String taskComment = task.getComment().value;
@@ -100,15 +109,17 @@ public class TaskCard extends UiPart<Region> {
         }
     }
 
-    /*
-     * Set tags for tasks
+    /**
+     * Set tags for the {@code TaskCard}
+     * @param is the task to be displayed on this task card
      */
     private void setTags(ReadOnlyTask task) {
         task.getTags().forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
     }
 
-    /*
-     * Set the priority level
+    /**
+     * Set the priority level for the {@code TaskCard}
+     * @param is the task to be displayed on this task card
      */
     private void setPriority(ReadOnlyTask task) {
         String priorityLevel = task.getPriority().value;
@@ -135,8 +146,9 @@ public class TaskCard extends UiPart<Region> {
         priority.setTranslateX(20);
     }
 
-    /*
+    /**
      * Set the startDate and endDate or deadline depending on the type of task
+     * @param is the task to be displayed on this task card
      */
     private void setDate(ReadOnlyTask task) {
         String taskType = task.getType();

@@ -27,18 +27,30 @@ public class UpcomingTaskCard extends UiPart<Region> {
     @FXML
     private Label connector;
 
+    /**
+     * Creates an {@code UpcomingTaskCard} Object and sets the values of the Labels
+     * @param task is the {@code ReadOnlyTask} to be shown in the UpcomingTaskCard
+     */
     public UpcomingTaskCard(ReadOnlyTask task) {
         super(FXML);
         setName(task);
         setDate(task);
     }
 
+    /**
+     * Sets the name for the {@code TaskCard}
+     * @param task is the {@code ReadOnlyTask} to be displayed on this UpcomingTaskCard
+     */
     private void setName(ReadOnlyTask task) {
         name.setText(task.getName().fullName);
         name.setStyle("-fx-font-size: 120%");
         name.setTranslateX(27);
     }
 
+    /**
+     * Sets the date(s) for the {@code TaskCard}
+     * @param task is the {@code ReadOnlyTask} to be displayed on this UpcomingTaskCard
+     */
     private void setDate(ReadOnlyTask task) {
         String taskType = task.getType();
         connector.setStyle("-fx-font-size: 120%");

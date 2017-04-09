@@ -1,7 +1,5 @@
 package seedu.tasklist.ui;
 
-import java.util.logging.Logger;
-
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -10,7 +8,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
-import seedu.tasklist.commons.core.LogsCenter;
 import seedu.tasklist.commons.util.FxViewUtil;
 import seedu.tasklist.model.task.ReadOnlyTask;
 
@@ -18,7 +15,7 @@ import seedu.tasklist.model.task.ReadOnlyTask;
  * Panel containing the list of tasks.
  */
 public class TaskListPanel extends UiPart<Region> {
-    private final Logger logger = LogsCenter.getLogger(TaskListPanel.class);
+
     private static final String FXML = "TaskListPanel.fxml";
 
     @FXML
