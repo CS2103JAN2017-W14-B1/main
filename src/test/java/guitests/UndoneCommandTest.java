@@ -20,7 +20,7 @@ import seedu.tasklist.testutil.TestTask;
 public class UndoneCommandTest extends TaskListGuiTest {
 
     @Test
-    public void undoneFloatingTaskSuccess() throws Exception {
+    public void undone_FloatingTask_success() throws Exception {
         commandBox.runCommand("done 3");
         int undoneTaskIndex = 3;
 
@@ -34,7 +34,7 @@ public class UndoneCommandTest extends TaskListGuiTest {
     }
 
     @Test
-    public void undoneDeadlineTaskSuccess() throws Exception {
+    public void undone_DeadlineTask_success() throws Exception {
         commandBox.runCommand("done 5");
         int undoneTaskIndex = 5;
 
@@ -49,7 +49,7 @@ public class UndoneCommandTest extends TaskListGuiTest {
     }
 
     @Test
-    public void undoneEventTaskSuccess() throws Exception {
+    public void undone_EventTask_success() throws Exception {
         commandBox.runCommand("done 1");
         int undoneTaskIndex = 1;
 
@@ -66,7 +66,7 @@ public class UndoneCommandTest extends TaskListGuiTest {
     }
 
     @Test
-    public void undoneFindThenUndoneSuccess() throws Exception {
+    public void undone_FindThenUndone_success() throws Exception {
         commandBox.runCommand("done 2");
         commandBox.runCommand("find CS3245");
         int filteredTaskListIndex = 1;
@@ -83,19 +83,19 @@ public class UndoneCommandTest extends TaskListGuiTest {
     }
 
     @Test
-    public void undoneMissingIndexFailure() throws Exception {
+    public void undone_MissingIndex_failure() throws Exception {
         commandBox.runCommand("undone");
         assertResultMessage(String.format(MESSAGE_INVALID_COMMAND_FORMAT, UndoneCommand.MESSAGE_USAGE));
     }
 
     @Test
-    public void undoneInvalidIndexFailure() throws Exception {
+    public void undone_InvalidIndex_failure() throws Exception {
         commandBox.runCommand("undone 100");
         assertResultMessage(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
     }
 
     @Test
-    public void undoneAlreadyCompletedFailure() throws Exception {
+    public void undone_AlreadyCompleted_failure() throws Exception {
         commandBox.runCommand("undone 4");
         assertResultMessage(UndoneCommand.MESSAGE_UNDONE_ERROR);
     }

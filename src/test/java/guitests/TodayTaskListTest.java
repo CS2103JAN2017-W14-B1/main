@@ -11,7 +11,7 @@ import seedu.tasklist.testutil.TestTask;
 public class TodayTaskListTest extends TaskListGuiTest {
 
     @Test
-    public void addDeadlineTask_Success() throws Exception {
+    public void add_DeadlineTask_success() throws Exception {
         commandBox.runCommand("add Meeting with Tom d/Today c/Clementi");
         TestTask taskToAdd = new DeadlineTaskBuilder()
                 .withName("Meeting with Tom")
@@ -22,7 +22,7 @@ public class TodayTaskListTest extends TaskListGuiTest {
     }
 
     @Test
-    public void addEventTask_Success() throws Exception {
+    public void add_EventTask_success() throws Exception {
         commandBox.runCommand("add Orientation camp d/today to next friday c/School");
         TestTask taskToAdd = new EventTaskBuilder()
                 .withName("Orientation camp")
@@ -34,7 +34,7 @@ public class TodayTaskListTest extends TaskListGuiTest {
     }
 
     @Test
-    public void editDeadlineTask_Success() throws Exception {
+    public void edit_DeadlineTask_success() throws Exception {
         commandBox.runCommand("add Meet Jack for lunch d/Today");
         commandBox.runCommand("find Jack");
         commandBox.runCommand("edit 1 Meet Jack for dinner");
@@ -46,7 +46,7 @@ public class TodayTaskListTest extends TaskListGuiTest {
     }
 
     @Test
-    public void editEventTask_Success() throws Exception {
+    public void edit_EventTask_success() throws Exception {
         commandBox.runCommand("add Tour Europe d/Today to Next Sunday");
         commandBox.runCommand("find Europe");
         commandBox.runCommand("edit 1 Tour America d/Today to Next Friday");
@@ -58,6 +58,10 @@ public class TodayTaskListTest extends TaskListGuiTest {
         assertTaskInsideTodayList(taskToEdit);
     }
 
+    /**
+     * Checks if the task is inside {@code todayListPanel}
+     * @param taskToAdd is the task to be checked
+     */
     private void assertTaskInsideTodayList(TestTask taskToAdd) {
         UpcomingTaskCardHandle addedCard = todayListPanel.navigateToTask(taskToAdd.getName().fullName);
         assertUpcomingTaskMatching(taskToAdd, addedCard);

@@ -11,7 +11,7 @@ import seedu.tasklist.testutil.TestTask;
 public class TomorrowTaskListTest extends TaskListGuiTest {
 
     @Test
-    public void addDeadlineTask_Success() throws Exception {
+    public void add_DeadlineTask_success() throws Exception {
         commandBox.runCommand("add Finish up report d/tomorrow");
         TestTask taskToAdd = new DeadlineTaskBuilder()
                 .withName("Finish up report")
@@ -21,7 +21,7 @@ public class TomorrowTaskListTest extends TaskListGuiTest {
     }
 
     @Test
-    public void addEventTask_Success() throws Exception {
+    public void add_EventTask_success() throws Exception {
         commandBox.runCommand("add Visit Cousin d/tomorrow to next friday");
         TestTask taskToAdd = new EventTaskBuilder()
                 .withName("Visit Cousin")
@@ -32,7 +32,7 @@ public class TomorrowTaskListTest extends TaskListGuiTest {
     }
 
     @Test
-    public void editDeadlineTask_Success() throws Exception {
+    public void edit_DeadlineTask_success() throws Exception {
         commandBox.runCommand("add Submit survey d/tomorrow");
         commandBox.runCommand("find survey");
         commandBox.runCommand("edit 1 d/tomorrow 5pm");
@@ -44,7 +44,7 @@ public class TomorrowTaskListTest extends TaskListGuiTest {
     }
 
     @Test
-    public void editEventTask_Success() throws Exception {
+    public void edit_EventTask_success() throws Exception {
         commandBox.runCommand("add attend conference overseas d/tomorrow to next monday");
         commandBox.runCommand("find conference");
         commandBox.runCommand("edit 1 attend conference in Malaysia d/tomorrow to next tuesday");
@@ -56,6 +56,10 @@ public class TomorrowTaskListTest extends TaskListGuiTest {
         assertTaskInsideTomorrowList(taskToEdit);
     }
 
+    /**
+     * Checks if the task is inside {@code tomorrowListPanel}
+     * @param taskToAdd is the task to be checked
+     */
     private void assertTaskInsideTomorrowList(TestTask taskToAdd) {
         UpcomingTaskCardHandle taskCard = tomorrowListPanel.navigateToTask(taskToAdd.getName().fullName);
         assertUpcomingTaskMatching(taskToAdd, taskCard);
