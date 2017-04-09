@@ -204,16 +204,16 @@ Example: <br>
 <br>
 
 #### 3.3.2 Finding a task by substring
-Finds all tasks containing any part of prefix or suffix specified<br>
+Finds all tasks containing any part of prefix specified<br>
 Example: <br>
 
-* find  eval
-> Returns all tasks that has the prefix eval in their name, for example a task with name evalutation report will be returned
+* find eval
+> Returns all tasks that has the prefix "eval" in their name, for example a task with name evalutation report will be returned
 
-* find  ing
-> Returns all tasks with the suffix ing in their name, for example a task with name jogging will be returned
+* find emerg situ 
+> Returns all tasks with the prefixes "emerg" and "rep" in their name, for example a task with name emergency situation will be returned
 
-#### 3.3.2 Finding a task by tags
+#### 3.3.3 Finding a task by tags
 Finds all tasks with the tags specified <br>
 Multiple tags can be stated and only tasks with all specified tags will be returned
 
@@ -225,7 +225,7 @@ Example: <br>
 * find t/family friends
 > Returns all tasks with the tags both family and work
 
-#### 3.3.3 Finding a task by status 
+#### 3.3.4 Finding a task by status 
 Finds all tasks that are marked as completed or uncompleted
 
 Example:<br>
