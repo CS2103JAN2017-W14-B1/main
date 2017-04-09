@@ -86,6 +86,7 @@ public class TaskList implements ReadOnlyTaskList {
     //@@author A0139747N
     /**
      * Removes the list of tasks toRemove from the original task list.
+     * @param is a list of tasks selected to be removed.
      */
     public void removeAll(TaskList toRemove) {
         for (ReadOnlyTask task : toRemove.getTaskList()) {

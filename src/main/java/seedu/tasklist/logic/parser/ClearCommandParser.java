@@ -20,7 +20,10 @@ public class ClearCommandParser {
     private boolean isByTags = false;
     private boolean isByStatus = false;
     private boolean isOnlyClear = false;
-
+    /**
+     * Parses the given {@code String} of arguments in the context of the ClearCommand
+     * and returns a ClearCommand object for execution.
+     */
     public Command parse(String args) {
         args = args.trim();
         if (args.isEmpty()) {

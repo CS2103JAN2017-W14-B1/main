@@ -177,6 +177,7 @@ public class ParserUtil {
      * Return the legitimate prefix if the input prefix conforms to one of the listed alternatives.
      * If it does not conform, return the input prefix as it is.
      * If the prefix is an invalid one, the error will be detected during the tokenisation process.
+     * @param the input string from the user after the prefix
      */
     public static String parseFlexiblePrefix(String input) {
         String result = input;
