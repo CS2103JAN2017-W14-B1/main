@@ -40,7 +40,7 @@ public class DoneCommand extends Command {
 
     @Override
     public CommandResult execute() throws CommandException {
-        checkValidIndex(targetIndex);
+        checkValidIndex();
 
         //Index adjusted to 0 based
         int adjustedIndex = targetIndex - 1;
@@ -67,10 +67,9 @@ public class DoneCommand extends Command {
 
     /**
      * Checks if the Index is valid task
-     * @param index the index of a task
      * @throws CommandException if index is invalid
      */
-    private void checkValidIndex(int index) throws CommandException {
+    private void checkValidIndex() throws CommandException {
         List<ReadOnlyTask> lastShownList = model.getFilteredTaskList();
 
         if (lastShownList.size() < targetIndex) {
