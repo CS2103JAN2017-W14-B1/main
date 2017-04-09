@@ -50,6 +50,7 @@ public class ArgumentTokenizer {
     //@@author A0139747N
     /**
      * Returns all the tags as a list.
+     * @param is the prefix entered by user "t/"
      */
     public Optional<List<String>> getAllTags(Prefix prefix) {
         if (!this.tokenizedArguments.containsKey(prefix)) {
@@ -72,6 +73,7 @@ public class ArgumentTokenizer {
     }
     /**
      * Generates all the tags as a String array.
+     * @param is the string array of individual tags, after splitted by whitespace characters.
      */
     public String[] generateNewTagsArray(String[] splittedTags) {
         ArrayList<String> processedTags = new ArrayList<String>();

@@ -134,10 +134,7 @@ public class ModelManager extends ComponentManager implements Model {
     }
 
     //@@author A0139747N
-    /**
-     * Set the task list to be of the previous state, i.e. before a command that mutates the task list took place.
-     * The desired task list is popped from undoStack, and pushed into redoStack for redo command purposes.
-     */
+
     @Override
     public String setPreviousState() throws EmptyStackException {
         if (undoStack.empty()) {
@@ -160,10 +157,7 @@ public class ModelManager extends ComponentManager implements Model {
         redoStack.clear();
     }
 
-    /**
-     * Set the task list to be of the state before an undo command.
-     * The desired task list is popped from the redoStack, and pushd into undoStack.
-     */
+
     @Override
     public String setNextState() throws EmptyStackException {
         if (redoStack.empty()) {

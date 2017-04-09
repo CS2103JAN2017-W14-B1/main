@@ -57,21 +57,30 @@ public interface Model {
     void updateFilteredTaskList(Set<String> keywords);
 
     //@@author A0139747N
-    /** Get the previous state (undo) of the task list */
+    /** Get the previous state (undo) of the task list
+     * @throws EmptyStackException if the user calls undo command when
+     * there is no preceding commands that mutates the data.
+     */
     public String setPreviousState() throws EmptyStackException;
 
     /** Clear the redo stack (if the preceding command is not 'undo') */
     public void clearRedoStack();
 
-    /** Get the next state (redo) of the task list */
+    /** Get the next state (redo) of the task list
+     * @throws EmptyStackException if the user calls redo command when there is no preceding undo commands entered.
+     */
     public String setNextState() throws EmptyStackException;
 
     /** Enables undo to work after a clear command, by pushing the existing state into UndoStack. */
     public void enableUndoForClear();
 
-    /** Removes tasks that contains the parameter/keywords input from clear command. */
+    /** Removes tasks that contains the parameter/keywords input from clear command.
+     * @param the tag entered by the user
+     */
     public void removeTasksForClearByTag(String keyword);
-
+    /** Removes tasks that have the same status input from clear command.
+     * @param the status entered by the user (completed/uncompleted)
+     */
     public void removeTasksForClearByStatus(String keyword);
 //@@author A0141993X
     /**Sort tasks according to parameter specified by user */
