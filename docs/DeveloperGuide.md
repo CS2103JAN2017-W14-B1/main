@@ -24,6 +24,7 @@ This guide describes the design and implementation of FlexiTask. This developer 
 It will walk you through the Setup, Architecture, APIs and the details regarding the different components of the program.
 
 <br>
+
 ## 1. Setting up
 
 ### 1.1. Prerequisites
@@ -130,7 +131,7 @@ _Figure 2: Class Diagram of the Logic Component_
 Figure 3 below shows how the components interact for the scenario where the user issues the
 command `delete 1`.
 
-<img src="images/SDforDeleteTask.png" width="600">
+<img src="images/SDforDeleteTask.png" width="600"><br>
 _Figure 3: Component Interactions for `delete 1` Command (Part 1)_
 
 >Note how the `Model` simply raises a `TaskListChangedEvent` when FlexiTask data are changed,
@@ -156,7 +157,7 @@ _Figure 5: Structure of the UI Component_
 **API** : [`Ui.java`](../src/main/java/seedu/tasklist/ui/Ui.java)
 
 The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `TaskListPanel`,
-`StatusBarFooter`, `BrowserPanel` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class.
+`StatusBarFooter`, `TodayTaskPanel`, `TomorrowTaskPanel` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class.
 
 The `UI` component uses JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files
  that are in the `src/main/resources/view` folder.<br>
@@ -281,12 +282,10 @@ We have two types of tests:
    These are in the `guitests` package.
 
 2. **Non-GUI Tests** - These are tests not involving the GUI. They include,
-   1. _Unit tests_ targeting the lowest level methods/classes. <br>
-      e.g. `seedu.tasklist.commons.UrlUtilTest`
-   2. _Integration tests_ that are checking the integration of multiple code units
+   1. _Integration tests_ that are checking the integration of multiple code units
      (those code units are assumed to be working).<br>
       e.g. `seedu.tasklist.storage.StorageManagerTest`
-   3. Hybrids of unit and integration tests. These test are checking multiple code units as well as
+   2. Hybrids of unit and integration tests. These test are checking multiple code units as well as
       how the are connected together.<br>
       e.g. `seedu.tasklist.logic.LogicManagerTest`
       
@@ -534,15 +533,15 @@ Use case ends
 #### Path
 > Absolute path or Relative path of the Tasks Storage
 
-####DOS style commands
+#### DOS style commands
 
 > commandline commands based on Windows System
 
-####UNIX-style commands
+#### UNIX-style commands
 
 > commandline commands based on UNIX System
 
-####Headless Mode:
+#### Headless Mode:
 > In the headless mode, GUI tests do not show up on the screen
 > This means you can do other things on the computer while the tests are running
 
