@@ -33,7 +33,7 @@ It has many useful features that help to organise your tasks, notably a convenie
 
 FlexiTask will also be able to sort your tasks according to their priorities, date, or tags, so that you can locate your tasks easily.
 
-Try FlexiTask now and benefit from its convenient features. 
+Try FlexiTask now and benefit from its convenient features.
 
 ## 2. Quick Start
 
